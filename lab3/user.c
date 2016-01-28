@@ -4,6 +4,15 @@
 #include <math.h>
 #include <sys/mman.h>
 
+
+#define VMODE                   _IOW (0xcc,0,unsigned long)
+#define BIND_DMA                _IOW (0xcc,1,unsigned long)
+#define UNBIND_DMA              _IOW (0xcc,5,unsigned long)
+#define START_DMA               _IOWR(0xcc,2,unsigned long)
+#define FIFO_QUEUE              _IOWR(0xcc,3,unsigned long)
+#define FIFO_FLUSH              _IO  (0xcc,4)
+
+
 struct u_kyouko_device{
    unsigned int *u_control_base;
 } kyouko3;

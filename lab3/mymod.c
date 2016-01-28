@@ -53,10 +53,12 @@ int kyouko3_mmap(struct file *filp, struct vm_area_struct *vma){
                                                               
 }
 
-int kyouko3_ioctl(){
-   int ret;
+long kyouko3_ioctl(struct file *filp, unsigned int cmd, unsigned long arg){
+   long ret;
+
    
-   return ret;
+
+   return 0;
 }
 
 
@@ -78,14 +80,10 @@ struct pci_device_id kyouko3_dev_ids[]={
 
 
 int kyouko3_probe(struct pci_dev * pdev, const struct pci_dev_id * pciId){
-    
-    kyouko3.p_control_base = pci_resource_start(pdev, 1);
+   kyouko3.p_control_base = pci_resource_start(pdev, 1);
     kyouko3.p_card_ram_base = pci_resource_start(pdev, 2);
-
     pci_enable_device(pdev);
-
     pci_set_master(pdev);
-
     kyouko3.pdev = pdev;
 }
 
