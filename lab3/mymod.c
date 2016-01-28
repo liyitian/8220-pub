@@ -7,6 +7,13 @@
 #include <linux/cdev.h>  
 #include <linux/pci.h>
 
+#define VMODE                   _IOW (0xcc,0,unsigned long)
+#define BIND_DMA                _IOW (0xcc,1,unsigned long)
+#define UNBIND_DMA              _IOW (0xcc,5,unsigned long)
+#define START_DMA               _IOWR(0xcc,2,unsigned long)
+#define FIFO_QUEUE              _IOWR(0xcc,3,unsigned long)
+#define FIFO_FLUSH              _IO  (0xcc,4)
+
 MODULE_LICENSE("Proprietarty");
 MODULE_AUTHOR("Chaoran Huang");
 
