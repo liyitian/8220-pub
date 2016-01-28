@@ -3,6 +3,7 @@
 #include <errno.h>
 #include <math.h>
 #include <sys/mman.h>
+#include <sys/ioctl.h>
 
 
 #define VMODE                   _IOW (0xcc,0,unsigned long)
@@ -30,6 +31,9 @@ int main()
    int result;
 
    fd = open("/dev/kyouko3", O_RDWR);
+
+   ioctl(fd, VMODE, 1);
+   
    kyouko3.u_control_base = (unsigned int *)mmap(0, KYOUKO_CONTROL_SIZE, PROT_READ|PROT_WRITE,MAP_SHARED,fd,0);
    result = U_READ_REG(Device_RAM);
    printf("Ram size in MB is: %d\n", result);
