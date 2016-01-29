@@ -7,10 +7,8 @@
 #include <linux/cdev.h>  
 #include <linux/pci.h>
 #include <linux/delay.h>
-#include <asm/uaccess.h>
+#include <linux/sched.h>
 #include <linux/kernel_stat.h>
-#include <linux/atomic.h>
-
 #include "reg.h"
 
 MODULE_LICENSE("Proprietary");
@@ -149,7 +147,16 @@ int kyouko3_release(struct inode *inode, struct file *fp){
 }
 int kyouko3_mmap(struct file *flip, struct vm_area_struct * vma){
 	int ret;
-	ret = remap_pfn_range(vma, vma->vm_start,(unsigned int )(kyouko3.p_control_base)>>PAGE_SHIFT, (unsigned long)(vma->vm_end-vma->vm_start), vma->vm_page_prot);
+	if((vma->vm_pgoff)<<PAGE_SHIFT == 0x0){
+		printk(KERN_ALERT "I am in controlMMP\n");
+		ret = remap_pfn_range(vma, vma->vm_start,(unsigned int )(kyouko3.p_control_base)>>PAGE_SHIFT, (unsigned long)(vma->vm_end-vma->vm_start), vma->vm_page_prot);
+		printk(KERN_ALERT "controlMMPret: %d\n", ret);
+	}
+	if((vma->vm_pgoff)<<PAGE_SHIFT == 0x80000000){
+		printk(KERN_ALERT "I am in framBufferMMP\n");
+		ret = remap_pfn_range(vma, vma->vm_start,(unsigned int )(kyouko3.p_card_ram_base)>>PAGE_SHIFT, (unsigned long)(vma->vm_end-vma->vm_start), vma->vm_page_prot);
+		printk(KERN_ALERT "ramMMPret: %d\n", ret);
+	}
 	return ret;
 }
 
@@ -179,7 +186,7 @@ long kyouko3_ioctl(struct file *fp, unsigned int cmd, unsigned int arg)
 				unsigned int one_as_int = *(unsigned int *) &one;
 				FIFO_WRITE(Clear_Color,   0);
 				FIFO_WRITE(Clear_Color+4, 0);
-				FIFO_WRITE(Clear_Color+8, 0);
+				FIFO_WRITE(Clear_Color+8, one_as_int);
 				FIFO_WRITE(Clear_Color+12,one_as_int);
 				
 				FIFO_WRITE(Clear_Buffer,0x03);
@@ -199,17 +206,12 @@ long kyouko3_ioctl(struct file *fp, unsigned int cmd, unsigned int arg)
 			printk(KERN_ALERT "in QUEUE\n");
 			unsigned int ret;
 			struct fifo_entry entry;
-			ret=copy_from_user(
-				&entry,  
-				(struct fifo_entry *) arg,
-				sizeof(struct fifo_entry)
-				);
+			ret=copy_from_user(&entry, (unsigned int*)arg, sizeof(struct fifo_entry));
 
 			printk(KERN_ALERT "ret: %d", ret);
 			printk(KERN_ALERT "queue_arg: %x\n", arg);
-			printk(KERN_ALERT "UserQueue: %x, %d\n", entry.command, entry.value);
+			printk(KERN_ALERT "KernelQueue: %x, %d\n", entry.command, entry.value);
 			FIFO_WRITE(entry.command, entry.value);
-			//FIFO_WRITE(0x3ffc, 0);
 			break;
 		}
 		case FIFO_FLUSH:{  
@@ -218,6 +220,7 @@ long kyouko3_ioctl(struct file *fp, unsigned int cmd, unsigned int arg)
 			while(kyouko3.fifo.tail_cache != kyouko3.fifo.head){
 				kyouko3.fifo.tail_cache= K_READ_REG(FifoTail);
 				schedule();
+				//printk(KERN_ALERT "Still in FLUSH\n");
 			}
 			break;
 		}
