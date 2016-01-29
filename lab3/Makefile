@@ -3,10 +3,5 @@ obj-m += mymod.o
 default:
 	$(MAKE) -C /usr/src/linux M=$(PWD) modules
 clean: 
-	rm *.ko
-	rm *.o
-	rm *.mod.c
-	rm *.symvers
-	rm *.order
-	rm .*
-	rm user
+	rm -rf *.ko *.o *.mod.c *.symvers *.order .* user
+	
