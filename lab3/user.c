@@ -105,7 +105,7 @@ int main()
 	printf("sizeofentry: %d\n",sizeof(entry));
 	
 	
-	/*
+/*
 	ioctlQueue(Command_Primitive, 1);
 	
 	float p1[4]={-0.5,-0.5,0.0,1.0};
@@ -124,16 +124,15 @@ int main()
 	ioctlQueue(Vertex_Emit, 0x0);
 
 	ioctlQueue(Command_Primitive, 0x0);
-	
-	*/
-	
-	ioctlQueue(Flush, 0x0);
+*/
 
+	ioctlQueue(Flush, 0x0);
+	sleep(5);
 	
 	ioctl(fd, FIFO_FLUSH);
 	
 	
-	sleep(5);
+	sleep(2);
 
 	ioctl(fd, VMODE, GRAPHICS_OFF);
 	

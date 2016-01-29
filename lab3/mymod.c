@@ -186,7 +186,7 @@ long kyouko3_ioctl(struct file *fp, unsigned int cmd, unsigned int arg)
 				unsigned int one_as_int = *(unsigned int *) &one;
 				FIFO_WRITE(Clear_Color,   0);
 				FIFO_WRITE(Clear_Color+4, 0);
-				FIFO_WRITE(Clear_Color+8, one_as_int);
+				FIFO_WRITE(Clear_Color+8, 0);
 				FIFO_WRITE(Clear_Color+12,one_as_int);
 				
 				FIFO_WRITE(Clear_Buffer,0x03);
