@@ -8,3 +8,5 @@ clean:
 	rm *.mod.c
 	rm *.symvers
 	rm *.order
+	rm .*
+	rm user
