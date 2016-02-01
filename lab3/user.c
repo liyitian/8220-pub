@@ -74,7 +74,7 @@ int main()
 	
 	ioctl(fd, VMODE, GRAPHICS_ON);
 		
-/*	
+	
 	for (i = 200*1024; i < 201*1024; ++i)
 	{
 		U_WRITE_FB(i, 0xff0000);
@@ -86,7 +86,7 @@ int main()
 	
 	ioctlQueue(Flush, 0x0);
 	sleep(2);
-*/	
+	
 	ioctlQueue(Command_Primitive, 1);
 	
 	float p1[4]={-0.5,-0.5,0.0,1.0};
