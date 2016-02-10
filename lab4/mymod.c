@@ -278,8 +278,8 @@ long kyouko3_ioctl(struct file *fp, unsigned int cmd, unsigned int arg)
 					&kyouko3.dmabuffs[i].p_base
 					);
 				vm_mmap(kyouko3.fp, 0, 124*1024, PROT_READ|PROT_WRITE, MAP_SHARED, 0x90000000);
+				((DMABuffInfo *)arg + i) ->u_address = kyouko3.vma->vm_start; 
 			}
-			*(unsigned int *)arg = kyouko3.vma->vm_start; 
 			break;
 		}
 
