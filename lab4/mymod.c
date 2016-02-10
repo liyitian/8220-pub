@@ -11,10 +11,11 @@
 #include <linux/kernel_stat.h>
 #include <linux/mman.h>
 #include "reg.h"
+#define NUM_BUFS 1
 
 MODULE_LICENSE("Proprietary");
 MODULE_AUTHOR("Yaolobg Yu");
-DECLARE_WAIT_QUEUE_HEAD(dma_snooze)
+DECLARE_WAIT_QUEUE_HEAD(dma_snooze);
 
 struct cdev kyouko3_cdev;
 
@@ -31,12 +32,11 @@ struct __fifo
 	u32 tail_cache;
 };
 
-struct __dma
+struct __dmabuff
 {
 	u64 p_base;
 	u64 k_base;
-	unsigned int dma_fill;
-	unsigned int dma_drain;
+	DMAhdr hdr;
 	
 };
 
@@ -49,7 +49,9 @@ struct kyouko3_data{
 	unsigned int * k_control_base;
 	unsigned int * k_card_ram_base;
 	struct __fifo fifo;
-	struct __dma dma;
+	struct __dmabuff dmabuffs[NUM_BUFS];
+	unsigned int dma_fill;
+	unsigned int dma_drain;
 	unsigned int graphics_on;
 } kyouko3;
 
@@ -173,13 +175,13 @@ int kyouko3_mmap(struct file *flip, struct vm_area_struct * vma){
 		printk(KERN_ALERT "ramMMPret: %d\n", ret);
 	}else{
 		printk(KERN_ALERT "I am in DMABufferMMP\n");
-		ret = remap_pfn_range(vma, vma->vm_start,(unsigned int )(kyouko3.dma.p_base)>>PAGE_SHIFT, (unsigned long)(vma->vm_end-vma->vm_start), vma->vm_page_prot);
+		ret = remap_pfn_range(vma, vma->vm_start,(unsigned int )(kyouko3.dmabuffs[0].p_base)>>PAGE_SHIFT, (unsigned long)(vma->vm_end-vma->vm_start), vma->vm_page_prot);
 		printk(KERN_ALERT "DMAMMPret: %d\n", ret);
 	}
 	return ret;
 }
 
-
+/*
 unsigned int initiate_transfer(void)
 {
 	unsigned int flags;
@@ -201,7 +203,7 @@ unsigned int initiate_transfer(void)
 	return fill;
 
 }
-
+*/
 long kyouko3_ioctl(struct file *fp, unsigned int cmd, unsigned int arg)
 {
 	switch (cmd){
@@ -267,13 +269,16 @@ long kyouko3_ioctl(struct file *fp, unsigned int cmd, unsigned int arg)
 			break;
 		}
 
-		case BIND_DMA:{	
-			kyouko3.dma.k_base= pci_alloc_consistent(
-				kyouko3.pdev,
-				124*1024,
-				&kyouko3.dma.p_base
-				);
-			vm_mmap(kyouko3.fp, 0, 124*1024, PROT_READ|PROT_WRITE, MAP_SHARED, 0x90000000);
+		case BIND_DMA:{
+			unsigned int i=0;
+			for(i=0;i<NUM_BUFS;++i){
+				kyouko3.dmabuffs[i].k_base= pci_alloc_consistent(
+					kyouko3.pdev,
+					124*1024,
+					&kyouko3.dmabuffs[i].p_base
+					);
+				vm_mmap(kyouko3.fp, 0, 124*1024, PROT_READ|PROT_WRITE, MAP_SHARED, 0x90000000);
+			}
 			*(unsigned int *)arg = kyouko3.vma->vm_start; 
 			break;
 		}
