@@ -32,12 +32,12 @@ struct __fifo
 	u32 tail_cache;
 };
 
-struct __dmabuff
+
+struct __k_dmabuff
 {
 	u64 p_base;
 	u64 k_base;
-	DMAhdr hdr;
-	
+	DMABuffInfo buffInfo; 
 };
 
 struct kyouko3_data{
@@ -49,7 +49,7 @@ struct kyouko3_data{
 	unsigned int * k_control_base;
 	unsigned int * k_card_ram_base;
 	struct __fifo fifo;
-	struct __dmabuff dmabuffs[NUM_BUFS];
+	struct __k_dmabuff dmabuffs[NUM_BUFS];
 	unsigned int dma_fill;
 	unsigned int dma_drain;
 	unsigned int graphics_on;

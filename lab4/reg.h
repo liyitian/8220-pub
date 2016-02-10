@@ -12,6 +12,12 @@ typedef struct kyouko3_dma_hdr{
 	unsigned int opcode:8;
 }DMAhdr;
 
+
+typedef struct __dmaBuffInfo{
+	unsigned long u_address;
+	DMAhdr hdr;
+}DMABuffInfo;
+
 #define VMODE 					_IOW (0xcc,0,unsigned long)
 #define BIND_DMA				_IOW (0xcc,1,unsigned long)
 #define UNBIND_DMA				_IOW (0xcc,5,unsigned long)
