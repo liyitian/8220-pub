@@ -36,6 +36,7 @@ struct __k_dmabuff
 {
 	u64 p_base;
 	u64 k_base;
+	unsigned int cmdCount;
 	dmaInfo buffInfo; 
 };
 
@@ -164,7 +165,7 @@ int kyouko3_release(struct inode *inode, struct file *fp){
 }
 int kyouko3_mmap(struct file *flip, struct vm_area_struct * vma){
 	int ret;
-	static unsigned int i = 0;
+	static unsigned int index = 0;
 	kyouko3.vma = vma;
 	if((vma->vm_pgoff)<<PAGE_SHIFT == 0x0){
 		printk(KERN_ALERT "I am in controlMMP\n");
@@ -177,11 +178,11 @@ int kyouko3_mmap(struct file *flip, struct vm_area_struct * vma){
 		printk(KERN_ALERT "ramMMPret: %d\n", ret);
 	}else{
 		printk(KERN_ALERT "I am in DMABufferMMP\n");
-		ret = remap_pfn_range(vma, vma->vm_start,(unsigned int )(kyouko3.dmabuffs[i].p_base)>>PAGE_SHIFT, (unsigned long)(vma->vm_end-vma->vm_start), vma->vm_page_prot);
+		ret = remap_pfn_range(vma, vma->vm_start,(unsigned int )(kyouko3.dmabuffs[index].p_base)>>PAGE_SHIFT, (unsigned long)(vma->vm_end-vma->vm_start), vma->vm_page_prot);
 		printk(KERN_ALERT "DMAMMPret: %d\n", ret);
-		udelay(1);
-		++i;
-		i = i % NUM_BUFS;
+		//udelay(1);
+		++index;
+		index = index % NUM_BUFS;
 	}
 	return ret;
 }
@@ -200,18 +201,34 @@ unsigned int initiate_transfer(unsigned int cmdCount)
 		kyouko3.dma_fill  = (kyouko3.dma_fill + 1) % NUM_BUFS;
 		//kick_fifo .......
 		K_WRITE_REG(FifoHead,kyouko3.fifo.head);
-		//kyouko3.fifo.tail_cache= K_READ_REG(FifoTail);
-		//return fill;
+		return 0;
 	}
-	return 0;
-	//????
-	/*
-	dmabuf[fill.stored_count] = count;
-	fill = (fill + 1) % NUM_BUFS;
-	wait_event_interruptable(dma_snooze, fill != drain);
+		
+	kyouko3.dmabuffs[kyouko3.dma_fill].cmdCount = cmdCount;
+	kyouko3.dma_fill  = (kyouko3.dma_fill + 1) % NUM_BUFS;
+	if(kyouko3.dma_fill == kyouko3.dma_drain){
+		wait_event_interruptible(dma_snooze, kyouko3.dma_fill != kyouko3.dma_drain);
+	}
 	local_irq_restore(flags);
-	return fill;
-	*/
+	return 9;
+	
+}
+
+irqreturn_t rkintr(int irq, void* dev_id, struct pt_regs* regs){
+	unsigned int iflags;
+	iflags = K_READ_REG(InterruptStatus);
+	K_WRITE_REG(InterruptStatus, 0xf);//clean flags;
+	if(iflags&0x02 == 0){
+		return(IRQ_NONE);
+	}
+	else{
+		//interrupt handle here......
+		kyouko3.dma_drain = (kyouko3.dma_drain + 1) % NUM_BUFS;
+	}
+	//??
+	if(kyouko3.dma_fill == kyouko3.dma_drain)
+		wake_up_interruptible(&dma_snooze);
+	return (IRQ_HANDLED); 
 }
 
 long kyouko3_ioctl(struct file *fp, unsigned int cmd, unsigned int arg)
@@ -293,6 +310,18 @@ long kyouko3_ioctl(struct file *fp, unsigned int cmd, unsigned int arg)
 				((dmaInfo *)arg + i) ->u_dma_bufferAddress = kyouko3.vma->vm_start; 
 				kyouko3.dmabuffs[i].buffInfo.u_dma_bufferAddress = kyouko3.vma->vm_start;
 			}
+			ret = pci_enable_msi(kyouko3.pdev);
+			if(ret){
+				printk(KERN_ALERT "enable_msi_ErrorRet: %d", ret);	
+				return ret;
+			}
+			ret = request_irq(kyouko3.pdev->irq, (irq_handler_t)rkintr, IRQF_SHARED, "rkintr", &kyouko3 );
+			if(ret){
+				printk(KERN_ALERT "request_irq_ErrorRet: %d", ret);	
+				pci_disable_msi(kyouko3.pdev);
+				return ret;
+			}
+			K_WRITE_REG(InterruptSet, 0x02); //need to hook up interrupt handler first then call this function
 			break;
 		}
 
@@ -308,7 +337,10 @@ long kyouko3_ioctl(struct file *fp, unsigned int cmd, unsigned int arg)
 				vm_munmap(kyouko3.dmabuffs[i].buffInfo.u_dma_bufferAddress, 124*1024);
 				pci_free_consistent(kyouko3.pdev, 124*1024, kyouko3.dmabuffs[i].k_base, kyouko3.dmabuffs[i].p_base);
 			}
-
+			K_WRITE_REG(InterruptSet, 0x0);
+			free_irq(kyouko3.pdev->irq, &kyouko3);
+			pci_disable_msi(kyouko3.pdev);
+			
 			break;
 		}
 

@@ -93,30 +93,31 @@ int main()
 	
 	for(i=0; i<NUM_BUFS; ++i){
 		printf("dma %d u_address %x\n", i, dmaHeadBuffs[i].u_dma_bufferAddress);
+		
+		dmaHeadBuffs[i].dmaHdr.address = 0x1045; //0b 1 0000 0100 0101
+		dmaHeadBuffs[i].dmaHdr.count = 3 * 1;
+		dmaHeadBuffs[i].dmaHdr.opcode = 0x14;
+		dmaHeadBuffs[i].u_dma_bufferAddress[0] = *((unsigned int *)&dmaHeadBuffs[i].dmaHdr);
+		printf("dmaHdr: %x\n",*(unsigned int*)&dmaHeadBuffs[i].dmaHdr);	
+		printf("dmaHdrInaddr: %x\n", dmaHeadBuffs[i].u_dma_bufferAddress[0]);	
+		float p0[4]={-0.5+0.05*i,-0.5+0.05*i,0.0,1.0};
+		float c0[4]={1.0, 0.0, 0.0, 1.0};
+		U_WRITE_DMABufferPoint(i ,0, p0, c0);
+		float p1[4]={0.5+0.05*i,0.0,0.0,1.0};
+		float c1[4]={0.0, 1.0, 0.0, 1.0};
+		U_WRITE_DMABufferPoint(i, 1, p1, c1);
+		float p2[4]={0.125+0.05*i,0.5+0.05*i,0.0,1.0};
+		float c2[4]={0.0, 0.0, 1.0, 1.0};
+		U_WRITE_DMABufferPoint(i, 2, p2, c2);
+		
+		ioctlQueue(Flush, 0x0);
+		ioctl(fd, START_DMA, 19);
+		sleep(1);
+		ioctlQueue(Flush, 0x0);
+		
 	}
 	
-	dmaHeadBuffs[0].dmaHdr.address = 0x1045; //0b 1 0000 0100 0101
-	dmaHeadBuffs[0].dmaHdr.count = 3 * 1;
-	dmaHeadBuffs[0].dmaHdr.opcode = 0x14;
-	
-	dmaHeadBuffs[0].u_dma_bufferAddress[0] = *((unsigned int *)&dmaHeadBuffs[0].dmaHdr);
-	printf("dmaHdr: %x\n",*(unsigned int*)&dmaHeadBuffs[0].dmaHdr);	
-	printf("dmaHdrInaddr: %x\n", dmaHeadBuffs[0].u_dma_bufferAddress[0]);	
-	float p0[4]={-0.5,-0.5,0.0,1.0};
-	float c0[4]={1.0, 0.0, 0.0, 1.0};
-	U_WRITE_DMABufferPoint(0 ,0, p0, c0);
-	float p1[4]={0.5,0.0,0.0,1.0};
-	float c1[4]={1.0, 1.0, 0.0, 1.0};
-	U_WRITE_DMABufferPoint(0, 1, p1, c1);
-	float p2[4]={0.125,0.5,0.0,1.0};
-	float c2[4]={1.0, 0.0, 1.0, 1.0};
-	U_WRITE_DMABufferPoint(0, 2, p2, c2);
-	
 
-
-	ioctlQueue(Flush, 0x0);
-	ioctl(fd, START_DMA, 19);
-	sleep(4);
 	ioctlQueue(Flush, 0x0);
 	sleep(1);
 	ioctl(fd, UNBIND_DMA);

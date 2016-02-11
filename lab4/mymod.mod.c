@@ -24,9 +24,16 @@ __attribute__((section("__versions"))) = {
 	{ 0x60130fc1, __VMLINUX_SYMBOL_STR(cdev_add) },
 	{ 0x1c9a00c9, __VMLINUX_SYMBOL_STR(cdev_init) },
 	{ 0xf9a482f9, __VMLINUX_SYMBOL_STR(msleep) },
+	{ 0x461218ef, __VMLINUX_SYMBOL_STR(pci_disable_msi) },
+	{ 0xf20dabd8, __VMLINUX_SYMBOL_STR(free_irq) },
+	{ 0xd6b8e852, __VMLINUX_SYMBOL_STR(request_threaded_irq) },
+	{ 0x92b16f1a, __VMLINUX_SYMBOL_STR(pci_enable_msi_range) },
 	{ 0x53e800f8, __VMLINUX_SYMBOL_STR(vm_mmap) },
 	{ 0xb5419b40, __VMLINUX_SYMBOL_STR(_copy_from_user) },
 	{ 0x5b56860c, __VMLINUX_SYMBOL_STR(vm_munmap) },
+	{ 0xf08242c2, __VMLINUX_SYMBOL_STR(finish_wait) },
+	{ 0x2207a57f, __VMLINUX_SYMBOL_STR(prepare_to_wait_event) },
+	{ 0xa1c76e0a, __VMLINUX_SYMBOL_STR(_cond_resched) },
 	{ 0x42c8de35, __VMLINUX_SYMBOL_STR(ioremap_nocache) },
 	{ 0xdb7305a1, __VMLINUX_SYMBOL_STR(__stack_chk_fail) },
 	{ 0x48d256, __VMLINUX_SYMBOL_STR(arch_dma_alloc_attrs) },
@@ -35,6 +42,7 @@ __attribute__((section("__versions"))) = {
 	{ 0xbc449561, __VMLINUX_SYMBOL_STR(dma_ops) },
 	{ 0x78764f4e, __VMLINUX_SYMBOL_STR(pv_irq_ops) },
 	{ 0xedc03953, __VMLINUX_SYMBOL_STR(iounmap) },
+	{ 0xa6bbd805, __VMLINUX_SYMBOL_STR(__wake_up) },
 	{ 0xeae3dfd6, __VMLINUX_SYMBOL_STR(__const_udelay) },
 	{ 0xe6475537, __VMLINUX_SYMBOL_STR(remap_pfn_range) },
 	{ 0x27e1a049, __VMLINUX_SYMBOL_STR(printk) },
@@ -50,4 +58,4 @@ __attribute__((section(".modinfo"))) =
 "depends=";
 
 
-MODULE_INFO(srcversion, "7B5EA72191DDB801D9472FE");
+MODULE_INFO(srcversion, "6E9EF262F6CE577E24889C7");
