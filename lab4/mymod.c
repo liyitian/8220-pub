@@ -11,7 +11,6 @@
 #include <linux/kernel_stat.h>
 #include <linux/mman.h>
 #include "reg.h"
-#define NUM_BUFS 1
 
 MODULE_LICENSE("Proprietary");
 MODULE_AUTHOR("Yaolobg Yu");
@@ -37,7 +36,7 @@ struct __k_dmabuff
 {
 	u64 p_base;
 	u64 k_base;
-	DMABuffInfo buffInfo; 
+	dmaInfo buffInfo; 
 };
 
 struct kyouko3_data{
@@ -163,6 +162,7 @@ int kyouko3_release(struct inode *inode, struct file *fp){
 }
 int kyouko3_mmap(struct file *flip, struct vm_area_struct * vma){
 	int ret;
+	static unsigned int i = 0;
 	kyouko3.vma = vma;
 	if((vma->vm_pgoff)<<PAGE_SHIFT == 0x0){
 		printk(KERN_ALERT "I am in controlMMP\n");
@@ -175,8 +175,11 @@ int kyouko3_mmap(struct file *flip, struct vm_area_struct * vma){
 		printk(KERN_ALERT "ramMMPret: %d\n", ret);
 	}else{
 		printk(KERN_ALERT "I am in DMABufferMMP\n");
-		ret = remap_pfn_range(vma, vma->vm_start,(unsigned int )(kyouko3.dmabuffs[0].p_base)>>PAGE_SHIFT, (unsigned long)(vma->vm_end-vma->vm_start), vma->vm_page_prot);
+		ret = remap_pfn_range(vma, vma->vm_start,(unsigned int )(kyouko3.dmabuffs[i].p_base)>>PAGE_SHIFT, (unsigned long)(vma->vm_end-vma->vm_start), vma->vm_page_prot);
 		printk(KERN_ALERT "DMAMMPret: %d\n", ret);
+		udelay(1);
+		++i;
+		i = i % NUM_BUFS;
 	}
 	return ret;
 }
@@ -278,7 +281,8 @@ long kyouko3_ioctl(struct file *fp, unsigned int cmd, unsigned int arg)
 					&kyouko3.dmabuffs[i].p_base
 					);
 				vm_mmap(kyouko3.fp, 0, 124*1024, PROT_READ|PROT_WRITE, MAP_SHARED, 0x90000000);
-				((DMABuffInfo *)arg + i) ->u_address = kyouko3.vma->vm_start; 
+				printk(KERN_ALERT "u_address: %x\n", kyouko3.vma->vm_start);
+				((dmaInfo *)arg + i) ->u_dma_bufferAddress = kyouko3.vma->vm_start; 
 			}
 			break;
 		}

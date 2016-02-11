@@ -121,7 +121,7 @@ int main()
 
 	
 	ioctl(fd, BIND_DMA, dmaHeadBuffs);
-//	
+	
 	for(i=0; i<NUM_BUFS; ++i){
 		printf("dma u_address %x\n",dmaHeadBuffs[i].u_dma_bufferAddress);
 	}

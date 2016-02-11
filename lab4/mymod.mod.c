@@ -30,11 +30,11 @@ __attribute__((section("__versions"))) = {
 	{ 0x53e800f8, __VMLINUX_SYMBOL_STR(vm_mmap) },
 	{ 0x48d256, __VMLINUX_SYMBOL_STR(arch_dma_alloc_attrs) },
 	{ 0xb5419b40, __VMLINUX_SYMBOL_STR(_copy_from_user) },
-	{ 0xeae3dfd6, __VMLINUX_SYMBOL_STR(__const_udelay) },
 	{ 0x16305289, __VMLINUX_SYMBOL_STR(warn_slowpath_null) },
 	{ 0xbc449561, __VMLINUX_SYMBOL_STR(dma_ops) },
 	{ 0x78764f4e, __VMLINUX_SYMBOL_STR(pv_irq_ops) },
 	{ 0xedc03953, __VMLINUX_SYMBOL_STR(iounmap) },
+	{ 0xeae3dfd6, __VMLINUX_SYMBOL_STR(__const_udelay) },
 	{ 0xe6475537, __VMLINUX_SYMBOL_STR(remap_pfn_range) },
 	{ 0x27e1a049, __VMLINUX_SYMBOL_STR(printk) },
 	{ 0x43845cd1, __VMLINUX_SYMBOL_STR(pci_disable_device) },
@@ -49,4 +49,4 @@ __attribute__((section(".modinfo"))) =
 "depends=";
 
 
-MODULE_INFO(srcversion, "AF0B087A36AB342D31054FE");
+MODULE_INFO(srcversion, "384B33B0748BDD1039C62A5");

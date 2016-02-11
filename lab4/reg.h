@@ -5,6 +5,7 @@
 #define GRAPHICS_ON 9
 #define GRAPHICS_OFF 7
 #define FIFO_ENTRIES 1024
+#define NUM_BUFS 2 
 // DMA header
 typedef struct kyouko3_dma_hdr{
 	unsigned int address:14;
@@ -12,11 +13,11 @@ typedef struct kyouko3_dma_hdr{
 	unsigned int opcode:8;
 }DMAhdr;
 
+typedef struct arg_dma_info{
+	unsigned int * u_dma_bufferAddress;
+	DMAhdr dmaHdr;
+}dmaInfo;
 
-typedef struct __dmaBuffInfo{
-	unsigned long u_address;
-	DMAhdr hdr;
-}DMABuffInfo;
 
 #define VMODE 					_IOW (0xcc,0,unsigned long)
 #define BIND_DMA				_IOW (0xcc,1,unsigned long)
