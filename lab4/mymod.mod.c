@@ -23,13 +23,14 @@ __attribute__((section("__versions"))) = {
 	{ 0x3e0d8262, __VMLINUX_SYMBOL_STR(__pci_register_driver) },
 	{ 0x60130fc1, __VMLINUX_SYMBOL_STR(cdev_add) },
 	{ 0x1c9a00c9, __VMLINUX_SYMBOL_STR(cdev_init) },
+	{ 0xf9a482f9, __VMLINUX_SYMBOL_STR(msleep) },
+	{ 0x53e800f8, __VMLINUX_SYMBOL_STR(vm_mmap) },
+	{ 0xb5419b40, __VMLINUX_SYMBOL_STR(_copy_from_user) },
+	{ 0x5b56860c, __VMLINUX_SYMBOL_STR(vm_munmap) },
 	{ 0x42c8de35, __VMLINUX_SYMBOL_STR(ioremap_nocache) },
 	{ 0xdb7305a1, __VMLINUX_SYMBOL_STR(__stack_chk_fail) },
-	{ 0xf9a482f9, __VMLINUX_SYMBOL_STR(msleep) },
-	{ 0x1000e51, __VMLINUX_SYMBOL_STR(schedule) },
-	{ 0x53e800f8, __VMLINUX_SYMBOL_STR(vm_mmap) },
 	{ 0x48d256, __VMLINUX_SYMBOL_STR(arch_dma_alloc_attrs) },
-	{ 0xb5419b40, __VMLINUX_SYMBOL_STR(_copy_from_user) },
+	{ 0x1000e51, __VMLINUX_SYMBOL_STR(schedule) },
 	{ 0x16305289, __VMLINUX_SYMBOL_STR(warn_slowpath_null) },
 	{ 0xbc449561, __VMLINUX_SYMBOL_STR(dma_ops) },
 	{ 0x78764f4e, __VMLINUX_SYMBOL_STR(pv_irq_ops) },
@@ -49,4 +50,4 @@ __attribute__((section(".modinfo"))) =
 "depends=";
 
 
-MODULE_INFO(srcversion, "384B33B0748BDD1039C62A5");
+MODULE_INFO(srcversion, "7B5EA72191DDB801D9472FE");

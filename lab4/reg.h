@@ -5,7 +5,7 @@
 #define GRAPHICS_ON 9
 #define GRAPHICS_OFF 7
 #define FIFO_ENTRIES 1024
-#define NUM_BUFS 2 
+#define NUM_BUFS 1 
 // DMA header
 typedef struct kyouko3_dma_hdr{
 	unsigned int address:14;

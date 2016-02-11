@@ -143,6 +143,8 @@ int kyouko3_open(struct inode *inode, struct file *fp){
 	ramsize *=(1024*1024);
 	kyouko3.k_card_ram_base=ioremap(kyouko3.p_card_ram_base,ramsize);
 	init_fifo();
+	kyouko3.dma_fill = 0;
+	kyouko3.dma_drain = 0;
 	printk(KERN_ALERT "Opened Kyouko3...");
 	return 0;
 }
@@ -184,31 +186,37 @@ int kyouko3_mmap(struct file *flip, struct vm_area_struct * vma){
 	return ret;
 }
 
-/*
-unsigned int initiate_transfer(void)
+unsigned int initiate_transfer(unsigned int cmdCount)
 {
 	unsigned int flags;
+	
+	printk(KERN_ALERT "Kbas_hdr: %x\n", ((unsigned int *)(kyouko3.dmabuffs[kyouko3.dma_fill].k_base))[1]);
 	local_irq_save(flags);
-	if(kyouko3.dma.fill == kyouko3.dma.drain){
+	if(kyouko3.dma_fill == kyouko3.dma_drain){
 		local_irq_restore(flags);
-		fill = (fill + 1) % NUM_BUFS;
-		FIFO_WRITE(BufferA_Address, kyouko3.dma.p_base);
-		FIFO_WRITE(BufferA_Config, 124*1024 / NUM_BUFS);
+		printk(KERN_ALERT "DMAPaddr: %x\n", kyouko3.dmabuffs[kyouko3.dma_fill].p_base);
+		FIFO_WRITE(BufferA_Address, kyouko3.dmabuffs[kyouko3.dma_fill].p_base);
+		FIFO_WRITE(BufferA_Config, cmdCount);
+		kyouko3.dma_fill  = (kyouko3.dma_fill + 1) % NUM_BUFS;
 		//kick_fifo .......
 		K_WRITE_REG(FifoHead,kyouko3.fifo.head);
-		return fill;
+		//kyouko3.fifo.tail_cache= K_READ_REG(FifoTail);
+		//return fill;
 	}
+	return 0;
 	//????
+	/*
 	dmabuf[fill.stored_count] = count;
 	fill = (fill + 1) % NUM_BUFS;
 	wait_event_interruptable(dma_snooze, fill != drain);
 	local_irq_restore(flags);
 	return fill;
-
+	*/
 }
-*/
+
 long kyouko3_ioctl(struct file *fp, unsigned int cmd, unsigned int arg)
 {
+	int ret;
 	switch (cmd){
 		case VMODE:{
 			if (((int)(arg))==GRAPHICS_ON){
@@ -276,23 +284,30 @@ long kyouko3_ioctl(struct file *fp, unsigned int cmd, unsigned int arg)
 			unsigned int i=0;
 			for(i=0;i<NUM_BUFS;++i){
 				kyouko3.dmabuffs[i].k_base= pci_alloc_consistent(
-					kyouko3.pdev,
+				 	kyouko3.pdev,
 					124*1024,
 					&kyouko3.dmabuffs[i].p_base
 					);
 				vm_mmap(kyouko3.fp, 0, 124*1024, PROT_READ|PROT_WRITE, MAP_SHARED, 0x90000000);
 				printk(KERN_ALERT "u_address: %x\n", kyouko3.vma->vm_start);
 				((dmaInfo *)arg + i) ->u_dma_bufferAddress = kyouko3.vma->vm_start; 
+				kyouko3.dmabuffs[i].buffInfo.u_dma_bufferAddress = kyouko3.vma->vm_start;
 			}
 			break;
 		}
 
 		case START_DMA:{
-				
+			ret = initiate_transfer((unsigned int)arg);
+
 			break;
 		}
 
 		case UNBIND_DMA:{
+			unsigned int i=0;
+			for(i=0; i<NUM_BUFS; ++i){
+				vm_munmap(kyouko3.dmabuffs[i].buffInfo.u_dma_bufferAddress, 124*1024);
+				pci_free_consistent(kyouko3.pdev, 124*1024, kyouko3.dmabuffs[i].k_base, kyouko3.dmabuffs[i].p_base);
+			}
 
 			break;
 		}

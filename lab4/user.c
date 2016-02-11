@@ -33,6 +33,8 @@ void U_WRITE_FB(unsigned int pixel, unsigned int value){
 	kyouko3.u_framebuffer_base[pixel] = value;
 }
 
+
+
 unsigned int float_to_uint(float v)
 {
 	return *(unsigned int *) &v; 
@@ -62,6 +64,17 @@ void draw_point(float* xyzw, float* rgba){
 
 }
 
+void U_WRITE_DMABufferPoint(unsigned int index,  unsigned int i, float* xyz, float *rgb){
+	//XYZRGB 
+	dmaHeadBuffs[index].u_dma_bufferAddress[i*6+1] = float_to_uint(rgb[0]);
+	dmaHeadBuffs[index].u_dma_bufferAddress[i*6+2] = float_to_uint(rgb[1]);
+	dmaHeadBuffs[index].u_dma_bufferAddress[i*6+3] = float_to_uint(rgb[2]);
+	dmaHeadBuffs[index].u_dma_bufferAddress[i*6+4] = float_to_uint(xyz[0]);
+	dmaHeadBuffs[index].u_dma_bufferAddress[i*6+5] = float_to_uint(xyz[1]);
+	dmaHeadBuffs[index].u_dma_bufferAddress[i*6+6] = float_to_uint(xyz[2]);
+
+}
+
 int main()
 {
 
@@ -76,6 +89,40 @@ int main()
 	
 	ioctl(fd, VMODE, GRAPHICS_ON);
 	
+	ioctl(fd, BIND_DMA, dmaHeadBuffs);
+	
+	for(i=0; i<NUM_BUFS; ++i){
+		printf("dma %d u_address %x\n", i, dmaHeadBuffs[i].u_dma_bufferAddress);
+	}
+	
+	dmaHeadBuffs[0].dmaHdr.address = 0x1045; //0b 1 0000 0100 0101
+	dmaHeadBuffs[0].dmaHdr.count = 3 * 1;
+	dmaHeadBuffs[0].dmaHdr.opcode = 0x14;
+	
+	dmaHeadBuffs[0].u_dma_bufferAddress[0] = *((unsigned int *)&dmaHeadBuffs[0].dmaHdr);
+	printf("dmaHdr: %x\n",*(unsigned int*)&dmaHeadBuffs[0].dmaHdr);	
+	printf("dmaHdrInaddr: %x\n", dmaHeadBuffs[0].u_dma_bufferAddress[0]);	
+	float p0[4]={-0.5,-0.5,0.0,1.0};
+	float c0[4]={1.0, 0.0, 0.0, 1.0};
+	U_WRITE_DMABufferPoint(0 ,0, p0, c0);
+	float p1[4]={0.5,0.0,0.0,1.0};
+	float c1[4]={1.0, 1.0, 0.0, 1.0};
+	U_WRITE_DMABufferPoint(0, 1, p1, c1);
+	float p2[4]={0.125,0.5,0.0,1.0};
+	float c2[4]={1.0, 0.0, 1.0, 1.0};
+	U_WRITE_DMABufferPoint(0, 2, p2, c2);
+	
+
+
+	ioctlQueue(Flush, 0x0);
+	ioctl(fd, START_DMA, 19);
+	sleep(4);
+	ioctlQueue(Flush, 0x0);
+	sleep(1);
+	ioctl(fd, UNBIND_DMA);
+
+
+
 	//draw a line 
 	/*	
 	for (i = 200*1024; i < 201*1024; ++i)
@@ -120,12 +167,7 @@ int main()
 	*/
 
 	
-	ioctl(fd, BIND_DMA, dmaHeadBuffs);
-//	
-	for(i=0; i<NUM_BUFS; ++i){
-		printf("dma u_address %x\n",dmaHeadBuffs[i].u_dma_bufferAddress);
-	}
-	
+
 	sleep(4);
 
 	ioctl(fd, VMODE, GRAPHICS_OFF);
