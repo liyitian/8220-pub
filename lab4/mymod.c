@@ -203,6 +203,7 @@ unsigned int initiate_transfer(unsigned int cmdCount)
 		K_WRITE_REG(FifoHead,kyouko3.fifo.head);
 		return 0;
 	}
+	
 		
 	kyouko3.dmabuffs[kyouko3.dma_fill].cmdCount = cmdCount;
 	kyouko3.dma_fill  = (kyouko3.dma_fill + 1) % NUM_BUFS;
@@ -224,9 +225,13 @@ irqreturn_t rkintr(int irq, void* dev_id, struct pt_regs* regs){
 	else{
 		//interrupt handle here......
 		kyouko3.dma_drain = (kyouko3.dma_drain + 1) % NUM_BUFS;
+		FIFO_WRITE(BufferA_Address, kyouko3.dmabuffs[kyouko3.dma_drain].p_base);
+		FIFO_WRITE(BufferA_Config, kyouko3.dmabuffs[kyouko3.dma_drain].cmdCount);
+		K_WRITE_REG(FifoHead,kyouko3.fifo.head);
+
 	}
 	//??
-	if(kyouko3.dma_fill == kyouko3.dma_drain)
+	if(kyouko3.dma_fill != kyouko3.dma_drain)
 		wake_up_interruptible(&dma_snooze);
 	return (IRQ_HANDLED); 
 }

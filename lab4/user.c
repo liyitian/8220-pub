@@ -4,8 +4,11 @@
 #include <math.h>
 #include <sys/mman.h>
 #include <linux/ioctl.h>
+#include <time.h>
+#include <stdlib.h>
 #include "reg.h"
 
+#define TRIANGLE_NUM 100
 int fd;
 struct u_kyouko_device{
 unsigned int *u_control_base;
@@ -91,27 +94,43 @@ int main()
 	
 	ioctl(fd, BIND_DMA, dmaHeadBuffs);
 	
+	srand((unsigned int)time(NULL));
 	for(i=0; i<NUM_BUFS; ++i){
 		printf("dma %d u_address %x\n", i, dmaHeadBuffs[i].u_dma_bufferAddress);
 		
 		dmaHeadBuffs[i].dmaHdr.address = 0x1045; //0b 1 0000 0100 0101
-		dmaHeadBuffs[i].dmaHdr.count = 3 * 1;
+		dmaHeadBuffs[i].dmaHdr.count = 3 * TRIANGLE_NUM;
 		dmaHeadBuffs[i].dmaHdr.opcode = 0x14;
 		dmaHeadBuffs[i].u_dma_bufferAddress[0] = *((unsigned int *)&dmaHeadBuffs[i].dmaHdr);
 		printf("dmaHdr: %x\n",*(unsigned int*)&dmaHeadBuffs[i].dmaHdr);	
-		printf("dmaHdrInaddr: %x\n", dmaHeadBuffs[i].u_dma_bufferAddress[0]);	
-		float p0[4]={-0.5+0.05*i,-0.5+0.05*i,0.0,1.0};
-		float c0[4]={1.0, 0.0, 0.0, 1.0};
-		U_WRITE_DMABufferPoint(i ,0, p0, c0);
-		float p1[4]={0.5+0.05*i,0.0,0.0,1.0};
-		float c1[4]={0.0, 1.0, 0.0, 1.0};
-		U_WRITE_DMABufferPoint(i, 1, p1, c1);
-		float p2[4]={0.125+0.05*i,0.5+0.05*i,0.0,1.0};
-		float c2[4]={0.0, 0.0, 1.0, 1.0};
-		U_WRITE_DMABufferPoint(i, 2, p2, c2);
+		//printf("dmaHdrInaddr: %x\n", dmaHeadBuffs[i].u_dma_bufferAddress[0]);
+		int j=0;
+		float x1,x2,x3,y1,y2,y3;
+		for(j=0; j<TRIANGLE_NUM; ++j){
+		
+			x1 = rand()*1.0/RAND_MAX*2-1;
+			y1 = rand()*1.0/RAND_MAX*2-1;
+			x2 = rand()*1.0/RAND_MAX*2-1;
+			y2 = rand()*1.0/RAND_MAX*2-1;
+			x3 = rand()*1.0/RAND_MAX*2-1;
+			y3 = rand()*1.0/RAND_MAX*2-1;
+			
+			float r = rand()*1.0/RAND_MAX; 
+			float g = rand()*1.0/RAND_MAX; 
+			float b = rand()*1.0/RAND_MAX; 
+			float p0[4]={x1,y1,0.0,1.0};
+			float c0[4]={r, g, b, 1.0};
+			U_WRITE_DMABufferPoint(i ,3*j+0, p0, c0);
+			float p1[4]={x2,y2,0.0,1.0};
+			float c1[4]={r, g, b, 1.0};
+			U_WRITE_DMABufferPoint(i, 3*j+1, p1, c1);
+			float p2[4]={x3,y3,0.0,1.0};
+			float c2[4]={r, g, b, 1.0};
+			U_WRITE_DMABufferPoint(i, 3*j+2, p2, c2);
+		}
 		
 		ioctlQueue(Flush, 0x0);
-		ioctl(fd, START_DMA, 19);
+		ioctl(fd, START_DMA, 18*TRIANGLE_NUM+1);
 		sleep(1);
 		ioctlQueue(Flush, 0x0);
 		
