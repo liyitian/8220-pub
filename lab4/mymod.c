@@ -10,12 +10,16 @@
 #include <linux/sched.h>
 #include <linux/kernel_stat.h>
 #include <linux/mman.h>
+#include <linux/spinlock.h>
 #include "reg.h"
 
 MODULE_LICENSE("Proprietary");
 MODULE_AUTHOR("Yaolobg Yu");
 DECLARE_WAIT_QUEUE_HEAD(dma_snooze);
 
+int dma_empty_flag = 1;
+
+spinlock_t lock;
 struct cdev kyouko3_cdev;
 
 struct fifo_entry{
@@ -201,15 +205,26 @@ unsigned int initiate_transfer(unsigned int cmdCount)
 		kyouko3.dma_fill  = (kyouko3.dma_fill + 1) % NUM_BUFS;
 		//kick_fifo .......
 		K_WRITE_REG(FifoHead,kyouko3.fifo.head);
+		dma_empty_flag = 0;
 		return 0;
 	}
-	
-		
+
+	unsigned int lock_irq_flags;
+	int suspend = 0;
 	kyouko3.dmabuffs[kyouko3.dma_fill].cmdCount = cmdCount;
 	kyouko3.dma_fill  = (kyouko3.dma_fill + 1) % NUM_BUFS;
+	
+	spin_lock(&lock);
 	if(kyouko3.dma_fill == kyouko3.dma_drain){
-		wait_event_interruptible(dma_snooze, kyouko3.dma_fill != kyouko3.dma_drain);
+		//hold a lock, can not suspend here
+		suspend = 1;
 	}
+	spin_unlock(&lock);
+	if(suspend == 1 && dma_empty_flag == 0){
+		wait_event_interruptible(dma_snooze, kyouko3.dma_fill != kyouko3.dma_drain);
+		suspend = 0;
+	}
+
 	local_irq_restore(flags);
 	return 9;
 	
@@ -230,9 +245,13 @@ irqreturn_t rkintr(int irq, void* dev_id, struct pt_regs* regs){
 		K_WRITE_REG(FifoHead,kyouko3.fifo.head);
 
 	}
-	//??
+	//
 	if(kyouko3.dma_fill != kyouko3.dma_drain)
 		wake_up_interruptible(&dma_snooze);
+
+	if(kyouko3.dma_fill == kyouko3.dma_drain){
+		dma_empty_flag = 1;
+	}
 	return (IRQ_HANDLED); 
 }
 
