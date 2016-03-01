@@ -188,7 +188,7 @@ int main()
 
 	
 
-	sleep(4);
+	sleep(1);
 
 	ioctl(fd, VMODE, GRAPHICS_OFF);
 	
