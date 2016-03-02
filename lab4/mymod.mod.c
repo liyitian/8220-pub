@@ -34,8 +34,8 @@ __attribute__((section("__versions"))) = {
 	{ 0xf08242c2, __VMLINUX_SYMBOL_STR(finish_wait) },
 	{ 0x2207a57f, __VMLINUX_SYMBOL_STR(prepare_to_wait_event) },
 	{ 0xa1c76e0a, __VMLINUX_SYMBOL_STR(_cond_resched) },
-	{ 0x6bf1c17f, __VMLINUX_SYMBOL_STR(pv_lock_ops) },
-	{ 0xe259ae9e, __VMLINUX_SYMBOL_STR(_raw_spin_lock) },
+	{ 0x1916e38c, __VMLINUX_SYMBOL_STR(_raw_spin_unlock_irqrestore) },
+	{ 0x680ec266, __VMLINUX_SYMBOL_STR(_raw_spin_lock_irqsave) },
 	{ 0x42c8de35, __VMLINUX_SYMBOL_STR(ioremap_nocache) },
 	{ 0xdb7305a1, __VMLINUX_SYMBOL_STR(__stack_chk_fail) },
 	{ 0x48d256, __VMLINUX_SYMBOL_STR(arch_dma_alloc_attrs) },
@@ -60,4 +60,4 @@ __attribute__((section(".modinfo"))) =
 "depends=";
 
 
-MODULE_INFO(srcversion, "DB6F36DF0CF0A1D549C9472");
+MODULE_INFO(srcversion, "7ACADEE6CADFF88A02E6C70");
