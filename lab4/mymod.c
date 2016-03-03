@@ -215,7 +215,7 @@ unsigned int initiate_transfer(unsigned int cmdCount)
 	}
 	spin_unlock_irqrestore(&lock,flags);	
 	if(isFull){
-		wait_event_interruptible(dma_snooze, kyouko3.dma_fill != kyouko3.dma_drain || (!isFull));
+		wait_event_interruptible(dma_snooze, (kyouko3.dma_fill != kyouko3.dma_drain) || (!isFull));
 	}
 	
 	
