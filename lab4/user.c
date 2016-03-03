@@ -78,123 +78,123 @@ void U_WRITE_DMABufferPoint(unsigned int index,  unsigned int i, float* xyz, flo
 
 }
 
-int main()
+int main(int argc, const char* argv[])
 {
 
-
-	int result;
-	unsigned int i;
-	fd = open("/dev/kyouko3", O_RDWR);
-	
-	kyouko3.u_control_base = mmap(0, KYOUKO_CONTROL_SIZE, PROT_READ|PROT_WRITE,MAP_SHARED,fd,0);
-	kyouko3.u_framebuffer_base = mmap(0, 1024*768*4, PROT_READ|PROT_WRITE,MAP_SHARED,fd,0x80000000);
-
-	
-	ioctl(fd, VMODE, GRAPHICS_ON);
-	
-	ioctl(fd, BIND_DMA, dmaHeadBuffs);
-	
-	srand((unsigned int)time(NULL));
-	for(i=0; i<NUM_BUFS; ++i){
-		printf("dma %d u_address %x\n", i, dmaHeadBuffs[i].u_dma_bufferAddress);
-		
-		dmaHeadBuffs[i].dmaHdr.address = 0x1045; //0b 1 0000 0100 0101
-		dmaHeadBuffs[i].dmaHdr.count = 3 * TRIANGLE_NUM;
-		dmaHeadBuffs[i].dmaHdr.opcode = 0x14;
-		dmaHeadBuffs[i].u_dma_bufferAddress[0] = *((unsigned int *)&dmaHeadBuffs[i].dmaHdr);
-		printf("dmaHdr: %x\n",*(unsigned int*)&dmaHeadBuffs[i].dmaHdr);	
-		//printf("dmaHdrInaddr: %x\n", dmaHeadBuffs[i].u_dma_bufferAddress[0]);
-		int j=0;
-		float x1,x2,x3,y1,y2,y3;
-		for(j=0; j<TRIANGLE_NUM; ++j){
-		
-			x1 = rand()*1.0/RAND_MAX*2-1;
-			y1 = rand()*1.0/RAND_MAX*2-1;
-			x2 = rand()*1.0/RAND_MAX*2-1;
-			y2 = rand()*1.0/RAND_MAX*2-1;
-			x3 = rand()*1.0/RAND_MAX*2-1;
-			y3 = rand()*1.0/RAND_MAX*2-1;
-			
-			float r = rand()*1.0/RAND_MAX; 
-			float g = rand()*1.0/RAND_MAX; 
-			float b = rand()*1.0/RAND_MAX; 
-			float p0[4]={x1,y1,0.0,1.0};
-			float c0[4]={r, g, b, 1.0};
-			U_WRITE_DMABufferPoint(i ,3*j+0, p0, c0);
-			float p1[4]={x2,y2,0.0,1.0};
-			float c1[4]={r, g, b, 1.0};
-			U_WRITE_DMABufferPoint(i, 3*j+1, p1, c1);
-			float p2[4]={x3,y3,0.0,1.0};
-			float c2[4]={r, g, b, 1.0};
-			U_WRITE_DMABufferPoint(i, 3*j+2, p2, c2);
-		}
-		
-		ioctlQueue(Flush, 0x0);
-		ioctl(fd, START_DMA, 18*TRIANGLE_NUM+1);
-		sleep(1);
-		ioctlQueue(Flush, 0x0);
-		
-	}
-	
-
-	ioctlQueue(Flush, 0x0);
-	sleep(1);
-	ioctl(fd, UNBIND_DMA);
-
-
-
-	//draw a line 
-	/*	
-	for (i = 200*1024; i < 201*1024; ++i)
+	if(argc<2)
 	{
-		U_WRITE_FB(i, 0xff0000);
+		printf("dma or fifo\n");
+		exit(1);
 	}
+
+	if(strcmp(argv[1],"fifo") == 0){
+		int result;
+		unsigned int i;
+		fd = open("/dev/kyouko3", O_RDWR);
+		kyouko3.u_control_base = mmap(0, KYOUKO_CONTROL_SIZE, PROT_READ|PROT_WRITE,MAP_SHARED,fd,0);
+		kyouko3.u_framebuffer_base = mmap(0, 1024*768*4, PROT_READ|PROT_WRITE,MAP_SHARED,fd,0x80000000);
+		ioctl(fd, VMODE, GRAPHICS_ON);
+		//draw a line
+		for (i = 200*1024; i < 201*1024; ++i)
+		{
+			U_WRITE_FB(i, 0xff0000);
+		}
+		printf("address: %x\n", &entry);
+		printf("user_queue: %x , %d\n", entry.command, entry.value);
+		printf("sizeofentry: %d\n",sizeof(entry));
 	
+		ioctlQueue(Flush, 0x0);
+		sleep(1);
+		
+		ioctlQueue(Command_Primitive, 1);
 	
-	printf("address: %x\n", &entry);
-	printf("user_queue: %x , %d\n", entry.command, entry.value);
-	printf("sizeofentry: %d\n",sizeof(entry));
+		float p1[4]={-0.5,-0.5,0.0,1.0};
+		float c1[4]={1.0, 0.0, 0.0, 1.0};
+		draw_point(p1, c1);
+		ioctlQueue(Vertex_Emit, 0x0);
+
+		float p2[4]={0.5,0.0,0.0,1.0};
+		float c2[4]={1.0, 1.0, 0.0, 1.0};
+		draw_point(p2, c2);
+		ioctlQueue(Vertex_Emit, 0x0);
 	
+		float p3[4]={0.125,0.5,0.0,1.0};
+		float c3[4]={1.0, 0.0, 1.0, 1.0};
+		draw_point(p3, c3);
+		ioctlQueue(Vertex_Emit, 0x0);
+		ioctlQueue(Command_Primitive, 0x0);
+		ioctlQueue(Flush, 0x0);
+		sleep(2);
+		ioctl(fd, FIFO_FLUSH);
+		sleep(2);
+		ioctl(fd, VMODE, GRAPHICS_OFF);
+		//result = U_READ_REG(Device_RAM);
+		//printf("Ram size in MB is: %d\n", result);
+		close(fd);
+		return 0;
+	}
 
 
-	ioctlQueue(Flush, 0x0);
-	sleep(2);
-	*/
 
-	/*
-	ioctlQueue(Command_Primitive, 1);
+
+	if(strcmp(argv[1],"dma") == 0){
+		int result;
+		unsigned int i;
+		fd = open("/dev/kyouko3", O_RDWR);
+		
+		kyouko3.u_control_base = mmap(0, KYOUKO_CONTROL_SIZE, PROT_READ|PROT_WRITE,MAP_SHARED,fd,0);
+		kyouko3.u_framebuffer_base = mmap(0, 1024*768*4, PROT_READ|PROT_WRITE,MAP_SHARED,fd,0x80000000);
+		ioctl(fd, VMODE, GRAPHICS_ON);
+		ioctl(fd, BIND_DMA, dmaHeadBuffs);
 	
-	float p1[4]={-0.5,-0.5,0.0,1.0};
-	float c1[4]={1.0, 0.0, 0.0, 1.0};
-	draw_point(p1, c1);
-	ioctlQueue(Vertex_Emit, 0x0);
+		srand((unsigned int)time(NULL));
+		for(i=0; i<NUM_BUFS; ++i){
+			printf("dma %d u_address %x\n", i, dmaHeadBuffs[i].u_dma_bufferAddress);
+			dmaHeadBuffs[i].dmaHdr.address = 0x1045; //0b 1 0000 0100 0101
+			dmaHeadBuffs[i].dmaHdr.count = 3 * TRIANGLE_NUM;
+			dmaHeadBuffs[i].dmaHdr.opcode = 0x14;
+			dmaHeadBuffs[i].u_dma_bufferAddress[0] = *((unsigned int *)&dmaHeadBuffs[i].dmaHdr);
+			printf("dmaHdr: %x\n",*(unsigned int*)&dmaHeadBuffs[i].dmaHdr);	
+			//printf("dmaHdrInaddr: %x\n", dmaHeadBuffs[i].u_dma_bufferAddress[0]);
+			int j=0;
+			float x1,x2,x3,y1,y2,y3;
+			for(j=0; j<TRIANGLE_NUM; ++j){
+				x1  = rand()*1.0/RAND_MAX*2-1;
+				y1 = rand()*1.0/RAND_MAX*2-1;
+				x2 = rand()*1.0/RAND_MAX*2-1;
+				y2 = rand()*1.0/RAND_MAX*2-1;
+				x3 = rand()*1.0/RAND_MAX*2-1;
+				y3 = rand()*1.0/RAND_MAX*2-1;
+			
+				float r = rand()*1.0/RAND_MAX; 
+				float g = rand()*1.0/RAND_MAX; 
+				float b = rand()*1.0/RAND_MAX; 
+				float p0[4]={x1,y1,0.0,1.0};
+				float c0[4]={r, g, b, 1.0};
+				U_WRITE_DMABufferPoint(i ,3*j+0, p0, c0);
+				float p1[4]={x2,y2,0.0,1.0};
+				float c1[4]={r, g, b, 1.0};
+				U_WRITE_DMABufferPoint(i, 3*j+1, p1, c1);
+				float p2[4]={x3,y3,0.0,1.0};
+				float c2[4]={r, g, b, 1.0};
+				U_WRITE_DMABufferPoint(i, 3*j+2, p2, c2);
+			}
+		
+			ioctlQueue(Flush, 0x0);
+			ioctl(fd, START_DMA, 18*TRIANGLE_NUM+1);
+			sleep(1);
+			ioctlQueue(Flush, 0x0);
+		}
 
-	float p2[4]={0.5,0.0,0.0,1.0};
-	float c2[4]={1.0, 1.0, 0.0, 1.0};
-	draw_point(p2, c2);
-	ioctlQueue(Vertex_Emit, 0x0);
-	
-	float p3[4]={0.125,0.5,0.0,1.0};
-	float c3[4]={1.0, 0.0, 1.0, 1.0};
-	draw_point(p3, c3);
-	ioctlQueue(Vertex_Emit, 0x0);
-	ioctlQueue(Command_Primitive, 0x0);
+		ioctlQueue(Flush, 0x0);
+		sleep(1);
+		ioctl(fd, UNBIND_DMA);
 
-	ioctlQueue(Flush, 0x0);
-	sleep(2);
-	
-	ioctl(fd, FIFO_FLUSH);
-	*/
+		sleep(1);
 
-	
+		ioctl(fd, VMODE, GRAPHICS_OFF);
 
-	sleep(1);
-
-	ioctl(fd, VMODE, GRAPHICS_OFF);
-	
-	//result = U_READ_REG(Device_RAM);
-   	//printf("Ram size in MB is: %d\n", result);
-
-	close(fd);
-	return 0;
+		close(fd);
+		return 0;
+	}
 }

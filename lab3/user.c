@@ -62,24 +62,16 @@ void draw_point(float* xyzw, float* rgba){
 
 int main()
 {
-
-
 	int result;
 	unsigned int i;
 	fd = open("/dev/kyouko3", O_RDWR);
-	
 	kyouko3.u_control_base = mmap(0, KYOUKO_CONTROL_SIZE, PROT_READ|PROT_WRITE,MAP_SHARED,fd,0);
 	kyouko3.u_framebuffer_base = mmap(0, 1024*768*4, PROT_READ|PROT_WRITE,MAP_SHARED,fd,0x80000000);
-
-	
 	ioctl(fd, VMODE, GRAPHICS_ON);
-		
-	
 	for (i = 200*1024; i < 201*1024; ++i)
 	{
 		U_WRITE_FB(i, 0xff0000);
 	}
-
 	printf("address: %x\n", &entry);
 	printf("user_queue: %x , %d\n", entry.command, entry.value);
 	printf("sizeofentry: %d\n",sizeof(entry));
@@ -103,24 +95,14 @@ int main()
 	float c3[4]={1.0, 0.0, 1.0, 1.0};
 	draw_point(p3, c3);
 	ioctlQueue(Vertex_Emit, 0x0);
-
-
-
 	ioctlQueue(Command_Primitive, 0x0);
-
 	ioctlQueue(Flush, 0x0);
 	sleep(2);
-	
 	ioctl(fd, FIFO_FLUSH);
-	
-	
 	sleep(4);
-
 	ioctl(fd, VMODE, GRAPHICS_OFF);
-	
 	//result = U_READ_REG(Device_RAM);
    	//printf("Ram size in MB is: %d\n", result);
-
 	close(fd);
 	return 0;
 }
