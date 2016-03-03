@@ -221,8 +221,7 @@ unsigned int initiate_transfer(unsigned int cmdCount)
 	
 	printk(KERN_ALERT "fill: %d\n", kyouko3.dma_fill);
 	printk(KERN_ALERT "dratin: %d\n", kyouko3.dma_drain);
-	spin_unlock_irqrestore(&lock,flags);	
-	return 9;
+	return 1;
 	
 }
 
