@@ -1,0 +1,234 @@
+echo "start"
+date
+(for i in 1 2 3 
+do
+randread /usr  123$i 0.5  0.7  > out.1 ; 
+done
+echo "1 done"
+date ) &
+
+(for i in 1 2 3 
+do
+randread /home 125$i 0.8  0.8  > out.2 
+done
+echo "2 done"
+date ) &
+
+(for i in 1 2 3 
+do
+randread /etc 778$i 0.9  0.8  > out.3 
+done
+echo "3 done"
+date ) &
+
+(for i in 1 2 3 
+do
+randread /bin     523$i 0.3  0.6  > out.4 
+done
+echo "4 done"
+date ) &
+
+(for i in 1 2 3 
+do
+randread /usr 135$i 0.9  0.8  > out.5 
+done
+echo "5 done"
+date ) &
+
+(for i in 1 2 3 
+do
+randread /usr 135$i 0.9  0.8  > out.5_1 
+done
+echo "5_1 done"
+date ) &
+(for i in 1 2 3 
+do
+randread /usr 135$i 0.9  0.8  > out.5_2 
+done
+echo "5_2 done"
+date ) &
+
+(for i in 1 2 3 
+do
+randread /usr 135$i 0.9  0.8  > out.5_3 
+done
+echo "5_3 done"
+date ) &
+(for i in 1 2 3 
+do
+randread /usr 135$i 0.9  0.8  > out.5_4 
+done
+echo "5_4 done"
+date ) &
+
+
+
+(for i in 1 2 3 
+do
+randread /home 623$i 0.9  0.8  > out.6 
+done
+echo "6 done"
+date ) &
+
+(for i in 1 2 3 
+do
+randread /etc  923$i 0.5  0.7  > out.7 
+done
+echo "7 done"
+date ) &
+
+(for i in 1 2 3 
+do
+randread /   823$i 0.3  0.6  > out.8 
+done
+echo "8 done"
+date ) &
+
+echo "start"
+date
+(for i in 1 2 3 
+do
+randread /usr  123$i 0.5  0.7  > out.9 ; 
+done
+echo "9 done"
+date ) &
+
+(for i in 1 2 3 
+do
+randread /home 125$i 0.8  0.8  > out.10 
+done
+echo "10 done"
+date ) &
+
+(for i in 1 2 3 
+do
+randread /etc 778$i 0.9  0.8  > out.11 
+done
+echo "11 done"
+date ) &
+
+(for i in 1 2 3 
+do
+randread /bin     523$i 0.3  0.6  > out.12 
+done
+echo "12 done"
+date ) &
+
+(for i in 1 2 3 
+do
+randread /usr 135$i 0.9  0.8  > out.13 
+done
+echo "13 done"
+date ) &
+
+(for i in 1 2 3 
+do
+randread /home 623$i 0.9  0.8  > out.14 
+done
+echo "14 done"
+date ) &
+
+(for i in 1 2 3 
+do
+randread /etc  923$i 0.5  0.7  > out.15 
+done
+echo "15 done"
+date ) &
+
+(for i in 1 2 3 
+do
+randread /   823$i 0.3  0.6  > out.16
+done
+echo "16 done"
+date ) &
+
+(for i in 1 2 3 
+do
+randread /usr 135$i 0.9  0.8  > out.5 
+done
+echo "5 done"
+date ) &
+(for i in 1 2 3 
+do
+randread /usr 135$i 0.9  0.8  > out.5 
+done
+echo "5 done"
+date ) &
+(for i in 1 2 3 
+do
+randread /usr 135$i 0.9  0.8  > out.5 
+done
+echo "5 done"
+date ) &
+(for i in 1 2 3 
+do
+randread /usr 135$i 0.9  0.8  > out.5 
+done
+echo "5 done"
+date ) &
+(for i in 1 2 3 
+do
+randread /usr 135$i 0.9  0.8  > out.5 
+done
+echo "5 done"
+date ) &
+(for i in 1 2 3 
+do
+randread /usr 135$i 0.9  0.8  > out.5 
+done
+echo "5 done"
+date ) &
+(for i in 1 2 3 
+do
+randread /usr 135$i 0.9  0.8  > out.5 
+done
+echo "5 done"
+date ) &
+(for i in 1 2 3 
+do
+randread /usr 135$i 0.9  0.8  > out.5 
+done
+echo "5 done"
+date ) &
+(for i in 1 2 3 
+do
+randread /usr 135$i 0.9  0.8  > out.5 
+done
+echo "5 done"
+date ) &
+(for i in 1 2 3 
+do
+randread /usr 135$i 0.9  0.8  > out.5 
+done
+echo "5 done"
+date ) &
+(for i in 1 2 3 
+do
+randread /usr 135$i 0.9  0.8  > out.5 
+done
+echo "5 done"
+date ) &
+(for i in 1 2 3 
+do
+randread /usr 135$i 0.9  0.8  > out.5 
+done
+echo "5 done"
+date ) &
+(for i in 1 2 3 
+do
+randread /usr 135$i 0.9  0.8  > out.5 
+done
+echo "5 done"
+date ) &
+(for i in 1 2 3 
+do
+randread /usr 135$i 0.9  0.8  > out.5 
+done
+echo "5 done"
+date ) &
+(for i in 1 2 3 
+do
+randread /usr 135$i 0.9  0.8  > out.5 
+done
+echo "5 done"
+date ) &

@@ -1,0 +1,991 @@
+
+---> Processing directory /usr/bin 
+416d  . 
+41ed  .. 
+a1ff  gtbl 
+81ed  cpp 
+81ed  catchsegv 
+81ed  neqn 
+  neqn        2 
+a1ff  ex 
+81ed  gencat 
+a1ff  gtroff 
+81ed  getent 
+81ed  nroff 
+a1ff  rvi 
+81ed  iconv 
+81ed  zip 
+  zip      423 
+81ed  ldd 
+81ed  pic 
+a1ff  rview 
+81ed  locale 
+  locale       77 
+81ed  xzdec 
+  xzdec       24 
+81ed  vi 
+81ed  localedef 
+  localedef      624 
+81ed  xzdiff 
+81ed  makedb 
+81ed  zipcloak 
+81ed  pldd 
+a1ff  xzegrep 
+81ed  rpcgen 
+a1ff  xzfgrep 
+81ed  sotruss 
+81ed  xzgrep 
+81ed  sprof 
+81ed  xzless 
+  xzless        5 
+81ed  tzselect 
+81ed  xzmore 
+81ed  getconf 
+81ed  testgdbm 
+81ed  alias 
+81ed  zipnote 
+81ed  bash 
+81ed  pod2man 
+a1ff  bashbug 
+81ed  pod2text 
+81ed  bashbug-64 
+81ed  zipsplit 
+81ed  bg 
+a1ff  gmake 
+81ed  cd 
+81ed  perldoc 
+81ed  command 
+  command        2 
+81ed  make 
+  make      358 
+81ed  fc 
+81ed  which 
+81ed  fg 
+81ed  piconv 
+  piconv       17 
+81ed  getopts 
+  getopts        2 
+81ed  whiptail 
+81ed  jobs 
+81ed  last 
+  last       40 
+81ed  read 
+a1ff  lastb 
+a1ff  sh 
+81ed  pod2usage 
+  pod2usage        9 
+81ed  umask 
+81ed  h2ph 
+a1ff  view 
+81ed  unalias 
+81ed  mesg 
+  mesg       23 
+81ed  wait 
+856d  wall 
+81ed  info 
+81ed  find2perl 
+81ed  infokey 
+a1ff  domainname 
+81ed  sed 
+81ed  pl2pm 
+81ed  chacl 
+81ed  xmlwf 
+  xmlwf       49 
+81ed  pod2html 
+81ed  egrep 
+  egrep        2 
+81ed  splain 
+81ed  fgrep 
+81ed  hostname 
+81ed  grep 
+  grep      312 
+81ed  p11-kit 
+81ed  sqlite3 
+  sqlite3      111 
+a1ff  nisdomainname 
+a1ff  awk 
+81ed  less 
+  less      311 
+a1ff  bzcat 
+81ed  dgawk 
+a1ff  ypdomainname 
+81ed  gawk 
+81ed  c2ph 
+  c2ph       73 
+a1ff  bzcmp 
+81ed  igawk 
+81ed  pstruct 
+81ed  pgawk 
+  pgawk      839 
+81ed  teamnl 
+81ed  lua 
+81ed  autoconf 
+81ed  luac 
+  luac      239 
+81ed  autoheader 
+81ed  cpio 
+  cpio      278 
+81ed  perl 
+81ed  bzip2 
+81ed  gpg-error 
+81ed  autom4te 
+  autom4te       64 
+81ed  find 
+  find      391 
+81ed  perl5.16.3 
+81ed  oldfind 
+81ed  perlbug 
+81ed  xargs 
+  xargs      123 
+81ed  perlthanks 
+  perlthanks       87 
+81ed  xmlcatalog 
+  xmlcatalog       40 
+81ed  psed 
+  psed      106 
+81ed  dwz 
+81ed  xmllint 
+81ed  autoreconf 
+  autoreconf       43 
+81ed  cmp 
+  cmp       90 
+81ed  autoscan 
+81ed  diff 
+  diff      392 
+81ed  s2p 
+81ed  clear 
+81ed  diff3 
+81ed  lessecho 
+81ed  sdiff 
+81ed  lesskey 
+81ed  pkg-config 
+81ed  lesspipe.sh 
+81ed  gdbus 
+  gdbus       74 
+81ed  groff 
+  groff      165 
+81ed  autoupdate 
+81ed  gio-querymodules-64 
+81ed  grops 
+  grops      283 
+81ed  ifnames 
+81ed  glib-compile-schemas 
+  glib-compile-schemas       82 
+81ed  csslint-0.6 
+81ed  gsettings 
+81ed  grotty 
+  grotty      199 
+a1ff  reset 
+81ed  update-mime-database 
+  update-mime-database       99 
+a1ff  gsoelim 
+81ed  tabs 
+81ed  dbus-binding-tool 
+  dbus-binding-tool      190 
+81ed  prove 
+  prove       28 
+81ed  file 
+81ed  eu-addr2line 
+81ed  eqn 
+81ed  eu-ar 
+a1ff  geqn 
+a1ff  gtar 
+81ed  tic 
+a1ff  gneqn 
+81ed  tar 
+81ed  toe 
+a1ff  gnroff 
+81ed  eu-elfcmp 
+  eu-elfcmp       66 
+a1ff  gpic 
+81ed  post-grohtml 
+81ed  patch 
+81ed  tput 
+81ed  pre-grohtml 
+  pre-grohtml      174 
+81ed  funzip 
+81ed  preconv 
+81ed  unzipsfx 
+81ed  soelim 
+  soelim       67 
+81ed  eu-elflint 
+  eu-elflint      211 
+81ed  tbl 
+81ed  zipgrep 
+  zipgrep        7 
+81ed  troff 
+81ed  zipinfo 
+a1ff  zsoelim 
+81ed  eu-nm 
+81ed  idn 
+81ed  eu-objdump 
+81ed  m4 
+  m4      304 
+81ed  eu-ranlib 
+a1ff  unxz 
+81ed  eu-readelf 
+81ed  xz 
+  xz      140 
+a1ff  dnsdomainname 
+a1ff  xzcat 
+81ed  unzip 
+81ed  tset 
+  tset       41 
+a1ff  xzcmp 
+81ed  eu-size 
+81ed  a2p 
+81ed  eu-stack 
+81ed  comm 
+81ed  stty 
+81ed  update-ca-trust 
+81ed  cp 
+81ed  sum 
+81ed  eu-findtextrel 
+  eu-findtextrel       41 
+81ed  tac 
+  tac       66 
+81ed  sync 
+81ed  eu-make-debug-archive 
+81ed  dir 
+81ed  uniq 
+  uniq       91 
+81ed  eu-strings 
+  eu-strings       41 
+81ed  dircolors 
+  dircolors       82 
+81ed  eu-strip 
+81ed  dirname 
+  dirname       58 
+81ed  eu-unstrip 
+81ed  du 
+81ed  users 
+  users       66 
+81ed  getfacl 
+81ed  echo 
+  echo       66 
+81ed  vdir 
+81ed  setfacl 
+81ed  env 
+  env       58 
+81ed  wc 
+81ed  nettle-hash 
+81ed  csplit 
+81ed  who 
+81ed  nettle-lfib-stream 
+81ed  expand 
+81ed  pkcs1-conv 
+81ed  expr 
+  expr       75 
+81ed  yes 
+81ed  sexp-conv 
+81ed  factor 
+  factor      188 
+81ed  pinentry 
+  pinentry        6 
+81ed  cut 
+  cut       83 
+81ed  tail 
+  tail      132 
+81ed  pinentry-curses 
+  pinentry-curses      100 
+81ed  false 
+89ed  chage 
+a1ff  bunzip2 
+81ed  fmt 
+a1ff  sg 
+81ed  bzdiff 
+  bzdiff        6 
+81ed  fold 
+81ed  cal 
+81ed  bzgrep 
+81ed  groups 
+  groups       66 
+81ed  bzip2recover 
+81ed  head 
+89c9  chfn 
+a1ff  bzless 
+81ed  hostid 
+  hostid       58 
+81ed  bzmore 
+81ed  id 
+81ed  chrt 
+81ed  db_archive 
+81ed  date 
+81ed  tee 
+81ed  db_checkpoint 
+  db_checkpoint       24 
+81ed  install 
+  install      281 
+81ed  db_deadlock 
+  db_deadlock       32 
+81ed  join 
+89c9  chsh 
+  chsh       48 
+81ed  db_dump 
+  db_dump       32 
+81ed  link 
+81ed  col 
+81ed  db_dump185 
+81ed  ln 
+81ed  colrm 
+81ed  db_hotbackup 
+81ed  logname 
+81ed  db_load 
+81ed  dd 
+81ed  test 
+81ed  db_log_verify 
+81ed  ls 
+81ed  dmesg 
+81ed  db_printlog 
+81ed  md5sum 
+81ed  db_recover 
+81ed  mkdir 
+81ed  eject 
+81ed  db_replicate 
+81ed  mkfifo 
+  mkfifo      125 
+81ed  db_stat 
+81ed  mknod 
+81ed  flock 
+81ed  db_tuner 
+  db_tuner       40 
+81ed  mktemp 
+81ed  db_upgrade 
+81ed  mv 
+a1ff  i386 
+81ed  db_verify 
+81ed  nice 
+81ed  ipcmk 
+a1ff  captoinfo 
+81ed  nl 
+  nl       83 
+81ed  ipcrm 
+81ed  infocmp 
+  infocmp      114 
+81ed  nohup 
+81ed  ipcs 
+a1ff  infotocap 
+81ed  nproc 
+81ed  kill 
+  kill       59 
+81ed  ndptool 
+81ed  numfmt 
+81ed  certutil 
+81ed  od 
+81ed  login 
+  login       74 
+81ed  cmsutil 
+81ed  paste 
+81ed  look 
+81ed  crlutil 
+81ed  pathchk 
+  pathchk       66 
+81ed  modutil 
+  modutil      300 
+81ed  pinky 
+81ed  lsblk 
+81ed  pk12util 
+81ed  pr 
+  pr      132 
+81ed  lscpu 
+81ed  signtool 
+81ed  printenv 
+  printenv       58 
+81ed  signver 
+81ed  printf 
+  printf       99 
+81ed  ssltap 
+81ed  ptx 
+81ed  more 
+  more       82 
+81ed  gunzip 
+81ed  pwd 
+89ed  mount 
+81ed  gzexe 
+81ed  touch 
+  touch      123 
+81ed  gzip 
+81ed  timeout 
+81ed  zcat 
+  zcat        5 
+81ed  true 
+81ed  zcmp 
+  zcmp        5 
+81ed  readlink 
+81ed  zdiff 
+81ed  realpath 
+81ed  zegrep 
+81ed  rm 
+81ed  namei 
+  namei       49 
+81ed  zfgrep 
+81ed  rmdir 
+81ed  raw 
+  raw       32 
+81ed  zforce 
+  zforce        6 
+81ed  runcon 
+81ed  zgrep 
+81ed  seq 
+  seq       98 
+81ed  rev 
+  rev       24 
+81ed  zless 
+  zless        5 
+81ed  sha1sum 
+  sha1sum       75 
+81ed  zmore 
+81ed  tr 
+81ed  znew 
+81ed  sha224sum 
+  sha224sum       83 
+81ed  pwmake 
+81ed  sha256sum 
+81ed  pwscore 
+81ed  sha384sum 
+81ed  lchfn 
+81ed  sha512sum 
+81ed  lchsh 
+81ed  tsort 
+81ed  [ 
+81ed  truncate 
+81ed  arch 
+81ed  shred 
+89ed  su 
+81ed  base64 
+  base64       74 
+81ed  shuf 
+  shuf      100 
+81ed  tailf 
+  tailf       41 
+81ed  basename 
+  basename       58 
+81ed  uname 
+81ed  cat 
+81ed  sleep 
+81ed  ul 
+  ul       40 
+81ed  chcon 
+81ed  sort 
+  sort      231 
+81ed  wdctl 
+81ed  chgrp 
+81ed  split 
+  split      140 
+85ed  write 
+81ed  chmod 
+81ed  stat 
+81ed  pydoc 
+81ed  chown 
+81ed  stdbuf 
+  stdbuf      131 
+81ed  cksum 
+81ed  df 
+81ed  tty 
+81ed  readelf 
+81ed  unexpand 
+  unexpand       66 
+81ed  size 
+81ed  ping 
+81ed  unlink 
+  unlink       58 
+81ed  strings 
+  strings       58 
+81ed  whoami 
+81ed  strip 
+81ed  ping6 
+89ed  gpasswd 
+81ed  ld.gold 
+81ed  lastlog 
+81ed  c89 
+81ed  rsync 
+89ed  newgrp 
+81ed  kmod 
+81ed  git 
+  git     2960 
+81ed  colcrt 
+  colcrt       24 
+81ed  c99 
+a1ff  gpg 
+81ed  column 
+a1ff  cc 
+81ed  gpg2 
+81ed  fallocate 
+  fallocate       41 
+81ed  gcc-ar 
+  gcc-ar       54 
+81ed  findmnt 
+81ed  gcc-nm 
+81ed  getopt 
+81ed  gcc-ranlib 
+81ed  hexdump 
+81ed  gcov 
+a1ff  gpgv 
+81ed  ionice 
+81ed  gcc 
+81ed  gpgv2 
+81ed  isosize 
+81ed  pgrep 
+  pgrep       57 
+81ed  yum 
+a1ff  linux32 
+81ed  automake 
+a1ff  linux64 
+81ed  aclocal 
+  aclocal       73 
+81ed  logger 
+  logger       50 
+81ed  aclocal-1.13 
+81ed  lslocks 
+81ed  automake-1.13 
+81ed  mcookie 
+  mcookie       32 
+81ed  free 
+81ed  teamd 
+81ed  mountpoint 
+  mountpoint       32 
+81ed  pkill 
+  pkill       57 
+81ed  nmcli 
+81ed  nsenter 
+  nsenter       50 
+81ed  pmap 
+  pmap       57 
+81ed  stap 
+81ed  prlimit 
+81ed  ps 
+81ed  nmtui 
+81ed  rename 
+81ed  pwdx 
+81ed  chvt 
+81ed  renice 
+81ed  skill 
+a1ff  open 
+81ed  script 
+81ed  slabtop 
+81ed  scriptreplay 
+81ed  snice 
+81ed  vlock 
+81ed  setarch 
+  setarch       32 
+81ed  tload 
+81ed  svn 
+81ed  setpriv 
+81ed  top 
+  top      210 
+a1ff  mailq 
+81ed  setsid 
+81ed  uptime 
+  uptime       24 
+81ed  setterm 
+81ed  vmstat 
+81ed  taskset 
+81ed  w 
+a1ff  rmail 
+89ed  umount 
+81ed  watch 
+a1ff  f95 
+81ed  unshare 
+81ed  easy_install 
+81ed  utmpdump 
+81ed  gdb 
+81ed  c++ 
+  c++     1511 
+81ed  uuidgen 
+81ed  easy_install-2.7 
+81ed  whereis 
+81ed  gcore 
+81ed  g++ 
+a1ff  x86_64 
+a1ff  ld 
+81ed  localectl 
+  localectl      588 
+a1ff  setup-nsssysinit 
+81ed  objdump 
+8849  sudo 
+81ed  setup-nsssysinit.sh 
+a1ff  pstack 
+a1ff  python 
+81ed  gdb-add-index 
+a1ff  python2 
+81ed  gstack 
+81ed  python2.7 
+81ed  openssl 
+81ed  envsubst 
+  envsubst       73 
+81ed  aserver 
+81ed  gettext 
+81ed  urlgrabber 
+81ed  gettext.sh 
+81ed  curl 
+  curl      299 
+81ed  man 
+81ed  msgattrib 
+81ed  rpm 
+81ed  mandb 
+81ed  msgcat 
+  msgcat       48 
+81ed  rpm2cpio 
+81ed  msgcmp 
+81ed  rpmdb 
+81ed  bison 
+81ed  msgcomm 
+81ed  rpmkeys 
+81ed  msgconv 
+a1ff  rpmquery 
+81ed  msgen 
+  msgen       40 
+a1ff  rpmverify 
+81ed  msgexec 
+  msgexec       32 
+81ed  secon 
+81ed  flex 
+81ed  msgfilter 
+  msgfilter       48 
+81ed  fipscheck 
+81ed  msgfmt 
+  msgfmt      139 
+81ed  fipshmac 
+81ed  msggrep 
+81ed  ssh-keygen 
+81ed  msghack 
+81ed  scp 
+a1ff  lex 
+81ed  msginit 
+  msginit       90 
+81ed  sftp 
+81ed  ci 
+  ci        3 
+81ed  msgmerge 
+a1ff  slogin 
+81ed  msgunfmt 
+81ed  ssh 
+81ed  co 
+81ed  msguniq 
+  msguniq       40 
+81ed  ssh-add 
+81ed  ngettext 
+81ed  ranlib 
+81ed  ident 
+  ident      222 
+81ed  recode-sr-latin 
+  recode-sr-latin       32 
+8449  ssh-agent 
+81ed  xgettext 
+81ed  ssh-copy-id 
+  ssh-copy-id       20 
+81ed  addr2line 
+  addr2line       58 
+81ed  loginctl 
+81ed  ar 
+  ar      124 
+81ed  machinectl 
+81ed  as 
+81ed  ssh-keyscan 
+81ed  c++filt 
+81ed  systemctl 
+81ed  dwp 
+81ed  bootctl 
+  bootctl      115 
+81ed  elfedit 
+  elfedit       66 
+81ed  hostnamectl 
+81ed  gprof 
+  gprof      198 
+81ed  journalctl 
+81ed  ld.bfd 
+81ed  systemd-cat 
+81ed  nm 
+  nm       84 
+81ed  kernel-install 
+81ed  objcopy 
+  objcopy      440 
+81ed  systemd-cgls 
+81ed  dracut 
+81ed  intltoolize 
+  intltoolize       15 
+81ed  x86_64-redhat-linux-gcc 
+81ed  plymouth 
+81ed  merge 
+81ed  systemd-analyze 
+81ed  gpg-agent 
+81ed  rcs 
+  rcs      353 
+81ed  systemd-ask-password 
+81ed  gpg-connect-agent 
+81ed  systemd-cgtop 
+  systemd-cgtop      139 
+81ed  gpg-zip 
+  gpg-zip        8 
+81ed  rlog 
+  rlog        3 
+a1ff  systemd-coredumpctl 
+81ed  gpgconf 
+  gpgconf      282 
+81ed  swig 
+81ed  systemd-delta 
+81ed  gpgparsemail 
+81ed  ocs 
+81ed  systemd-detect-virt 
+81ed  gpgsplit 
+a1ff  byacc 
+81ed  systemd-inhibit 
+81ed  watchgnupg 
+81ed  yacc 
+  yacc      170 
+a1ff  systemd-loginctl 
+81ed  lsinitrd 
+  lsinitrd       14 
+81ed  aulast 
+81ed  systemd-machine-id-setup 
+81ed  bond2team 
+81ed  ctags 
+81ed  systemd-notify 
+81ed  teamdctl 
+81ed  bc 
+  bc      164 
+81ed  systemd-nspawn 
+81ed  setfont 
+81ed  systemd-run 
+81ed  nm-online 
+81ed  dc 
+81ed  systemd-stdio-bridge 
+  systemd-stdio-bridge      685 
+81ed  stap-merge 
+81ed  trust 
+81ed  systemd-tmpfiles 
+  systemd-tmpfiles      237 
+81ed  svndumpfilter 
+  svndumpfilter       72 
+81ed  aulastlog 
+  aulastlog       24 
+81ed  systemd-tty-ask-password-agent 
+81ed  unicode_start 
+81ed  timedatectl 
+81ed  unicode_stop 
+  unicode_stop        2 
+81ed  udevadm 
+81ed  stap-report 
+  stap-report       10 
+81ed  tmon 
+81ed  dbus-cleanup-sockets 
+  dbus-cleanup-sockets       23 
+81ed  deallocvt 
+81ed  dbus-daemon 
+81ed  fgconsole 
+81ed  dbus-monitor 
+81ed  getkeycodes 
+81ed  dbus-send 
+  dbus-send       48 
+81ed  kbdinfo 
+81ed  dbus-uuidgen 
+81ed  stapdyn 
+81ed  xxd 
+81ed  systemd-sysv-convert 
+  systemd-sysv-convert        9 
+81ed  kbdrate 
+81ed  tracepath 
+81ed  loadunimap 
+  loadunimap       49 
+81ed  tracepath6 
+81ed  mapscrn 
+  mapscrn       41 
+81ed  pkaction 
+  pkaction       31 
+81ed  openvt 
+81ed  pkcheck 
+a1ff  psfaddtable 
+89ed  pkexec 
+a1ff  psfgettable 
+81ed  pkttyagent 
+81ed  mkinitrd 
+81ed  ausyscall 
+  ausyscall       24 
+81ed  pkla-admin-identities 
+a1ff  iptables-xml 
+81ed  auvirt 
+  auvirt       65 
+81ed  pkla-check-authorization 
+a1ff  psfstriptable 
+81ed  run-parts 
+81ed  psfxtable 
+89ed  crontab 
+8848  staprun 
+a1ff  rvim 
+81ed  linux-boot-prober 
+81ed  resizecons 
+81ed  os-prober 
+81ed  stapsh 
+81ed  vim 
+81ed  grub2-editenv 
+  grub2-editenv      785 
+81ed  setkeycodes 
+81ed  grub2-file 
+81ed  setleds 
+81ed  grub2-fstest 
+81ed  stap-prep 
+  stap-prep        9 
+81ed  wget 
+81ed  grub2-glue-efi 
+81ed  gendiff 
+81ed  grub2-kbdcomp 
+  grub2-kbdcomp        5 
+81ed  rpmbuild 
+  rpmbuild       53 
+81ed  grub2-menulst2cfg 
+81ed  setmetamode 
+  setmetamode       24 
+81ed  grub2-mkfont 
+81ed  rpmspec 
+  rpmspec       33 
+81ed  grub2-mkimage 
+  grub2-mkimage      752 
+81ed  nmtui-edit 
+81ed  grub2-mklayout 
+81ed  nmtui-hostname 
+  nmtui-hostname      507 
+81ed  grub2-mknetdir 
+81ed  ipcalc 
+  ipcalc       32 
+81ed  svnadmin 
+81ed  grub2-mkpasswd-pbkdf2 
+81ed  rpmsign 
+81ed  grub2-mkrelpath 
+  grub2-mkrelpath      510 
+81ed  nmtui-connect 
+81ed  grub2-mkrescue 
+  grub2-mkrescue     1996 
+81ed  rsyslog-recover-qi.pl 
+81ed  grub2-mkstandalone 
+81ed  kdumpctl 
+81ed  grub2-render-label 
+  grub2-render-label     1647 
+81ed  dumpkeys 
+  dumpkeys      156 
+81ed  grub2-script-check 
+81ed  kbd_mode 
+81ed  grub2-syslinux2cfg 
+81ed  setvtrgb 
+  setvtrgb       24 
+81ed  usx2yloader 
+81ed  usleep 
+81ed  svnlook 
+81ed  git-receive-pack 
+  git-receive-pack     2960 
+81ed  git-upload-archive 
+81ed  showconsolefont 
+81ed  git-shell 
+81ed  loadkeys 
+  loadkeys      222 
+81ed  git-upload-pack 
+81ed  showkey 
+  showkey       32 
+81ed  autopoint 
+81ed  firewall-cmd 
+81ed  gettextize 
+81ed  hdsploader 
+81ed  mixartloader 
+81ed  vxloader 
+  vxloader       32 
+81ed  firewall-offline-cmd 
+  firewall-offline-cmd      103 
+81ed  intltool-extract 
+81ed  intltool-merge 
+81ed  intltool-prepare 
+81ed  intltool-update 
+81ed  svnrdump 
+  svnrdump      104 
+81ed  svnserve 
+  svnserve      169 
+81ed  svnsync 
+  svnsync      105 
+81ed  svnversion 
+81ed  sim_client 
+a1ff  mailq.postfix 
+81ed  uuclient 
+  uuclient       31 
+a1ff  newaliases.postfix 
+81ed  ncurses5-config 
+81ed  rmail.postfix 
+a1ff  newaliases 
+81ed  gfortran 
+  gfortran     1503 
+81ed  libtool 
+81ed  libtoolize 
+81ed  pcre-config 
+81ed  gss-client 
+  gss-client       48 
+81ed  krb5-config 
+81ed  ncursesw5-config 
+81ed  x86_64-redhat-linux-c++ 
+81ed  x86_64-redhat-linux-g++ 
+81ed  chattr 
+81ed  lsattr 
+89ed  passwd 
+a1ff  sudoedit 
+8049  sudoreplay 
+  sudoreplay      130 
+a1ff  apropos 
+81ed  catman 
+81ed  lexgrog 
+81ed  manpath 
+81ed  whatis 
+a1ff  vimdiff 
+81ed  centrino-decode 
+  centrino-decode       14 
+81ed  cpupower 
+  cpupower      134 
+81ed  vimtutor 
+81ed  powernow-k8-decode 
+81ed  turbostat 
+81ed  randread 
+  randread       29 
+81ed  x86_energy_perf_policy 
+a1ff  combinediff 
+81ed  dehtmldiff 
+81ed  editdiff 
+81ed  espdiff 
+81ed  filterdiff 
+  filterdiff       92 
+81ed  fixcvsdiff 
+a1ff  flipdiff 
+a1ff  grepdiff 
+81ed  interdiff 
+a1ff  lsdiff 
+81ed  recountdiff 
+  recountdiff        8 
+81ed  rediff 
+81ed  splitdiff 
+81ed  unwrapdiff 
+a1ff  flex++ 
+81ed  rcsclean 
+81ed  rcsdiff 
+81ed  rcsfreeze 
+81ed  rcsmerge 
+81ed  indent 
+  indent      149 
+81ed  ccache-swig 
+81ed  cscope 
+  cscope     1313 
+81ed  strace 
+81ed  cscope-indexer 
+81ed  doxygen 
+81ed  diffstat 
+81ed  acpi_listen 
+81ed  ca-legacy 
+81ed  mokutil 
+81ed  gapplication 
+81ed  lslogins 
+81ed  busctl 
+81ed  coredumpctl 
+  coredumpctl      253 
+81ed  strace-log-merge 
+  strace-log-merge        3 
+81ed  systemd-escape 
+81ed  systemd-firstboot 
+81ed  systemd-hwdb 
+81ed  systemd-path 
+  systemd-path       90 
+81ed  lsscsi 
+81ed  compile_et 
+81ed  sclient 

@@ -1,0 +1,3858 @@
+
+---> Processing directory / 
+416d  . 
+416d  .. 
+416d  boot 
+41ed  dev 
+
+---> Processing directory /dev 
+41ed  . 
+416d  .. 
+21b0  vcsa5 
+21b0  vcs5 
+21b0  vcsa4 
+21b0  vcs4 
+21b0  vcsa3 
+21b0  vcs3 
+21b0  vcsa2 
+21b0  vcs2 
+21b0  vcsa6 
+21b0  vcs6 
+a1ff  cdrom 
+21b0  sg1 
+21b0  sg0 
+43ff  mqueue 
+a1ff  initctl 
+41ed  hugepages 
+
+---> Processing directory /dev/hugepages 
+41ed  . 
+41ed  .. 
+61b0  dm-1 
+41ed  centos_cpsc822 
+
+---> Processing directory /dev/centos_cpsc822 
+41ed  . 
+41ed  .. 
+a1ff  root 
+a1ff  swap 
+61b0  dm-0 
+41ed  disk 
+
+---> Processing directory /dev/disk 
+41ed  . 
+41ed  .. 
+41ed  by-uuid 
+41ed  by-path 
+
+---> Processing directory /dev/disk/by-path 
+41ed  . 
+41ed  .. 
+a1ff  pci-0000:00:01.1-ata-1.0-part1 
+a1ff  pci-0000:00:01.1-ata-1.0-part2 
+a1ff  pci-0000:00:01.1-ata-1.0 
+a1ff  pci-0000:00:01.1-ata-2.0 
+41ed  by-id 
+41ed  block 
+61b0  sr0 
+61b0  sda2 
+61b0  sda1 
+61b0  sda 
+41ed  bsg 
+41ed  virtio-ports 
+
+---> Processing directory /dev/virtio-ports 
+41ed  . 
+41ed  .. 
+a1ff  org.qemu.guest_agent.0 
+a1ff  com.redhat.rhevm.vdsm 
+2180  vport2p2 
+2180  vport2p1 
+a1ff  rtc 
+41ed  char 
+2180  hidraw0 
+41ed  mapper 
+c1b6  log 
+a1ff  stderr 
+a1ff  stdout 
+a1ff  stdin 
+a1ff  fd 
+a1ff  core 
+41ed  pts 
+43ff  shm 
+2180  memory_bandwidth 
+2180  network_throughput 
+2180  network_latency 
+2180  cpu_dma_latency 
+2180  mcelog 
+2180  rtc0 
+41ed  input 
+41ed  bus 
+
+---> Processing directory /dev/bus 
+41ed  . 
+41ed  .. 
+41ed  usb 
+2180  usbmon1 
+2180  usbmon0 
+2180  hwrng 
+2180  nvram 
+2180  hpet 
+41ed  raw 
+21b0  ttyS3 
+21b0  ttyS2 
+21b0  ttyS1 
+21b0  ttyS0 
+21b6  ptmx 
+2180  autofs 
+2180  snapshot 
+41ed  cpu 
+2190  tty63 
+2190  tty62 
+2190  tty61 
+2190  tty60 
+2190  tty59 
+2190  tty58 
+2190  tty57 
+2190  tty56 
+2190  tty55 
+2190  tty54 
+2190  tty53 
+2190  tty52 
+2190  tty51 
+2190  tty50 
+2190  tty49 
+2190  tty48 
+2190  tty47 
+2190  tty46 
+2190  tty45 
+2190  tty44 
+2190  tty43 
+2190  tty42 
+2190  tty41 
+2190  tty40 
+2190  tty39 
+2190  tty38 
+2190  tty37 
+2190  tty36 
+2190  tty35 
+2190  tty34 
+2190  tty33 
+2190  tty32 
+2190  tty31 
+2190  tty30 
+2190  tty29 
+2190  tty28 
+2190  tty27 
+2190  tty26 
+2190  tty25 
+2190  tty24 
+2190  tty23 
+2190  tty22 
+2190  tty21 
+2190  tty20 
+2190  tty19 
+2190  tty18 
+2190  tty17 
+2190  tty16 
+2190  tty15 
+2190  tty14 
+2190  tty13 
+2190  tty12 
+2190  tty11 
+2190  tty10 
+2190  tty9 
+2190  tty8 
+2190  tty7 
+2190  tty6 
+2190  tty5 
+2190  tty4 
+2190  tty3 
+2190  tty2 
+2190  tty1 
+21b0  vcsa1 
+21b0  vcs1 
+21b0  vcsa 
+21b0  vcs 
+2190  tty0 
+2180  console 
+21b6  tty 
+21a4  kmsg 
+21b6  urandom 
+21b6  random 
+21b6  full 
+21b6  zero 
+21a0  port 
+21b6  null 
+21a0  mem 
+2180  vga_arbiter 
+416d  proc 
+
+---> Processing directory /proc 
+41ed  run 
+
+---> Processing directory /run 
+41ed  . 
+416d  .. 
+81a4  sshd.pid 
+81a4  dhclient-eth0.pid 
+41ed  NetworkManager 
+8180  xtables.lock 
+  xtables.lock        1 
+8000  cron.reboot 
+81a4  crond.pid 
+8180  syslogd.pid 
+81a4  acpid.pid 
+  acpid.pid        2 
+c1b6  acpid.socket 
+41ed  avahi-daemon 
+41ed  dbus 
+
+---> Processing directory /run/dbus 
+41ed  . 
+41ed  .. 
+c1b6  system_bus_socket 
+81a4  auditd.pid 
+  auditd.pid        2 
+41ed  console 
+41fd  netreport 
+
+---> Processing directory /run/netreport 
+41fd  . 
+41ed  .. 
+41ed  sepermit 
+41ed  setrans 
+41ed  faillock 
+
+---> Processing directory /run/faillock 
+41ed  . 
+41ed  .. 
+81b4  utmp 
+41ed  user 
+41ed  ppp 
+41c0  svnserve 
+
+---> Processing directory /run/svnserve 
+41c0  . 
+41ed  .. 
+41ed  tuned 
+81a4  lvmetad.pid 
+  lvmetad.pid        2 
+1180  dmeventd-client 
+1180  dmeventd-server 
+41c0  lvm 
+41ed  plymouth 
+
+---> Processing directory /run/plymouth 
+41ed  . 
+41ed  .. 
+41ed  tmpfiles.d 
+41ed  udev 
+
+---> Processing directory /run/udev 
+41ed  . 
+41ed  .. 
+41ed  watch 
+
+---> Processing directory /run/udev/watch 
+41ed  . 
+41ed  .. 
+a1ff  5 
+a1ff  4 
+a1ff  3 
+a1ff  2 
+a1ff  1 
+c180  control 
+41ed  links 
+41ed  tags 
+41ed  data 
+41ed  mount 
+41ed  log 
+41ed  lock 
+41ed  initramfs 
+41ed  systemd 
+416d  sys 
+
+---> Processing directory /sys 
+416d  . 
+416d  .. 
+41ed  fs 
+
+---> Processing directory /sys/fs 
+41ed  . 
+416d  .. 
+41ed  xfs 
+41ed  selinux 
+41ed  cgroup 
+41ed  pstore 
+41ed  bus 
+41ed  dev 
+41ed  devices 
+41ed  block 
+
+---> Processing directory /sys/block 
+41ed  . 
+416d  .. 
+a1ff  sda 
+a1ff  sr0 
+a1ff  dm-0 
+a1ff  dm-1 
+41ed  class 
+41ed  power 
+
+---> Processing directory /sys/power 
+41ed  . 
+416d  .. 
+81a4  reserved_size 
+  reserved_size        2 
+81a4  disk 
+  disk        2 
+81a4  image_size 
+81a4  state 
+  state        2 
+81a4  pm_freeze_timeout 
+81a4  resume 
+81a4  wakeup_count 
+81a4  pm_async 
+41ed  firmware 
+41ed  kernel 
+41ed  module 
+41ed  hypervisor 
+
+---> Processing directory /sys/hypervisor 
+41ed  . 
+416d  .. 
+41ed  etc 
+
+---> Processing directory /etc 
+41ed  . 
+416d  .. 
+81a4  fstab 
+  fstab        2 
+8180  crypttab 
+a1ff  mtab 
+41ed  pki 
+41ed  rpm 
+41ed  yum.repos.d 
+41ed  ssh 
+a1ff  grub2.cfg 
+81a4  centos-release 
+  centos-release        2 
+41ed  tmpfiles.d 
+81a4  issue 
+  issue        2 
+a1ff  rc.local 
+81a4  issue.net 
+41ed  systemd 
+81a4  os-release 
+81a4  DIR_COLORS.256color 
+  DIR_COLORS.256color       13 
+a1ff  redhat-release 
+41ed  rsyslog.d 
+
+---> Processing directory /etc/rsyslog.d 
+41ed  . 
+41ed  .. 
+81a4  listen.conf 
+41ed  acpi 
+
+---> Processing directory /etc/acpi 
+41ed  . 
+41ed  .. 
+41ed  actions 
+41ed  events 
+a1ff  system-release 
+41ed  dbus-1 
+
+---> Processing directory /etc/dbus-1 
+41ed  . 
+41ed  .. 
+41ed  system.d 
+81a4  session.conf 
+41ed  session.d 
+
+---> Processing directory /etc/dbus-1/session.d 
+41ed  . 
+41ed  .. 
+81a4  system.conf 
+  system.conf        7 
+81a4  vimrc 
+81a4  system-release-cpe 
+  system-release-cpe        2 
+41ed  udev 
+
+---> Processing directory /etc/udev 
+41ed  . 
+41ed  .. 
+41ed  rules.d 
+81a4  udev.conf 
+8124  hwdb.bin 
+81a4  aliases 
+  aliases        4 
+8124  machine-id 
+  machine-id        2 
+81a4  bashrc 
+41ed  cron.monthly 
+81a4  csh.cshrc 
+  csh.cshrc        5 
+81a4  nsswitch.conf.bak 
+81a4  csh.login 
+41ed  cron.hourly 
+81a4  environment 
+41ed  cron.weekly 
+
+---> Processing directory /etc/cron.weekly 
+41ed  . 
+41ed  .. 
+81a4  exports 
+8180  anacrontab 
+  anacrontab        3 
+81a4  filesystems 
+81a4  crontab 
+81a4  group 
+8000  shadow- 
+8000  gshadow 
+  gshadow        2 
+41ed  polkit-1 
+81a4  host.conf 
+41ed  iproute2 
+81a4  hosts 
+41ed  cron.d 
+
+---> Processing directory /etc/cron.d 
+41ed  . 
+41ed  .. 
+81a4  0hourly 
+  0hourly        2 
+81a4  hosts.allow 
+8180  cron.deny 
+81a4  hosts.deny 
+41c0  grub.d 
+81a4  inputrc 
+41ed  kernel 
+
+---> Processing directory /etc/kernel 
+41ed  . 
+41ed  .. 
+41ed  postinst.d 
+81a4  motd 
+  motd        1 
+41ed  wpa_supplicant 
+81a4  passwd 
+81a4  dnsmasq.conf 
+  dnsmasq.conf       51 
+81a4  printcap 
+41ed  dnsmasq.d 
+
+---> Processing directory /etc/dnsmasq.d 
+41ed  . 
+41ed  .. 
+81a4  profile 
+41ed  profile.d 
+81a4  rsyncd.conf 
+81a4  protocols 
+81a4  ethertypes 
+8180  securetty 
+41ed  ppp 
+81a4  services 
+81a4  dracut.conf 
+8000  shadow 
+  shadow        3 
+41ed  dracut.conf.d 
+81a4  shells 
+41ed  X11 
+41ed  bash_completion.d 
+
+---> Processing directory /etc/bash_completion.d 
+41ed  . 
+41ed  .. 
+81a4  git 
+81a4  yum 
+a1ff  yummain.py 
+81a4  iprutils 
+41ed  opt 
+41ed  pm 
+
+---> Processing directory /etc/pm 
+41ed  . 
+41ed  .. 
+41ed  config.d 
+41ed  power.d 
+41ed  sleep.d 
+
+---> Processing directory /etc/pm/sleep.d 
+41ed  . 
+41ed  .. 
+41ed  skel 
+
+---> Processing directory /etc/skel 
+41ed  . 
+41ed  .. 
+81a4  .bash_logout 
+81a4  .bash_profile 
+81a4  .bashrc 
+41ed  sysconfig 
+
+---> Processing directory /etc/sysconfig 
+41ed  . 
+41ed  .. 
+a1ff  selinux 
+81a4  rdisc 
+81a4  run-parts 
+8180  crond 
+a1ff  grub 
+81a4  wpa_supplicant 
+81a4  rsyncd 
+8180  ebtables-config 
+8180  ip6tables-config 
+8180  iptables-config 
+41ed  cbq 
+41ed  console 
+81a4  init 
+  init        3 
+41ed  modules 
+81a4  netconsole 
+41ed  network-scripts 
+81a4  readonly-root 
+81a4  rsyslog 
+81a4  kdump 
+  kdump        4 
+81a4  firewalld 
+  firewalld        2 
+81a4  svnserve 
+81a4  irqbalance 
+81a0  sshd 
+  sshd        2 
+81a4  man-db 
+81a4  cpupower 
+  cpupower        2 
+81a4  kernel 
+81a4  authconfig 
+  authconfig        2 
+81a4  network 
+  network        2 
+81a4  acpid 
+  acpid        2 
+41ed  xdg 
+41ed  xinetd.d 
+
+---> Processing directory /etc/xinetd.d 
+41ed  . 
+41ed  .. 
+41ed  terminfo 
+41ed  default 
+
+---> Processing directory /etc/default 
+41ed  . 
+41ed  .. 
+81a4  nss 
+  nss        5 
+81a4  useradd 
+81a4  grub 
+41ed  NetworkManager 
+81a4  ld.so.conf 
+  ld.so.conf        2 
+41ed  ld.so.conf.d 
+41ed  yum 
+81a4  nsswitch.conf 
+81a4  passwd- 
+  passwd-        3 
+41ed  lvm 
+
+---> Processing directory /etc/lvm 
+41ed  . 
+41ed  .. 
+41c0  archive 
+41c0  backup 
+41c0  cache 
+81a4  lvm.conf 
+41ed  profile 
+81a4  lvmlocal.conf 
+81a4  rpc 
+41e8  audit 
+
+---> Processing directory /etc/audit 
+41e8  . 
+41ed  .. 
+81a0  auditd.conf 
+41e8  rules.d 
+81a0  audit.rules 
+81a0  audit.rules.prev 
+81a4  ld.so.cache 
+41ed  popt.d 
+
+---> Processing directory /etc/popt.d 
+41ed  . 
+41ed  .. 
+41ed  binfmt.d 
+81a0  libaudit.conf 
+41ed  alternatives 
+
+---> Processing directory /etc/alternatives 
+41ed  . 
+41ed  .. 
+a1ff  mta 
+a1ff  mta-mailq 
+a1ff  mta-newaliases 
+a1ff  mta-pam 
+a1ff  mta-rmail 
+a1ff  mta-sendmail 
+a1ff  mta-mailqman 
+a1ff  mta-newaliasesman 
+a1ff  mta-sendmailman 
+a1ff  mta-aliasesman 
+a1ff  ld 
+a1ff  libnssckbi.so.x86_64 
+41ed  chkconfig.d 
+81a4  inittab 
+  inittab        2 
+a1ff  init.d 
+41ed  rc.d 
+81a4  adjtime 
+a1ff  rc0.d 
+81a4  networks 
+  networks        2 
+a1ff  rc1.d 
+81a4  rwtab 
+a1ff  rc2.d 
+41ed  gnupg 
+a1ff  rc3.d 
+41ed  rwtab.d 
+a1ff  rc4.d 
+81a4  statetab 
+a1ff  rc5.d 
+41ed  statetab.d 
+
+---> Processing directory /etc/statetab.d 
+41ed  . 
+41ed  .. 
+a1ff  rc6.d 
+81a4  sysctl.conf 
+81a4  GREP_COLORS 
+41ed  gcrypt 
+41ed  libnl 
+41ed  sasl2 
+
+---> Processing directory /etc/sasl2 
+41ed  . 
+41ed  .. 
+81a4  smtpd.conf 
+41e8  dhcp 
+81a4  magic 
+  magic        2 
+41ed  groff 
+41ed  pkcs11 
+41ed  ssl 
+41e8  audisp 
+81a4  virc 
+41ed  selinux 
+41ed  gss 
+
+---> Processing directory /etc/gss 
+41ed  . 
+41ed  .. 
+41ed  mech.d 
+81a4  kdump.conf 
+81a4  krb5.conf 
+41ed  openldap 
+41ed  security 
+81a4  yum.conf 
+81a4  libuser.conf 
+41ed  plymouth 
+81a4  DIR_COLORS 
+81a4  my.cnf 
+41ed  subversion 
+81a4  DIR_COLORS.lightbgcolor 
+41ed  pam.d 
+
+---> Processing directory /etc/pam.d 
+41ed  . 
+41ed  .. 
+81a4  config-util 
+81a4  other 
+81a4  chfn 
+81a4  chsh 
+  chsh        2 
+81a4  login 
+  login        3 
+81a4  remote 
+81a4  runuser 
+81a4  runuser-l 
+  runuser-l        2 
+81a4  su 
+  su        3 
+81a4  su-l 
+  su-l        2 
+81a4  systemd-user 
+81a4  polkit-1 
+81a4  crond 
+  crond        2 
+81a4  ppp 
+  ppp        2 
+81a4  vlock 
+81a4  smtp.postfix 
+a1ff  smtp 
+81a4  sshd 
+81a4  passwd 
+81a4  sudo 
+81a4  sudo-i 
+81a4  system-auth-ac 
+  system-auth-ac        3 
+a1ff  system-auth 
+81a4  postlogin-ac 
+  postlogin-ac        2 
+a1ff  postlogin 
+81a4  password-auth-ac 
+  password-auth-ac        3 
+a1ff  password-auth 
+81a4  fingerprint-auth-ac 
+a1ff  fingerprint-auth 
+81a4  smartcard-auth-ac 
+  smartcard-auth-ac        3 
+a1ff  smartcard-auth 
+41ed  avahi 
+81a4  login.defs 
+8180  .pwd.lock 
+41ed  logrotate.d 
+81a4  asound.conf 
+81a4  sestatus.conf 
+  sestatus.conf        2 
+41ed  postfix 
+81a4  group- 
+8000  gshadow- 
+41ed  depmod.d 
+
+---> Processing directory /etc/depmod.d 
+41ed  . 
+41ed  .. 
+81a4  dist.conf 
+  dist.conf        2 
+41ed  modprobe.d 
+81a4  rsyslog.conf 
+  rsyslog.conf        8 
+a1ff  favicon.png 
+41ed  sysctl.d 
+41e8  firewalld 
+
+---> Processing directory /etc/firewalld 
+41e8  . 
+41ed  .. 
+81a0  firewalld.conf 
+  firewalld.conf        4 
+41e8  icmptypes 
+81a0  lockdown-whitelist.xml 
+41e8  services 
+41e8  zones 
+81a4  gdbinit 
+41ed  gdbinit.d 
+
+---> Processing directory /etc/gdbinit.d 
+41ed  . 
+41ed  .. 
+41ed  cron.daily 
+41ed  modules-load.d 
+
+---> Processing directory /etc/modules-load.d 
+41ed  . 
+41ed  .. 
+81a4  logrotate.conf 
+41ed  my.cnf.d 
+41ed  prelink.conf.d 
+41ed  tuned 
+
+---> Processing directory /etc/tuned 
+41ed  . 
+41ed  .. 
+81a4  active_profile 
+81a4  tuned-main.conf 
+81a4  bootcmdline 
+81a4  makedumpfile.conf.sample 
+81a4  e2fsck.conf 
+  e2fsck.conf        2 
+81a4  mke2fs.conf 
+  mke2fs.conf        3 
+81a0  sudo-ldap.conf 
+81a0  sudo.conf 
+8120  sudoers 
+41e8  sudoers.d 
+81a4  man_db.conf 
+81a4  vconsole.conf 
+  vconsole.conf        2 
+a1ff  localtime 
+81a4  locale.conf 
+81a4  hostname 
+81a4  resolv.conf 
+81a4  aliases.db 
+81a4  centos-release-upstream 
+41ed  python 
+8180  tcsd.conf 
+81a4  .updated 
+81a4  wgetrc 
+4168  root 
+
+---> Processing directory /root 
+4168  . 
+416d  .. 
+81a4  .bash_logout 
+81a4  .bash_profile 
+81a4  .bashrc 
+81a4  .cshrc 
+81a4  .tcshrc 
+8180  anaconda-ks.cfg 
+41e0  .pki 
+41ed  .subversion 
+8180  .rnd 
+41c0  .ssh 
+41ed  .tmp_versions 
+81a4  .kyoukofb.o.cmd 
+81a4  .kyoukofb.mod.o.cmd 
+81a4  .kyoukofb.ko.cmd 
+8180  .lesshst 
+8180  .bash_history 
+81a4  .gitconfig 
+41ed  linuxcode 
+
+---> Processing directory /root/linuxcode 
+41ed  . 
+4168  .. 
+41ed  .git 
+81a4  .DS_Store 
+41ed  lab1 
+41ed  lab2 
+41ed  lab3 
+
+---> Processing directory /root/linuxcode/lab3 
+41ed  . 
+41ed  .. 
+81a4  .mymod.ko.cmd 
+81a4  .mymod.mod.o.cmd 
+81a4  .mymod.o.cmd 
+41ed  .tmp_versions 
+81a4  Makefile 
+  Makefile        2 
+81a4  mymod.o 
+81a4  modules.order 
+81a4  mymod.mod.c 
+81a4  Module.symvers 
+81a4  reg.h 
+81a4  mymod.c 
+  mymod.c       14 
+81a4  mymod.mod.o 
+81a4  mymod.ko 
+  mymod.ko      515 
+81a4  user.c 
+81ed  user 
+81a4  .vimrc 
+8180  .viminfo 
+41ed  labcode 
+41ed  8220_pub 
+
+---> Processing directory /root/8220_pub 
+41ed  . 
+4168  .. 
+41ed  .git 
+81a4  .mymod.ko.cmd 
+81a4  .mymod.mod.o.cmd 
+81a4  .mymod.o.cmd 
+41ed  .tmp_versions 
+81a4  README 
+  README        2 
+41ed  lab3 
+41ed  lab4 
+81a4  bzImage 
+41ed  lab5 
+
+---> Processing directory /root/8220_pub/lab5 
+41ed  . 
+41ed  .. 
+81a4  user.c 
+81ed  user 
+81ed  user_counter 
+81a4  user_counter.c 
+  user_counter.c        4 
+41ed  lab6 
+41ed  lab7 
+41ed  lab8 
+
+---> Processing directory /root/8220_pub/lab8 
+41ed  . 
+41ed  .. 
+81a4  deepSleep.c 
+81a4  zombie.c 
+81ed  deepSleep 
+81a4  wakeup.c 
+81ed  wakeup 
+  wakeup       18 
+81a4  fork.c 
+81ed  fork 
+81a4  syscall_define1 
+81ed  zombie 
+81ed  killZombie 
+  killZombie       18 
+81a4  killZombie.c 
+81a4  multi_threads.c 
+81ed  multi_threads 
+81a4  smunch.c 
+  smunch.c        3 
+81ed  smunch 
+  smunch       19 
+41ed  lab9 
+43ff  tmp 
+41ed  var 
+41ed  usr 
+
+---> Processing directory /usr 
+41ed  . 
+416d  .. 
+416d  bin 
+
+---> Processing directory /usr/bin 
+416d  . 
+41ed  .. 
+a1ff  gtbl 
+81ed  cpp 
+  cpp     1503 
+81ed  catchsegv 
+81ed  neqn 
+a1ff  ex 
+81ed  gencat 
+a1ff  gtroff 
+81ed  getent 
+81ed  nroff 
+a1ff  rvi 
+81ed  iconv 
+  iconv      119 
+81ed  zip 
+81ed  ldd 
+  ldd       12 
+81ed  pic 
+a1ff  rview 
+81ed  locale 
+81ed  xzdec 
+81ed  vi 
+81ed  localedef 
+  localedef      624 
+81ed  xzdiff 
+81ed  makedb 
+81ed  zipcloak 
+81ed  pldd 
+  pldd       30 
+a1ff  xzegrep 
+81ed  rpcgen 
+  rpcgen      183 
+a1ff  xzfgrep 
+81ed  sotruss 
+  sotruss       10 
+81ed  xzgrep 
+  xzgrep       12 
+81ed  sprof 
+81ed  xzless 
+81ed  tzselect 
+81ed  xzmore 
+81ed  getconf 
+  getconf       46 
+81ed  testgdbm 
+81ed  alias 
+81ed  zipnote 
+81ed  bash 
+81ed  pod2man 
+a1ff  bashbug 
+81ed  pod2text 
+  pod2text       23 
+81ed  bashbug-64 
+81ed  zipsplit 
+  zipsplit      197 
+81ed  bg 
+a1ff  gmake 
+81ed  cd 
+81ed  perldoc 
+  perldoc        2 
+81ed  command 
+81ed  make 
+  make      358 
+81ed  fc 
+81ed  which 
+81ed  fg 
+  fg        2 
+81ed  piconv 
+  piconv       17 
+81ed  getopts 
+  getopts        2 
+81ed  whiptail 
+  whiptail       57 
+81ed  jobs 
+81ed  last 
+81ed  read 
+  read        2 
+a1ff  lastb 
+a1ff  sh 
+81ed  pod2usage 
+81ed  umask 
+81ed  h2ph 
+  h2ph       57 
+a1ff  view 
+81ed  unalias 
+  unalias        2 
+81ed  mesg 
+  mesg       23 
+81ed  wait 
+  wait        2 
+856d  wall 
+81ed  info 
+81ed  find2perl 
+  find2perl       48 
+81ed  infokey 
+a1ff  domainname 
+81ed  sed 
+81ed  pl2pm 
+  pl2pm       10 
+81ed  chacl 
+81ed  xmlwf 
+  xmlwf       49 
+81ed  pod2html 
+  pod2html        9 
+81ed  egrep 
+81ed  splain 
+81ed  fgrep 
+81ed  hostname 
+  hostname       32 
+81ed  grep 
+81ed  p11-kit 
+  p11-kit       58 
+81ed  sqlite3 
+  sqlite3      111 
+a1ff  nisdomainname 
+a1ff  awk 
+81ed  less 
+  less      311 
+a1ff  bzcat 
+81ed  dgawk 
+a1ff  ypdomainname 
+81ed  gawk 
+81ed  c2ph 
+a1ff  bzcmp 
+81ed  igawk 
+81ed  pstruct 
+81ed  pgawk 
+  pgawk      839 
+81ed  teamnl 
+81ed  lua 
+81ed  autoconf 
+81ed  luac 
+  luac      239 
+81ed  autoheader 
+81ed  cpio 
+  cpio      278 
+81ed  perl 
+81ed  bzip2 
+81ed  gpg-error 
+81ed  autom4te 
+  autom4te       64 
+81ed  find 
+  find      391 
+81ed  perl5.16.3 
+  perl5.16.3       24 
+81ed  oldfind 
+81ed  perlbug 
+  perlbug       87 
+81ed  xargs 
+  xargs      123 
+81ed  perlthanks 
+  perlthanks       87 
+81ed  xmlcatalog 
+81ed  psed 
+81ed  dwz 
+81ed  xmllint 
+  xmllint      125 
+81ed  autoreconf 
+81ed  cmp 
+81ed  autoscan 
+81ed  diff 
+81ed  s2p 
+81ed  clear 
+81ed  diff3 
+  diff3      123 
+81ed  lessecho 
+81ed  sdiff 
+81ed  lesskey 
+81ed  pkg-config 
+81ed  lesspipe.sh 
+81ed  gdbus 
+81ed  groff 
+81ed  autoupdate 
+81ed  gio-querymodules-64 
+  gio-querymodules-64       24 
+81ed  grops 
+81ed  ifnames 
+  ifnames       10 
+81ed  glib-compile-schemas 
+  glib-compile-schemas       82 
+81ed  csslint-0.6 
+81ed  gsettings 
+81ed  grotty 
+a1ff  reset 
+81ed  update-mime-database 
+a1ff  gsoelim 
+81ed  tabs 
+  tabs       32 
+81ed  dbus-binding-tool 
+81ed  prove 
+  prove       28 
+81ed  file 
+81ed  eu-addr2line 
+  eu-addr2line       49 
+81ed  eqn 
+81ed  eu-ar 
+a1ff  geqn 
+a1ff  gtar 
+81ed  tic 
+  tic      130 
+a1ff  gneqn 
+81ed  tar 
+  tar      677 
+81ed  toe 
+a1ff  gnroff 
+81ed  eu-elfcmp 
+a1ff  gpic 
+81ed  post-grohtml 
+81ed  patch 
+81ed  tput 
+  tput       32 
+81ed  pre-grohtml 
+  pre-grohtml      174 
+81ed  funzip 
+81ed  preconv 
+81ed  unzipsfx 
+81ed  soelim 
+81ed  eu-elflint 
+  eu-elflint      211 
+81ed  tbl 
+  tbl      233 
+81ed  zipgrep 
+81ed  troff 
+81ed  zipinfo 
+  zipinfo      355 
+a1ff  zsoelim 
+81ed  eu-nm 
+81ed  idn 
+81ed  eu-objdump 
+81ed  m4 
+  m4      304 
+81ed  eu-ranlib 
+a1ff  unxz 
+81ed  eu-readelf 
+81ed  xz 
+  xz      140 
+a1ff  dnsdomainname 
+a1ff  xzcat 
+81ed  unzip 
+81ed  tset 
+  tset       41 
+a1ff  xzcmp 
+81ed  eu-size 
+81ed  a2p 
+81ed  eu-stack 
+81ed  comm 
+  comm       74 
+81ed  stty 
+81ed  update-ca-trust 
+81ed  cp 
+  cp      296 
+81ed  sum 
+  sum       75 
+81ed  eu-findtextrel 
+  eu-findtextrel       41 
+81ed  tac 
+  tac       66 
+81ed  sync 
+81ed  eu-make-debug-archive 
+  eu-make-debug-archive        7 
+81ed  dir 
+  dir      231 
+81ed  uniq 
+81ed  eu-strings 
+81ed  dircolors 
+  dircolors       82 
+81ed  eu-strip 
+81ed  dirname 
+81ed  eu-unstrip 
+  eu-unstrip       98 
+81ed  du 
+81ed  users 
+81ed  getfacl 
+81ed  echo 
+81ed  vdir 
+81ed  setfacl 
+81ed  env 
+81ed  wc 
+81ed  nettle-hash 
+81ed  csplit 
+81ed  who 
+81ed  nettle-lfib-stream 
+81ed  expand 
+81ed  pkcs1-conv 
+  pkcs1-conv       32 
+81ed  expr 
+81ed  yes 
+81ed  sexp-conv 
+81ed  factor 
+81ed  pinentry 
+81ed  cut 
+  cut       83 
+81ed  tail 
+81ed  pinentry-curses 
+81ed  false 
+  false       58 
+89ed  chage 
+a1ff  bunzip2 
+81ed  fmt 
+  fmt       74 
+a1ff  sg 
+81ed  bzdiff 
+81ed  fold 
+81ed  cal 
+81ed  bzgrep 
+  bzgrep        5 
+81ed  groups 
+  groups       66 
+81ed  bzip2recover 
+81ed  head 
+89c9  chfn 
+a1ff  bzless 
+81ed  hostid 
+81ed  bzmore 
+  bzmore        4 
+81ed  id 
+  id       82 
+81ed  chrt 
+81ed  db_archive 
+81ed  date 
+81ed  tee 
+  tee       66 
+81ed  db_checkpoint 
+81ed  install 
+  install      281 
+81ed  db_deadlock 
+81ed  join 
+  join       99 
+89c9  chsh 
+81ed  db_dump 
+81ed  link 
+81ed  col 
+81ed  db_dump185 
+  db_dump185      130 
+81ed  ln 
+81ed  colrm 
+81ed  db_hotbackup 
+81ed  logname 
+81ed  db_load 
+81ed  dd 
+81ed  test 
+81ed  db_log_verify 
+  db_log_verify       32 
+81ed  ls 
+  ls      231 
+81ed  dmesg 
+  dmesg       90 
+81ed  db_printlog 
+  db_printlog       66 
+81ed  md5sum 
+81ed  db_recover 
+81ed  mkdir 
+  mkdir      157 
+81ed  eject 
+81ed  db_replicate 
+81ed  mkfifo 
+81ed  db_stat 
+  db_stat       32 
+81ed  mknod 
+  mknod      133 
+81ed  flock 
+  flock       49 
+81ed  db_tuner 
+81ed  mktemp 
+81ed  db_upgrade 
+  db_upgrade       24 
+81ed  mv 
+  mv      256 
+a1ff  i386 
+81ed  db_verify 
+  db_verify       24 
+81ed  nice 
+81ed  ipcmk 
+a1ff  captoinfo 
+81ed  nl 
+81ed  ipcrm 
+  ipcrm       49 
+81ed  infocmp 
+  infocmp      114 
+81ed  nohup 
+81ed  ipcs 
+a1ff  infotocap 
+81ed  nproc 
+81ed  kill 
+81ed  ndptool 
+  ndptool       41 
+81ed  numfmt 
+81ed  certutil 
+81ed  od 
+  od      131 
+81ed  login 
+  login       74 
+81ed  cmsutil 
+81ed  paste 
+  paste       66 
+81ed  look 
+  look       24 
+81ed  crlutil 
+  crlutil      223 
+81ed  pathchk 
+81ed  modutil 
+81ed  pinky 
+  pinky       75 
+81ed  lsblk 
+81ed  pk12util 
+81ed  pr 
+  pr      132 
+81ed  lscpu 
+81ed  signtool 
+81ed  printenv 
+  printenv       58 
+81ed  signver 
+  signver      182 
+81ed  printf 
+81ed  ssltap 
+81ed  ptx 
+  ptx      132 
+81ed  more 
+  more       82 
+81ed  gunzip 
+81ed  pwd 
+89ed  mount 
+81ed  gzexe 
+81ed  touch 
+81ed  gzip 
+  gzip      198 
+81ed  timeout 
+81ed  zcat 
+81ed  true 
+81ed  zcmp 
+81ed  readlink 
+81ed  zdiff 
+81ed  realpath 
+81ed  zegrep 
+81ed  rm 
+81ed  namei 
+81ed  zfgrep 
+81ed  rmdir 
+81ed  raw 
+81ed  zforce 
+  zforce        6 
+81ed  runcon 
+81ed  zgrep 
+81ed  seq 
+  seq       98 
+81ed  rev 
+81ed  zless 
+81ed  sha1sum 
+  sha1sum       75 
+81ed  zmore 
+81ed  tr 
+81ed  znew 
+81ed  sha224sum 
+81ed  pwmake 
+81ed  sha256sum 
+81ed  pwscore 
+81ed  sha384sum 
+  sha384sum       83 
+81ed  lchfn 
+81ed  sha512sum 
+  sha512sum       83 
+81ed  lchsh 
+  lchsh       32 
+81ed  tsort 
+81ed  [ 
+81ed  truncate 
+81ed  arch 
+  arch       66 
+81ed  shred 
+89ed  su 
+81ed  base64 
+81ed  shuf 
+  shuf      100 
+81ed  tailf 
+81ed  basename 
+  basename       58 
+81ed  uname 
+  uname       66 
+81ed  cat 
+81ed  sleep 
+  sleep       66 
+81ed  ul 
+  ul       40 
+81ed  chcon 
+81ed  sort 
+81ed  wdctl 
+81ed  chgrp 
+81ed  split 
+  split      140 
+85ed  write 
+81ed  chmod 
+  chmod      116 
+81ed  stat 
+81ed  pydoc 
+  pydoc        2 
+81ed  chown 
+  chown      124 
+81ed  stdbuf 
+  stdbuf      131 
+81ed  cksum 
+81ed  df 
+81ed  tty 
+  tty       58 
+81ed  readelf 
+  readelf      793 
+81ed  unexpand 
+81ed  size 
+  size       58 
+81ed  ping 
+  ping       89 
+81ed  unlink 
+  unlink       58 
+81ed  strings 
+81ed  whoami 
+  whoami       58 
+81ed  strip 
+81ed  ping6 
+89ed  gpasswd 
+81ed  ld.gold 
+81ed  lastlog 
+  lastlog       32 
+81ed  c89 
+  c89        2 
+81ed  rsync 
+  rsync      877 
+89ed  newgrp 
+  newgrp       83 
+81ed  kmod 
+  kmod      296 
+81ed  git 
+81ed  colcrt 
+81ed  c99 
+  c99        2 
+a1ff  gpg 
+81ed  column 
+a1ff  cc 
+81ed  gpg2 
+81ed  fallocate 
+  fallocate       41 
+81ed  gcc-ar 
+81ed  findmnt 
+81ed  gcc-nm 
+81ed  getopt 
+81ed  gcc-ranlib 
+81ed  hexdump 
+81ed  gcov 
+a1ff  gpgv 
+81ed  ionice 
+81ed  gcc 
+81ed  gpgv2 
+81ed  isosize 
+  isosize       41 
+81ed  pgrep 
+  pgrep       57 
+81ed  yum 
+a1ff  linux32 
+81ed  automake 
+  automake      494 
+a1ff  linux64 
+81ed  aclocal 
+81ed  logger 
+81ed  aclocal-1.13 
+81ed  lslocks 
+81ed  automake-1.13 
+81ed  mcookie 
+81ed  free 
+81ed  teamd 
+81ed  mountpoint 
+81ed  pkill 
+81ed  nmcli 
+  nmcli     1151 
+81ed  nsenter 
+  nsenter       50 
+81ed  pmap 
+81ed  stap 
+  stap     5709 
+81ed  prlimit 
+81ed  ps 
+  ps      197 
+81ed  nmtui 
+81ed  rename 
+81ed  pwdx 
+  pwdx       24 
+81ed  chvt 
+  chvt       24 
+81ed  renice 
+  renice       24 
+81ed  skill 
+a1ff  open 
+81ed  script 
+81ed  slabtop 
+81ed  scriptreplay 
+  scriptreplay       32 
+81ed  snice 
+81ed  vlock 
+  vlock       33 
+81ed  setarch 
+81ed  tload 
+81ed  svn 
+81ed  setpriv 
+81ed  top 
+a1ff  mailq 
+81ed  setsid 
+81ed  uptime 
+81ed  setterm 
+  setterm       56 
+81ed  vmstat 
+81ed  taskset 
+  taskset       57 
+81ed  w 
+a1ff  rmail 
+89ed  umount 
+81ed  watch 
+  watch       50 
+a1ff  f95 
+81ed  unshare 
+81ed  easy_install 
+81ed  utmpdump 
+  utmpdump       32 
+81ed  gdb 
+81ed  c++ 
+81ed  uuidgen 
+  uuidgen       24 
+81ed  easy_install-2.7 
+81ed  whereis 
+81ed  gcore 
+81ed  g++ 
+a1ff  x86_64 
+a1ff  ld 
+81ed  localectl 
+a1ff  setup-nsssysinit 
+81ed  objdump 
+8849  sudo 
+81ed  setup-nsssysinit.sh 
+a1ff  pstack 
+a1ff  python 
+81ed  gdb-add-index 
+a1ff  python2 
+81ed  gstack 
+81ed  python2.7 
+81ed  openssl 
+81ed  envsubst 
+  envsubst       73 
+81ed  aserver 
+81ed  gettext 
+  gettext       73 
+81ed  urlgrabber 
+81ed  gettext.sh 
+  gettext.sh       11 
+81ed  curl 
+81ed  man 
+  man      202 
+81ed  msgattrib 
+  msgattrib       48 
+81ed  rpm 
+81ed  mandb 
+81ed  msgcat 
+  msgcat       48 
+81ed  rpm2cpio 
+81ed  msgcmp 
+81ed  rpmdb 
+81ed  bison 
+  bison      764 
+81ed  msgcomm 
+81ed  rpmkeys 
+  rpmkeys       25 
+81ed  msgconv 
+a1ff  rpmquery 
+81ed  msgen 
+a1ff  rpmverify 
+81ed  msgexec 
+81ed  secon 
+81ed  flex 
+81ed  msgfilter 
+  msgfilter       48 
+81ed  fipscheck 
+81ed  msgfmt 
+  msgfmt      139 
+81ed  fipshmac 
+81ed  msggrep 
+81ed  ssh-keygen 
+81ed  msghack 
+81ed  scp 
+a1ff  lex 
+81ed  msginit 
+81ed  sftp 
+81ed  ci 
+  ci        3 
+81ed  msgmerge 
+  msgmerge      107 
+a1ff  slogin 
+81ed  msgunfmt 
+  msgunfmt       65 
+81ed  ssh 
+  ssh     1310 
+81ed  co 
+  co        3 
+81ed  msguniq 
+81ed  ssh-add 
+81ed  ngettext 
+81ed  ranlib 
+81ed  ident 
+81ed  recode-sr-latin 
+8449  ssh-agent 
+  ssh-agent      600 
+81ed  xgettext 
+81ed  ssh-copy-id 
+81ed  addr2line 
+81ed  loginctl 
+81ed  ar 
+81ed  machinectl 
+81ed  as 
+81ed  ssh-keyscan 
+81ed  c++filt 
+81ed  systemctl 
+81ed  dwp 
+81ed  bootctl 
+81ed  elfedit 
+  elfedit       66 
+81ed  hostnamectl 
+81ed  gprof 
+81ed  journalctl 
+81ed  ld.bfd 
+81ed  systemd-cat 
+  systemd-cat       66 
+81ed  nm 
+81ed  kernel-install 
+81ed  objcopy 
+81ed  systemd-cgls 
+  systemd-cgls      572 
+81ed  dracut 
+81ed  intltoolize 
+81ed  x86_64-redhat-linux-gcc 
+81ed  plymouth 
+81ed  merge 
+  merge      222 
+81ed  systemd-analyze 
+  systemd-analyze     2758 
+81ed  gpg-agent 
+81ed  rcs 
+81ed  systemd-ask-password 
+  systemd-ask-password       98 
+81ed  gpg-connect-agent 
+81ed  systemd-cgtop 
+  systemd-cgtop      139 
+81ed  gpg-zip 
+81ed  rlog 
+  rlog        3 
+a1ff  systemd-coredumpctl 
+81ed  gpgconf 
+81ed  swig 
+81ed  systemd-delta 
+81ed  gpgparsemail 
+81ed  ocs 
+  ocs       16 
+81ed  systemd-detect-virt 
+81ed  gpgsplit 
+a1ff  byacc 
+81ed  systemd-inhibit 
+  systemd-inhibit      555 
+81ed  watchgnupg 
+  watchgnupg       32 
+81ed  yacc 
+a1ff  systemd-loginctl 
+81ed  lsinitrd 
+81ed  aulast 
+81ed  systemd-machine-id-setup 
+81ed  bond2team 
+81ed  ctags 
+81ed  systemd-notify 
+  systemd-notify       74 
+81ed  teamdctl 
+  teamdctl       59 
+81ed  bc 
+81ed  systemd-nspawn 
+81ed  setfont 
+81ed  systemd-run 
+  systemd-run      669 
+81ed  nm-online 
+81ed  dc 
+81ed  systemd-stdio-bridge 
+81ed  stap-merge 
+  stap-merge       23 
+81ed  trust 
+  trust      351 
+81ed  systemd-tmpfiles 
+81ed  svndumpfilter 
+81ed  aulastlog 
+81ed  systemd-tty-ask-password-agent 
+81ed  unicode_start 
+81ed  timedatectl 
+81ed  unicode_stop 
+81ed  udevadm 
+81ed  stap-report 
+  stap-report       10 
+81ed  tmon 
+  tmon       64 
+81ed  dbus-cleanup-sockets 
+81ed  deallocvt 
+81ed  dbus-daemon 
+  dbus-daemon      863 
+81ed  fgconsole 
+  fgconsole       24 
+81ed  dbus-monitor 
+81ed  getkeycodes 
+81ed  dbus-send 
+81ed  kbdinfo 
+  kbdinfo       24 
+81ed  dbus-uuidgen 
+  dbus-uuidgen       23 
+81ed  stapdyn 
+81ed  xxd 
+  xxd       30 
+81ed  systemd-sysv-convert 
+  systemd-sysv-convert        9 
+81ed  kbdrate 
+  kbdrate       24 
+81ed  tracepath 
+  tracepath       32 
+81ed  loadunimap 
+81ed  tracepath6 
+81ed  mapscrn 
+81ed  pkaction 
+81ed  openvt 
+81ed  pkcheck 
+a1ff  psfaddtable 
+89ed  pkexec 
+a1ff  psfgettable 
+81ed  pkttyagent 
+81ed  mkinitrd 
+81ed  ausyscall 
+  ausyscall       24 
+81ed  pkla-admin-identities 
+  pkla-admin-identities       40 
+a1ff  iptables-xml 
+81ed  auvirt 
+81ed  pkla-check-authorization 
+a1ff  psfstriptable 
+81ed  run-parts 
+81ed  psfxtable 
+89ed  crontab 
+8848  staprun 
+a1ff  rvim 
+81ed  linux-boot-prober 
+81ed  resizecons 
+81ed  os-prober 
+  os-prober       12 
+81ed  stapsh 
+81ed  vim 
+81ed  grub2-editenv 
+81ed  setkeycodes 
+81ed  grub2-file 
+81ed  setleds 
+81ed  grub2-fstest 
+81ed  stap-prep 
+81ed  wget 
+81ed  grub2-glue-efi 
+  grub2-glue-efi      511 
+81ed  gendiff 
+81ed  grub2-kbdcomp 
+81ed  rpmbuild 
+81ed  grub2-menulst2cfg 
+  grub2-menulst2cfg      477 
+81ed  setmetamode 
+  setmetamode       24 
+81ed  grub2-mkfont 
+81ed  rpmspec 
+81ed  grub2-mkimage 
+  grub2-mkimage      752 
+81ed  nmtui-edit 
+81ed  grub2-mklayout 
+  grub2-mklayout      523 
+81ed  nmtui-hostname 
+  nmtui-hostname      507 
+81ed  grub2-mknetdir 
+  grub2-mknetdir      844 
+81ed  ipcalc 
+  ipcalc       32 
+81ed  svnadmin 
+  svnadmin      136 
+81ed  grub2-mkpasswd-pbkdf2 
+81ed  rpmsign 
+  rpmsign       33 
+81ed  grub2-mkrelpath 
+81ed  nmtui-connect 
+81ed  grub2-mkrescue 
+81ed  rsyslog-recover-qi.pl 
+81ed  grub2-mkstandalone 
+  grub2-mkstandalone     1046 
+81ed  kdumpctl 
+81ed  grub2-render-label 
+81ed  dumpkeys 
+81ed  grub2-script-check 
+81ed  kbd_mode 
+81ed  grub2-syslinux2cfg 
+  grub2-syslinux2cfg     1504 
+81ed  setvtrgb 
+  setvtrgb       24 
+81ed  usx2yloader 
+81ed  usleep 
+  usleep       23 
+81ed  svnlook 
+81ed  git-receive-pack 
+81ed  git-upload-archive 
+81ed  showconsolefont 
+81ed  git-shell 
+81ed  loadkeys 
+  loadkeys      222 
+81ed  git-upload-pack 
+81ed  showkey 
+81ed  autopoint 
+  autopoint       49 
+81ed  firewall-cmd 
+81ed  gettextize 
+81ed  hdsploader 
+  hdsploader       24 
+81ed  mixartloader 
+81ed  vxloader 
+81ed  firewall-offline-cmd 
+  firewall-offline-cmd      103 
+81ed  intltool-extract 
+81ed  intltool-merge 
+81ed  intltool-prepare 
+  intltool-prepare       18 
+81ed  intltool-update 
+81ed  svnrdump 
+81ed  svnserve 
+  svnserve      169 
+81ed  svnsync 
+81ed  svnversion 
+81ed  sim_client 
+a1ff  mailq.postfix 
+81ed  uuclient 
+  uuclient       31 
+a1ff  newaliases.postfix 
+81ed  ncurses5-config 
+81ed  rmail.postfix 
+  rmail.postfix        2 
+a1ff  newaliases 
+81ed  gfortran 
+  gfortran     1503 
+81ed  libtool 
+  libtool      630 
+81ed  libtoolize 
+81ed  pcre-config 
+81ed  gss-client 
+81ed  krb5-config 
+  krb5-config       15 
+81ed  ncursesw5-config 
+  ncursesw5-config       13 
+81ed  x86_64-redhat-linux-c++ 
+81ed  x86_64-redhat-linux-g++ 
+81ed  chattr 
+  chattr       24 
+81ed  lsattr 
+89ed  passwd 
+  passwd       56 
+a1ff  sudoedit 
+8049  sudoreplay 
+  sudoreplay      130 
+a1ff  apropos 
+81ed  catman 
+  catman       75 
+81ed  lexgrog 
+81ed  manpath 
+81ed  whatis 
+a1ff  vimdiff 
+81ed  centrino-decode 
+81ed  cpupower 
+81ed  vimtutor 
+  vimtutor        6 
+81ed  powernow-k8-decode 
+  powernow-k8-decode       14 
+81ed  turbostat 
+81ed  randread 
+81ed  x86_energy_perf_policy 
+a1ff  combinediff 
+81ed  dehtmldiff 
+81ed  editdiff 
+81ed  espdiff 
+81ed  filterdiff 
+81ed  fixcvsdiff 
+a1ff  flipdiff 
+a1ff  grepdiff 
+81ed  interdiff 
+  interdiff       99 
+a1ff  lsdiff 
+81ed  recountdiff 
+81ed  rediff 
+  rediff       74 
+81ed  splitdiff 
+  splitdiff        8 
+81ed  unwrapdiff 
+a1ff  flex++ 
+81ed  rcsclean 
+81ed  rcsdiff 
+81ed  rcsfreeze 
+81ed  rcsmerge 
+81ed  indent 
+  indent      149 
+81ed  ccache-swig 
+  ccache-swig       98 
+81ed  cscope 
+81ed  strace 
+81ed  cscope-indexer 
+  cscope-indexer        9 
+81ed  doxygen 
+  doxygen    17356 
+81ed  diffstat 
+  diffstat       73 
+81ed  acpi_listen 
+81ed  ca-legacy 
+81ed  mokutil 
+81ed  gapplication 
+  gapplication       40 
+81ed  lslogins 
+  lslogins      174 
+81ed  busctl 
+  busctl      733 
+81ed  coredumpctl 
+  coredumpctl      253 
+81ed  strace-log-merge 
+  strace-log-merge        3 
+81ed  systemd-escape 
+81ed  systemd-firstboot 
+  systemd-firstboot      164 
+81ed  systemd-hwdb 
+  systemd-hwdb      132 
+81ed  systemd-path 
+81ed  lsscsi 
+81ed  compile_et 
+81ed  sclient 
+416d  sbin 
+416d  lib 
+
+---> Processing directory /usr/lib 
+416d  . 
+41ed  .. 
+41ed  debug 
+41ed  systemd 
+416d  games 
+416d  sse2 
+41ed  kbd 
+41ed  locale 
+
+---> Processing directory /usr/lib/locale 
+41ed  . 
+416d  .. 
+81a4  locale-archive.tmpl 
+  locale-archive.tmpl        1 
+81a4  locale-archive 
+41ed  tmpfiles.d 
+a1ff  cpp 
+41ed  gcc 
+41ed  udev 
+41ed  python2.7 
+41ed  modprobe.d 
+
+---> Processing directory /usr/lib/modprobe.d 
+41ed  . 
+416d  .. 
+81a4  dist-alsa.conf 
+81a4  dist-blacklist.conf 
+41ed  rpm 
+41ed  kernel 
+41ed  binfmt.d 
+41ed  modules-load.d 
+41ed  sysctl.d 
+41ed  polkit-1 
+41ed  grub 
+
+---> Processing directory /usr/lib/grub 
+41ed  . 
+416d  .. 
+41ed  i386-pc 
+41ed  firmware 
+
+---> Processing directory /usr/lib/firmware 
+41ed  . 
+416d  .. 
+81a4  myri10ge_ethp_z8e.dat 
+  myri10ge_ethp_z8e.dat      761 
+81a4  aica_firmware.bin 
+41ed  asihpi 
+81a4  rp2.fw 
+81a4  ctefx.bin 
+81a4  rt2561.bin 
+  rt2561.bin       17 
+81a4  ctspeq.bin 
+81a4  htc_9271.fw 
+  htc_9271.fw      101 
+41ed  slicoss 
+81a4  digiface_firmware.bin 
+  digiface_firmware.bin      192 
+81a4  f2255usb.bin 
+41ed  sun 
+81a4  digiface_firmware_rev11.bin 
+41ed  ea 
+41ed  emu 
+41ed  ess 
+41ed  korg 
+41ed  mixart 
+41ed  go7007 
+41ed  sxg 
+81a4  multiface_firmware.bin 
+81a4  htc_7010.fw 
+41ed  tehuti 
+81a4  multiface_firmware_rev11.bin 
+  multiface_firmware_rev11.bin      192 
+41ed  pcxhr 
+81a4  myri10ge_rss_eth_big_z8e.dat 
+81a4  rpm_firmware.bin 
+41ed  sb16 
+
+---> Processing directory /usr/lib/firmware/sb16 
+41ed  . 
+41ed  .. 
+81a4  alaw_main.csp 
+81a4  ima_adpcm_capture.csp 
+81a4  ima_adpcm_init.csp 
+  ima_adpcm_init.csp        4 
+81a4  ima_adpcm_playback.csp 
+  ima_adpcm_playback.csp        5 
+81a4  mulaw_main.csp 
+41ed  vx 
+41ed  yamaha 
+41ed  3com 
+
+---> Processing directory /usr/lib/firmware/3com 
+41ed  . 
+41ed  .. 
+81a4  3C359.bin 
+  3C359.bin       50 
+81a4  typhoon.bin 
+81a4  rt2561s.bin 
+  rt2561s.bin       17 
+81a4  GPL-3 
+  GPL-3       70 
+81a4  rt2661.bin 
+81a4  Makefile 
+81a4  rt2860.bin 
+  rt2860.bin       17 
+81a4  README 
+  README        5 
+41ed  RTL8192E 
+81a4  mt7650.bin 
+81a4  ti_3410.fw 
+81a4  TDA7706_OM_v2.5.1_boot.txt 
+81a4  mts_cdma.fw 
+  mts_cdma.fw       29 
+81a4  ti_5052.fw 
+81a4  TDA7706_OM_v3.0.2_boot.txt 
+41ed  acenic 
+41ed  adaptec 
+41ed  advansys 
+81a4  myri10ge_rss_eth_z8e.dat 
+81a4  agere_ap_fw.bin 
+81a4  myri10ge_rss_ethp_z8e.dat 
+81a4  agere_sta_fw.bin 
+41ed  ar3k 
+81a4  rt2870.bin 
+81a4  ar5523.bin 
+a1ff  rt3070.bin 
+81a4  ar7010.fw 
+41ed  myricom 
+41ed  vicam 
+
+---> Processing directory /usr/lib/firmware/vicam 
+41ed  . 
+41ed  .. 
+81a4  firmware.fw 
+81a4  ar7010_1_1.fw 
+81a4  rt3071.bin 
+  rt3071.bin        9 
+81a4  ar9170-1.fw 
+a1ff  rt3090.bin 
+81a4  ar9170-2.fw 
+  ar9170-2.fw        8 
+81a4  rt3290.bin 
+  rt3290.bin        9 
+81a4  ar9271.fw 
+81a4  rt73.bin 
+81a4  ath3k-1.fw 
+  ath3k-1.fw      484 
+41ed  rtlwifi 
+81a4  atmsar11.fw 
+41ed  av7110 
+41ed  bnx2 
+41ed  bnx2x 
+41ed  ositech 
+81a4  bnx2x-e1-4.8.53.0.fw 
+81a4  ql2100_fw.bin 
+41ed  yam 
+81a4  bnx2x-e1-5.2.13.0.fw 
+81a4  phanfw.bin 
+41ed  atmel 
+81a4  bnx2x-e1-5.2.7.0.fw 
+  bnx2x-e1-5.2.7.0.fw      319 
+81a4  mts_edge.fw 
+41ed  tigon 
+81a4  bnx2x-e1h-4.8.53.0.fw 
+81a4  mts_gsm.fw 
+81a4  tr_smctr.bin 
+81a4  bnx2x-e1h-5.2.13.0.fw 
+  bnx2x-e1h-5.2.13.0.fw      403 
+81a4  ql2200_fw.bin 
+  ql2200_fw.bin      167 
+41ed  atusb 
+
+---> Processing directory /usr/lib/firmware/atusb 
+41ed  . 
+41ed  .. 
+81a4  ChangeLog 
+  ChangeLog        3 
+81a4  atusb-0.2.dfu 
+81a4  bnx2x-e1h-5.2.7.0.fw 
+41ed  brcm 
+81a4  ql2300_fw.bin 
+41ed  i915 
+81a4  carl9170-1.fw 
+81a4  ql2322_fw.bin 
+41ed  qca 
+81a4  cbfw-3.2.1.1.bin 
+81a4  ql2400_fw.bin 
+81a4  cbfw-3.2.3.0.bin 
+  cbfw-3.2.3.0.bin      810 
+41ed  cis 
+41ed  cs46xx 
+81a4  configure 
+41ed  cpia2 
+81a4  ql2500_fw.bin 
+81a4  ct2fw-3.2.1.1.bin 
+  ct2fw-3.2.1.1.bin     1139 
+41ed  r128 
+41ed  ttusb-budget 
+81a4  ct2fw-3.2.3.0.bin 
+  ct2fw-3.2.3.0.bin     1142 
+41ed  qlogic 
+81a4  ctfw-3.2.1.1.bin 
+41ed  radeon 
+81a4  ctfw-3.2.3.0.bin 
+41ed  cxgb3 
+41ed  cxgb4 
+41ed  dabusb 
+41ed  dsp56k 
+81a4  mts_mt9234mu.fw 
+  mts_mt9234mu.fw       28 
+81a4  dvb-fe-xc5000-1.6.114.fw 
+  dvb-fe-xc5000-1.6.114.fw       26 
+81a4  mts_mt9234zba.fw 
+  mts_mt9234zba.fw       28 
+81a4  dvb-usb-dib0700-1.20.fw 
+  dvb-usb-dib0700-1.20.fw       67 
+81a4  myri10ge_eth_z8e.dat 
+81a4  dvb-usb-terratec-h5-drxk.fw 
+41ed  e100 
+41ed  edgeport 
+41ed  emi26 
+
+---> Processing directory /usr/lib/firmware/emi26 
+41ed  . 
+41ed  .. 
+81a4  bitstream.fw 
+  bitstream.fw      206 
+81a4  firmware.fw 
+81a4  loader.fw 
+41ed  emi62 
+41ed  ene-ub6250 
+81a4  myri10ge_eth_big_z8e.dat 
+81a4  myri10ge_rss_ethp_big_z8e.dat 
+41ed  intel 
+41ed  rtl_nic 
+81a4  intelliport2.bin 
+41ed  isci 
+41ed  kaweth 
+41ed  keyspan 
+41ed  keyspan_pda 
+a1ff  s2250.fw 
+81a4  lbtf_usb.bin 
+a1ff  s2250_loader.fw 
+81a4  lgs8g75.fw 
+41ed  matrox 
+41ed  moxa 
+41ed  mrvl 
+81a4  myri10ge_ethp_big_z8e.dat 
+81a4  as102_data1_st.hex 
+81a4  sdd_sagrad_1091_1098.bin 
+  sdd_sagrad_1091_1098.bin        3 
+81a4  dvb-usb-it9135-02.fw 
+81a4  tlg2300_firmware.bin 
+41ed  ueagle-atm 
+41ed  updates 
+41ed  usbdux 
+81a4  dvb_nova_12mhz.inp 
+81a4  usbdux_firmware.bin 
+81a4  as102_data2_st.hex 
+  as102_data2_st.hex      161 
+81a4  usbduxfast_firmware.bin 
+81a4  cmmb_vega_12mhz.inp 
+81a4  usbduxsigma_firmware.bin 
+41ed  ath9k_htc 
+81a4  v4l-cx231xx-avcore-01.fw 
+  v4l-cx231xx-avcore-01.fw       33 
+81a4  cbfw-3.2.5.1.bin 
+81a4  v4l-cx23885-avcore-01.fw 
+  v4l-cx23885-avcore-01.fw       33 
+81a4  vntwusb.fw 
+81a4  whiteheat.fw 
+  whiteheat.fw       48 
+81a4  dvb_nova_12mhz_b0.inp 
+  dvb_nova_12mhz_b0.inp      200 
+81a4  whiteheat_loader.fw 
+81a4  wsm_22.bin 
+  wsm_22.bin      193 
+41ed  intel-ucode 
+81a4  hfi1_dc8051.fw 
+81a4  aic94xx-seq.fw 
+81a4  hfi1_fabric.fw 
+  hfi1_fabric.fw       34 
+81a4  iwlwifi-105-6.ucode 
+  iwlwifi-105-6.ucode     1349 
+81a4  hfi1_pcie.fw 
+81a4  iwlwifi-1000-3.ucode 
+81a4  hfi1_sbus.fw 
+81a4  iwlwifi-1000-5.ucode 
+81a4  isdbt_nova_12mhz.inp 
+  isdbt_nova_12mhz.inp      150 
+81a4  iwlwifi-2030-6.ucode 
+81a4  isdbt_nova_12mhz_b0.inp 
+81a4  iwlwifi-6050-4.ucode 
+  iwlwifi-6050-4.ucode      907 
+81a4  isdbt_rio.inp 
+81a4  iwlwifi-6050-5.ucode 
+  iwlwifi-6050-5.ucode      919 
+41ed  rtl_bt 
+81a4  iwlwifi-135-6.ucode 
+  iwlwifi-135-6.ucode     1371 
+41ed  nvidia 
+81a4  iwlwifi-4965-2.ucode 
+81a4  qat_mmp.bin 
+  qat_mmp.bin      213 
+81a4  iwlwifi-7260-7.ucode 
+  iwlwifi-7260-7.ucode     1336 
+81a4  r8a779x_usb3_v1.dlmem 
+81a4  iwlwifi-7260-8.ucode 
+81a4  sms1xxx-hcw-55xxx-isdbt-02.fw 
+81a4  iwlwifi-3160-7.ucode 
+  iwlwifi-3160-7.ucode     1311 
+81a4  sms1xxx-hcw-55xxx-dvbt-02.fw 
+81a4  iwlwifi-3160-8.ucode 
+81a4  iwlwifi-3160-9.ucode 
+81ed  ivtv-firmware-license-end-user.txt 
+41ed  ath10k 
+
+---> Processing directory /usr/lib/firmware/ath10k 
+41ed  . 
+41ed  .. 
+41ed  QCA988X 
+81ed  ivtv-firmware-license-oemihvisv.txt 
+81a4  sms1xxx-nova-a-dvbt-01.fw 
+81ed  v4l-cx2341x-dec.fw 
+  v4l-cx2341x-dec.fw      513 
+81a4  sms1xxx-nova-b-dvbt-01.fw 
+81ed  v4l-cx2341x-enc.fw 
+81a4  sms1xxx-stellar-dvbt-01.fw 
+81ed  v4l-cx2341x-init.mpg 
+81a4  iwlwifi-3160-12.ucode 
+81ed  v4l-cx25840.fw 
+81a4  cmmb_venice_12mhz.inp 
+81ed  v4l-pvrusb2-24xxx-01.fw 
+  v4l-pvrusb2-24xxx-01.fw       17 
+81a4  ctfw-3.2.5.1.bin 
+  ctfw-3.2.5.1.bin     1055 
+81ed  v4l-pvrusb2-29xxx-01.fw 
+81a4  tdmb_nova_12mhz.inp 
+81a4  iwlwifi-5000-1.ucode 
+81a4  iwlwifi-3160-10.ucode 
+81a4  iwlwifi-5000-2.ucode 
+  iwlwifi-5000-2.ucode      691 
+81a4  iwlwifi-3160-13.ucode 
+  iwlwifi-3160-13.ucode     1346 
+81a4  iwlwifi-5000-5.ucode 
+81a4  iwlwifi-7260-12.ucode 
+  iwlwifi-7260-12.ucode     1529 
+81a4  iwlwifi-100-5.ucode 
+81a4  iwlwifi-7260-10.ucode 
+81a4  iwlwifi-6000-4.ucode 
+81a4  ct2fw-3.2.5.1.bin 
+  ct2fw-3.2.5.1.bin     1143 
+81a4  iwlwifi-6000g2a-5.ucode 
+81a4  dvb-fe-xc4000-1.4.1.fw 
+81a4  iwlwifi-6000g2a-6.ucode 
+81a4  iwlwifi-7260-13.ucode 
+  iwlwifi-7260-13.ucode     1538 
+81a4  iwlwifi-3945-2.ucode 
+  iwlwifi-3945-2.ucode      295 
+41ed  liquidio 
+81a4  iwlwifi-6000g2b-5.ucode 
+81a4  dvb-fe-xc5000c-4.1.30.7.fw 
+81a4  iwlwifi-6000g2b-6.ucode 
+  iwlwifi-6000g2b-6.ucode     1329 
+81a4  iwlwifi-2000-6.ucode 
+81a4  iwlwifi-5150-2.ucode 
+  iwlwifi-5150-2.ucode      660 
+81a4  qat_895xcc.bin 
+81a4  rsi_91x.fw 
+81a4  s5p-mfc-v6-v2.fw 
+81a4  s5p-mfc-v6.fw 
+81a4  s5p-mfc-v7.fw 
+81a4  s5p-mfc-v8.fw 
+  s5p-mfc-v8.fw      706 
+81a4  s5p-mfc.fw 
+81a4  iwlwifi-7260-9.ucode 
+41ed  amdgpu 
+81a4  dvb-usb-it9135-01.fw 
+41ed  dracut 
+
+---> Processing directory /usr/lib/dracut 
+41ed  . 
+416d  .. 
+a1ff  dracut-functions 
+81ed  dracut-functions.sh 
+  dracut-functions.sh      108 
+81ed  dracut-initramfs-restore 
+81ed  dracut-install 
+81ed  dracut-logger.sh 
+81ed  dracut-version.sh 
+  dracut-version.sh        2 
+41ed  dracut.conf.d 
+41ed  modules.d 
+81ed  skipcpio 
+81ed  dracut-init.sh 
+41ed  yum-plugins 
+41ed  modules 
+
+---> Processing directory /usr/lib/modules 
+41ed  . 
+416d  .. 
+41ed  3.10.0-123.el7.x86_64 
+41ed  3.10.0-123.13.2.el7.x86_64 
+41ed  3.10.0-327.4.4.el7.x86_64 
+41ed  4.3.3 
+41ed  kdump 
+41e8  firewalld 
+a1ff  sendmail.postfix 
+a1ff  sendmail 
+41ed  tuned 
+
+---> Processing directory /usr/lib/tuned 
+41ed  . 
+416d  .. 
+41ed  balanced 
+41ed  desktop 
+81a4  functions 
+41ed  latency-performance 
+41ed  network-latency 
+41ed  network-throughput 
+
+---> Processing directory /usr/lib/tuned/network-throughput 
+41ed  . 
+41ed  .. 
+81a4  tuned.conf 
+  tuned.conf        2 
+41ed  powersave 
+81a4  recommend.conf 
+41ed  throughput-performance 
+41ed  virtual-guest 
+41ed  virtual-host 
+416d  lib64 
+41ed  share 
+41ed  etc 
+
+---> Processing directory /usr/etc 
+41ed  . 
+41ed  .. 
+41ed  games 
+
+---> Processing directory /usr/games 
+41ed  . 
+41ed  .. 
+41ed  include 
+
+---> Processing directory /usr/include 
+41ed  . 
+41ed  .. 
+41ed  asm 
+
+---> Processing directory /usr/include/asm 
+41ed  . 
+41ed  .. 
+81a4  a.out.h 
+  a.out.h        3 
+81a4  auxvec.h 
+81a4  kvm_perf.h 
+81a4  bitsperlong.h 
+  bitsperlong.h        2 
+81a4  boot.h 
+81a4  bootparam.h 
+  bootparam.h       10 
+81a4  byteorder.h 
+81a4  debugreg.h 
+81a4  e820.h 
+81a4  errno.h 
+81a4  fcntl.h 
+81a4  hw_breakpoint.h 
+  hw_breakpoint.h        2 
+81a4  hyperv.h 
+81a4  ioctl.h 
+  ioctl.h        2 
+81a4  ioctls.h 
+  ioctls.h        2 
+81a4  ipcbuf.h 
+  ipcbuf.h        2 
+81a4  ist.h 
+81a4  kvm.h 
+81a4  kvm_para.h 
+  kvm_para.h        7 
+81a4  ldt.h 
+  ldt.h        3 
+81a4  mce.h 
+  mce.h        3 
+81a4  mman.h 
+81a4  msgbuf.h 
+81a4  msr-index.h 
+  msr-index.h       44 
+81a4  msr.h 
+  msr.h        2 
+81a4  mtrr.h 
+81a4  param.h 
+81a4  perf_regs.h 
+  perf_regs.h        3 
+81a4  poll.h 
+81a4  posix_types.h 
+81a4  posix_types_32.h 
+81a4  posix_types_64.h 
+  posix_types_64.h        3 
+81a4  posix_types_x32.h 
+81a4  prctl.h 
+81a4  processor-flags.h 
+  processor-flags.h       13 
+81a4  ptrace-abi.h 
+81a4  ptrace.h 
+81a4  resource.h 
+81a4  sembuf.h 
+  sembuf.h        3 
+81a4  setup.h 
+81a4  shmbuf.h 
+  shmbuf.h        2 
+81a4  sigcontext.h 
+  sigcontext.h       12 
+81a4  sigcontext32.h 
+  sigcontext32.h        5 
+81a4  siginfo.h 
+81a4  signal.h 
+  signal.h        7 
+81a4  socket.h 
+81a4  sockios.h 
+81a4  stat.h 
+81a4  statfs.h 
+81a4  svm.h 
+81a4  swab.h 
+81a4  termbits.h 
+81a4  termios.h 
+81a4  types.h 
+81a4  ucontext.h 
+  ucontext.h        2 
+81a4  unistd.h 
+81a4  unistd_32.h 
+81a4  unistd_64.h 
+  unistd_64.h       18 
+81a4  unistd_x32.h 
+81a4  vm86.h 
+81a4  vmx.h 
+81a4  vsyscall.h 
+  vsyscall.h        2 
+41ed  asm-generic 
+41ed  netatalk 
+81a4  cpufreq.h 
+41ed  drm 
+41ed  linux 
+
+---> Processing directory /usr/include/linux 
+41ed  . 
+41ed  .. 
+81a4  dlm_netlink.h 
+81a4  a.out.h 
+81a4  dlm_plock.h 
+  dlm_plock.h        3 
+81a4  acct.h 
+81a4  errqueue.h 
+81a4  adb.h 
+  adb.h        4 
+81a4  ethtool.h 
+81a4  adfs_fs.h 
+81a4  cycx_cfm.h 
+  cycx_cfm.h        7 
+81a4  in.h 
+  in.h       18 
+81a4  affs_hardblocks.h 
+81a4  eventpoll.h 
+  eventpoll.h        5 
+81a4  agpgart.h 
+  agpgart.h        9 
+81a4  fadvise.h 
+81a4  aio_abi.h 
+  aio_abi.h        8 
+81a4  falloc.h 
+  falloc.h        5 
+81a4  apm_bios.h 
+81a4  fanotify.h 
+  fanotify.h        8 
+81a4  arcfb.h 
+81a4  fb.h 
+81a4  in6.h 
+81a4  atalk.h 
+81a4  fcntl.h 
+  fcntl.h        5 
+81a4  atm.h 
+81a4  fd.h 
+81a4  ip.h 
+  ip.h        8 
+81a4  atm_eni.h 
+  atm_eni.h        3 
+81a4  fdreg.h 
+81a4  atm_he.h 
+81a4  dcbnl.h 
+81a4  ipc.h 
+81a4  atm_idt77105.h 
+  atm_idt77105.h        3 
+81a4  elfcore.h 
+81a4  ipx.h 
+81a4  atm_nicstar.h 
+81a4  fib_rules.h 
+81a4  atm_tcp.h 
+  atm_tcp.h        5 
+81a4  fiemap.h 
+81a4  atm_zatm.h 
+81a4  filter.h 
+81a4  atmapi.h 
+  atmapi.h        3 
+81a4  firewire-cdev.h 
+81a4  atmarp.h 
+81a4  firewire-constants.h 
+81a4  atmbr2684.h 
+81a4  flat.h 
+81a4  atmclip.h 
+81a4  fs.h 
+41ed  isdn 
+81a4  atmdev.h 
+81a4  fsl_hypervisor.h 
+81a4  atmioc.h 
+81a4  fuse.h 
+  fuse.h       33 
+81a4  atmlec.h 
+81a4  futex.h 
+  futex.h       11 
+81a4  atmmpc.h 
+81a4  gameport.h 
+81a4  atmppp.h 
+  atmppp.h        3 
+81a4  gen_stats.h 
+  gen_stats.h        4 
+81a4  atmsap.h 
+  atmsap.h       11 
+81a4  genetlink.h 
+81a4  atmsvc.h 
+  atmsvc.h        5 
+81a4  gfs2_ondisk.h 
+81a4  audit.h 
+  audit.h       36 
+81a4  gigaset_dev.h 
+  gigaset_dev.h        4 
+81a4  auto_fs.h 
+81a4  hdlc.h 
+81a4  auto_fs4.h 
+  auto_fs4.h       10 
+81a4  hdlcdrv.h 
+81a4  auxvec.h 
+81a4  hdreg.h 
+81a4  ax25.h 
+81a4  hid.h 
+81a4  kd.h 
+81a4  b1lli.h 
+81a4  hiddev.h 
+81a4  baycom.h 
+81a4  hidraw.h 
+81a4  bfs_fs.h 
+  bfs_fs.h        5 
+81a4  hpet.h 
+81a4  binfmts.h 
+  binfmts.h        3 
+81a4  hw_breakpoint.h 
+81a4  blkpg.h 
+81a4  dccp.h 
+81a4  kvm.h 
+81a4  blktrace_api.h 
+  blktrace_api.h       10 
+81a4  i2c-dev.h 
+81a4  bpqether.h 
+81a4  hysdn_if.h 
+  hysdn_if.h        4 
+81a4  bsg.h 
+  bsg.h        6 
+81a4  i2c.h 
+  i2c.h       15 
+81a4  llc.h 
+81a4  btrfs.h 
+  btrfs.h       41 
+41ed  byteorder 
+41ed  caif 
+41ed  can 
+81a4  i2o-dev.h 
+  i2o-dev.h       24 
+81a4  can.h 
+81a4  i8k.h 
+81a4  lp.h 
+81a4  capability.h 
+  capability.h       23 
+81a4  icmp.h 
+81a4  capi.h 
+  capi.h        7 
+81a4  icmpv6.h 
+81a4  cciss_defs.h 
+81a4  dlm.h 
+  dlm.h        6 
+81a4  if_packet.h 
+  if_packet.h       15 
+81a4  cciss_ioctl.h 
+81a4  if.h 
+81a4  mei.h 
+81a4  cdrom.h 
+81a4  dlm_device.h 
+81a4  mii.h 
+81a4  cgroupstats.h 
+81a4  if_addr.h 
+  if_addr.h        5 
+81a4  chio.h 
+  chio.h       12 
+81a4  if_arcnet.h 
+81a4  cm4000_cs.h 
+81a4  if_addrlabel.h 
+  if_addrlabel.h        3 
+81a4  cn_proc.h 
+  cn_proc.h        8 
+81a4  if_alg.h 
+  if_alg.h        3 
+81a4  coda.h 
+  coda.h       36 
+81a4  if_arp.h 
+  if_arp.h       14 
+81a4  coda_psdev.h 
+  coda_psdev.h        3 
+81a4  if_bonding.h 
+81a4  coff.h 
+  coff.h       26 
+81a4  if_bridge.h 
+81a4  connector.h 
+81a4  if_ether.h 
+81a4  const.h 
+  const.h        3 
+81a4  if_cablemodem.h 
+  if_cablemodem.h        3 
+81a4  cramfs_fs.h 
+  cramfs_fs.h        7 
+81a4  if_eql.h 
+81a4  cuda.h 
+  cuda.h        3 
+81a4  if_fc.h 
+81a4  cyclades.h 
+81a4  dlmconstants.h 
+  dlmconstants.h       11 
+81a4  if_fddi.h 
+81a4  dm-ioctl.h 
+81a4  errno.h 
+41ed  mmc 
+81a4  dm-log-userspace.h 
+81a4  if_phonet.h 
+81a4  dn.h 
+81a4  if_frad.h 
+  if_frad.h        7 
+81a4  dqblk_xfs.h 
+41ed  dvb 
+
+---> Processing directory /usr/include/linux/dvb 
+41ed  . 
+41ed  .. 
+81a4  audio.h 
+  audio.h       11 
+81a4  ca.h 
+81a4  dmx.h 
+  dmx.h        9 
+81a4  frontend.h 
+  frontend.h       32 
+81a4  net.h 
+81a4  osd.h 
+  osd.h       13 
+81a4  version.h 
+  version.h        3 
+81a4  video.h 
+81a4  if_hippi.h 
+81a4  edd.h 
+81a4  if_ltalk.h 
+81a4  efs_fs_sb.h 
+81a4  if_infiniband.h 
+81a4  elf-em.h 
+81a4  if_link.h 
+81a4  elf-fdpic.h 
+81a4  if_pppol2tp.h 
+  if_pppol2tp.h        8 
+81a4  elf.h 
+41ed  hdlc 
+
+---> Processing directory /usr/include/linux/hdlc 
+41ed  . 
+41ed  .. 
+81a4  ioctl.h 
+41ed  hsi 
+81a4  if_plip.h 
+81a4  if_ppp.h 
+81a4  netfilter_bridge.h 
+81a4  if_pppox.h 
+  if_pppox.h       11 
+81a4  netfilter_decnet.h 
+81a4  if_slip.h 
+  if_slip.h        3 
+41ed  netfilter_ipv4 
+
+---> Processing directory /usr/include/linux/netfilter_ipv4 
+41ed  . 
+41ed  .. 
+81a4  ip_tables.h 
+81a4  ipt_CLUSTERIP.h 
+81a4  ipt_ECN.h 
+  ipt_ECN.h        3 
+81a4  ipt_LOG.h 
+81a4  ipt_REJECT.h 
+  ipt_REJECT.h        2 
+81a4  ipt_TTL.h 
+  ipt_TTL.h        2 
+81a4  ipt_ULOG.h 
+81a4  ipt_ah.h 
+81a4  ipt_ecn.h 
+  ipt_ecn.h        2 
+81a4  ipt_ttl.h 
+  ipt_ttl.h        2 
+81a4  if_team.h 
+81a4  netfilter_ipv4.h 
+81a4  if_tun.h 
+41ed  netfilter_ipv6 
+
+---> Processing directory /usr/include/linux/netfilter_ipv6 
+41ed  . 
+41ed  .. 
+81a4  ip6_tables.h 
+  ip6_tables.h       17 
+81a4  ip6t_HL.h 
+81a4  ip6t_LOG.h 
+81a4  ip6t_NPT.h 
+81a4  ip6t_REJECT.h 
+81a4  ip6t_ah.h 
+81a4  ip6t_frag.h 
+  ip6t_frag.h        3 
+81a4  ip6t_hl.h 
+81a4  ip6t_ipv6header.h 
+81a4  ip6t_mh.h 
+81a4  ip6t_opts.h 
+81a4  ip6t_rt.h 
+81a4  if_tunnel.h 
+81a4  netfilter_ipv6.h 
+81a4  if_vlan.h 
+81a4  nfc.h 
+81a4  rtc.h 
+81a4  if_x25.h 
+  if_x25.h        3 
+81a4  netlink.h 
+  netlink.h       13 
+81a4  igmp.h 
+81a4  netlink_diag.h 
+81a4  in_route.h 
+81a4  netrom.h 
+  netrom.h        3 
+81a4  inet_diag.h 
+81a4  nfs.h 
+  nfs.h       10 
+81a4  scc.h 
+81a4  inotify.h 
+81a4  nfs2.h 
+81a4  input.h 
+  input.h       65 
+81a4  nfs3.h 
+81a4  ioctl.h 
+81a4  nfs4.h 
+81a4  ip6_tunnel.h 
+81a4  nfs4_mount.h 
+81a4  ip_vs.h 
+  ip_vs.h       26 
+81a4  nfs_fs.h 
+81a4  ipmi.h 
+41ed  netfilter_arp 
+81a4  sem.h 
+81a4  ipmi_msgdefs.h 
+81a4  nfs_idmap.h 
+  nfs_idmap.h        6 
+81a4  ipsec.h 
+  ipsec.h        3 
+81a4  nfs_mount.h 
+81a4  ipv6.h 
+81a4  nfsacl.h 
+81a4  ipv6_route.h 
+  ipv6_route.h        5 
+81a4  nubus.h 
+81a4  irda.h 
+41ed  nfsd 
+81a4  shm.h 
+81a4  irqnr.h 
+81a4  nl80211.h 
+81a4  isdn.h 
+81a4  netdevice.h 
+81a4  som.h 
+81a4  isdn_divertif.h 
+81a4  nvme.h 
+81a4  isdn_ppp.h 
+81a4  nvram.h 
+81a4  isdnif.h 
+81a4  omap3isp.h 
+81a4  iso_fs.h 
+81a4  omapfb.h 
+  omapfb.h       13 
+81a4  ivtv.h 
+  ivtv.h        7 
+81a4  oom.h 
+41ed  spi 
+
+---> Processing directory /usr/include/linux/spi 
+41ed  . 
+41ed  .. 
+81a4  spidev.h 
+  spidev.h       11 
+81a4  ivtvfb.h 
+81a4  packet_diag.h 
+81a4  ixjuser.h 
+81a4  openvswitch.h 
+81a4  jffs2.h 
+81a4  parport.h 
+81a4  joystick.h 
+  joystick.h        8 
+81a4  param.h 
+81a4  kdev_t.h 
+41ed  netfilter 
+81a4  tcp.h 
+81a4  kernel-page-flags.h 
+81a4  patchkey.h 
+81a4  kernel.h 
+  kernel.h        2 
+81a4  pci.h 
+  pci.h        4 
+81a4  tty.h 
+81a4  kernelcapi.h 
+  kernelcapi.h        3 
+81a4  pci_regs.h 
+  pci_regs.h       93 
+81a4  kexec.h 
+  kexec.h        5 
+81a4  perf_event.h 
+  perf_event.h       49 
+81a4  keyboard.h 
+81a4  pg.h 
+81a4  udp.h 
+81a4  keyctl.h 
+  keyctl.h        7 
+81a4  personality.h 
+81a4  kvm_para.h 
+  kvm_para.h        3 
+81a4  pfkeyv2.h 
+  pfkeyv2.h       21 
+81a4  l2tp.h 
+81a4  phantom.h 
+81a4  limits.h 
+  limits.h        3 
+81a4  phonet.h 
+81a4  loop.h 
+81a4  pkt_cls.h 
+81a4  magic.h 
+81a4  pkt_sched.h 
+  pkt_sched.h       37 
+81a4  major.h 
+  major.h       10 
+81a4  netfilter.h 
+81a4  uio.h 
+  uio.h        3 
+81a4  map_to_7segment.h 
+81a4  pktcdvd.h 
+81a4  matroxfb.h 
+81a4  pmu.h 
+81a4  un.h 
+81a4  mdio.h 
+81a4  poll.h 
+81a4  media.h 
+81a4  ppp-comp.h 
+  ppp-comp.h        6 
+81a4  mempolicy.h 
+81a4  posix_types.h 
+  posix_types.h        4 
+81a4  meye.h 
+  meye.h        6 
+81a4  ppdev.h 
+81a4  minix_fs.h 
+81a4  ppp-ioctl.h 
+81a4  mman.h 
+81a4  ppp_defs.h 
+81a4  mmtimer.h 
+  mmtimer.h        6 
+81a4  pps.h 
+41ed  usb 
+81a4  mqueue.h 
+  mqueue.h        6 
+81a4  prctl.h 
+81a4  mroute.h 
+81a4  ptp_clock.h 
+81a4  mroute6.h 
+81a4  ptrace.h 
+81a4  msdos_fs.h 
+  msdos_fs.h       14 
+81a4  qnx4_fs.h 
+81a4  msg.h 
+81a4  qnxtypes.h 
+  qnxtypes.h        3 
+81a4  mtio.h 
+  mtio.h       17 
+81a4  quota.h 
+  quota.h       12 
+81a4  n_r3964.h 
+81a4  radeonfb.h 
+81a4  nbd.h 
+81a4  raw.h 
+  raw.h        2 
+81a4  vt.h 
+81a4  ncp.h 
+  ncp.h       11 
+41ed  raid 
+41ed  wimax 
+81a4  ncp_fs.h 
+81a4  random.h 
+  random.h        3 
+81a4  ncp_mount.h 
+81a4  rds.h 
+81a4  x25.h 
+81a4  ncp_no.h 
+81a4  reboot.h 
+81a4  neighbour.h 
+81a4  reiserfs_xattr.h 
+  reiserfs_xattr.h        2 
+81a4  net.h 
+  net.h        5 
+41ed  netfilter_bridge 
+81a4  net_dropmon.h 
+  net_dropmon.h        4 
+81a4  reiserfs_fs.h 
+81a4  net_tstamp.h 
+81a4  screen_info.h 
+81a4  netconf.h 
+81a4  netfilter_arp.h 
+81a4  resource.h 
+  resource.h        6 
+81a4  rfkill.h 
+81a4  romfs_fs.h 
+81a4  rose.h 
+  rose.h        6 
+81a4  route.h 
+81a4  rtnetlink.h 
+81a4  sched.h 
+81a4  xfrm.h 
+  xfrm.h       23 
+81a4  sctp.h 
+81a4  hyperv.h 
+81a4  sdla.h 
+81a4  net_namespace.h 
+81a4  seccomp.h 
+81a4  userfaultfd.h 
+81a4  securebits.h 
+81a4  virtio_ids.h 
+  virtio_ids.h        6 
+81a4  selinux_netlink.h 
+81a4  virtio_input.h 
+81a4  serial.h 
+  serial.h        8 
+81a4  virtio_console.h 
+  virtio_console.h        7 
+81a4  serial_core.h 
+81a4  virtio_scsi.h 
+81a4  serial_reg.h 
+  serial_reg.h       33 
+81a4  virtio_types.h 
+81a4  serio.h 
+  serio.h        5 
+81a4  signal.h 
+  signal.h        2 
+81a4  signalfd.h 
+81a4  snmp.h 
+81a4  sock_diag.h 
+  sock_diag.h        2 
+81a4  socket.h 
+81a4  sockios.h 
+81a4  sonet.h 
+  sonet.h        6 
+81a4  sonypi.h 
+  sonypi.h       12 
+81a4  sound.h 
+  sound.h        4 
+81a4  soundcard.h 
+81a4  stat.h 
+81a4  stddef.h 
+  stddef.h        2 
+81a4  string.h 
+41ed  sunrpc 
+81a4  virtio_net.h 
+81a4  suspend_ioctls.h 
+81a4  swab.h 
+81a4  synclink.h 
+81a4  sysctl.h 
+81a4  sysinfo.h 
+  sysinfo.h        3 
+81a4  taskstats.h 
+41ed  tc_act 
+
+---> Processing directory /usr/include/linux/tc_act 
+41ed  . 
+41ed  .. 
+81a4  tc_csum.h 
+81a4  tc_gact.h 
+81a4  tc_ipt.h 
+  tc_ipt.h        2 
+81a4  tc_mirred.h 
+81a4  tc_nat.h 
+  tc_nat.h        2 
+81a4  tc_pedit.h 
+81a4  tc_skbedit.h 
+41ed  tc_ematch 
+81a4  virtio_pci.h 
+  virtio_pci.h       15 
+81a4  tcp_metrics.h 
+81a4  telephony.h 
+  telephony.h       19 
+81a4  termios.h 
+81a4  time.h 
+81a4  times.h 
+81a4  timex.h 
+81a4  tiocl.h 
+  tiocl.h        5 
+81a4  tipc.h 
+  tipc.h       12 
+81a4  virtio_ring.h 
+81a4  tipc_config.h 
+81a4  toshiba.h 
+81a4  tty_flags.h 
+81a4  types.h 
+81a4  udf_fs_i.h 
+81a4  uhid.h 
+81a4  uinput.h 
+  uinput.h       11 
+81a4  ultrasound.h 
+81a4  unistd.h 
+81a4  unix_diag.h 
+  unix_diag.h        4 
+81a4  virtio_rng.h 
+81a4  usbdevice_fs.h 
+81a4  utime.h 
+  utime.h        2 
+81a4  utsname.h 
+81a4  uuid.h 
+  uuid.h        5 
+81a4  uvcvideo.h 
+81a4  wanrouter.h 
+81a4  v4l2-common.h 
+  v4l2-common.h        6 
+81a4  wait.h 
+81a4  v4l2-controls.h 
+  v4l2-controls.h       76 
+81a4  watchdog.h 
+81a4  v4l2-dv-timings.h 
+81a4  wimax.h 
+  wimax.h       18 
+81a4  v4l2-mediabus.h 
+  v4l2-mediabus.h       11 
+81a4  v4l2-subdev.h 
+81a4  version.h 
+  version.h        2 
+81a4  veth.h 
+  veth.h        2 
+81a4  vfio.h 
+81a4  vhost.h 
+  vhost.h       14 
+81a4  videodev2.h 
+  videodev2.h      136 
+81a4  virtio_9p.h 
+81a4  wireless.h 
+81a4  virtio_balloon.h 
+81a4  virtio_blk.h 
+81a4  xattr.h 
+  xattr.h        7 
+81a4  virtio_config.h 
+41ed  mtd 
+41ed  rdma 
+41ed  scsi 
+
+---> Processing directory /usr/include/scsi 
+41ed  . 
+41ed  .. 
+41ed  fc 
+81a4  scsi_bsg_fc.h 
+81a4  scsi_netlink.h 
+81a4  scsi_netlink_fc.h 
+81a4  scsi.h 
+81a4  scsi_ioctl.h 
+81a4  sg.h 
+41ed  sound 
+
+---> Processing directory /usr/include/sound 
+41ed  . 
+41ed  .. 
+81a4  asequencer.h 
+  asequencer.h       45 
+81a4  asound.h 
+81a4  asound_fm.h 
+81a4  compress_offload.h 
+  compress_offload.h       14 
+81a4  compress_params.h 
+81a4  emu10k1.h 
+81a4  hdsp.h 
+81a4  hdspm.h 
+81a4  sb16_csp.h 
+  sb16_csp.h       10 
+81a4  sfnt_info.h 
+41ed  uapi 
+41ed  video 
+
+---> Processing directory /usr/include/video 
+41ed  . 
+41ed  .. 
+81a4  edid.h 
+81a4  sisfb.h 
+81a4  uvesafb.h 
+41ed  xen 
+41ed  netax25 
+81a4  _G_config.h 
+81a4  re_comp.h 
+81a4  a.out.h 
+81a4  netdb.h 
+81a4  aio.h 
+41ed  neteconet 
+81a4  aliases.h 
+81a4  pwd.h 
+41ed  sepol 
+
+---> Processing directory /usr/include/sepol 
+41ed  . 
+41ed  .. 
+81a4  boolean_record.h 
+81a4  booleans.h 
+81a4  context.h 
+81a4  context_record.h 
+  context_record.h        5 
+81a4  debug.h 
+81a4  errcodes.h 
+81a4  handle.h 
+81a4  iface_record.h 
+81a4  interfaces.h 
+  interfaces.h        4 
+81a4  module.h 
+  module.h        7 
+81a4  node_record.h 
+  node_record.h        7 
+81a4  nodes.h 
+41ed  policydb 
+81a4  policydb.h 
+81a4  port_record.h 
+81a4  ports.h 
+81a4  roles.h 
+81a4  sepol.h 
+81a4  user_record.h 
+  user_record.h        6 
+81a4  users.h 
+  users.h        5 
+81a4  alloca.h 
+81a4  pcrecpp.h 
+81a4  ar.h 
+81a4  regex.h 
+  regex.h       45 
+81a4  argp.h 
+  argp.h       53 
+81a4  regexp.h 
+81a4  argz.h 
+  argz.h       15 
+41ed  arpa 
+81a4  resolv.h 
+  resolv.h       31 
+81a4  assert.h 
+41ed  bits 
+41ed  rpcsvc 
+
+---> Processing directory /usr/include/rpcsvc 
+41ed  . 
+41ed  .. 
+81a4  bootparam.h 
+81a4  bootparam_prot.h 
+81a4  bootparam_prot.x 
+  bootparam_prot.x        8 
+81a4  key_prot.h 
+  key_prot.h       15 
+81a4  key_prot.x 
+81a4  klm_prot.h 
+  klm_prot.h        8 
+81a4  klm_prot.x 
+81a4  mount.h 
+81a4  mount.x 
+81a4  nfs_prot.h 
+81a4  nfs_prot.x 
+81a4  nis.h 
+  nis.h       33 
+81a4  nis.x 
+81a4  nis_callback.h 
+81a4  nis_callback.x 
+81a4  nis_object.x 
+81a4  nis_tags.h 
+  nis_tags.h       12 
+81a4  nislib.h 
+81a4  nlm_prot.h 
+81a4  nlm_prot.x 
+81a4  rex.h 
+81a4  rex.x 
+81a4  rstat.h 
+  rstat.h        9 
+81a4  rstat.x 
+  rstat.x        9 
+81a4  rusers.h 
+81a4  rusers.x 
+81a4  sm_inter.h 
+81a4  sm_inter.x 
+81a4  spray.h 
+81a4  spray.x 
+81a4  yp.h 
+81a4  yp.x 
+  yp.x       16 
+81a4  yp_prot.h 
+  yp_prot.h       22 
+81a4  ypclnt.h 
+81a4  yppasswd.h 
+81a4  yppasswd.x 
+81a4  ypupd.h 
+  ypupd.h        7 
+81a4  byteswap.h 
+41ed  rpc 
+41ed  kadm5 
+81a4  complex.h 
+81a4  search.h 
+81a4  cpio.h 
+81a4  sched.h 
+  sched.h       11 
+81a4  crypt.h 
+  crypt.h        6 
+81a4  semaphore.h 
+81a4  ctype.h 
+  ctype.h       25 
+81a4  setjmp.h 
+81a4  dirent.h 
+81a4  sgtty.h 
+  sgtty.h        4 
+81a4  dlfcn.h 
+81a4  shadow.h 
+  shadow.h       12 
+81a4  elf.h 
+81a4  signal.h 
+81a4  endian.h 
+  endian.h        7 
+81a4  spawn.h 
+81a4  envz.h 
+81a4  stab.h 
+81a4  err.h 
+  err.h        6 
+81a4  stdio.h 
+81a4  errno.h 
+81a4  stdc-predef.h 
+81a4  error.h 
+81a4  stdint.h 
+81a4  execinfo.h 
+81a4  stdio_ext.h 
+81a4  fcntl.h 
+  fcntl.h       21 
+81a4  stdlib.h 
+81a4  features.h 
+81a4  string.h 
+81a4  fenv.h 
+  fenv.h       10 
+81a4  strings.h 
+81a4  fmtmsg.h 
+81a4  sysexits.h 
+81a4  fnmatch.h 
+81a4  mqueue.h 
+81a4  kdb.h 
+  kdb.h      117 
+81a4  fpu_control.h 
+41ed  sys 
+41ed  krb5 
+81a4  fstab.h 
+81a4  syscall.h 
+81a4  fts.h 
+81a4  syslog.h 
+81a4  ftw.h 
+81a4  tar.h 
+81a4  eti.h 
+  eti.h        7 
+81a4  gconv.h 
+81a4  termio.h 
+81a4  getopt.h 
+  getopt.h       15 
+81a4  termios.h 
+81a4  glob.h 
+41ed  gnu 
+41ed  netash 
+81a4  tic.h 
+81a4  gnu-versions.h 
+81a4  tgmath.h 
+81a4  grp.h 
+  grp.h       15 
+81a4  thread_db.h 
+81a4  gshadow.h 
+81a4  time.h 
+81a4  iconv.h 
+81a4  ttyent.h 
+  ttyent.h        6 
+81a4  ieee754.h 
+81a4  uchar.h 
+81a4  ifaddrs.h 
+81a4  ucontext.h 
+81a4  inttypes.h 
+81a4  ulimit.h 
+81a4  langinfo.h 
+81a4  unistd.h 
+81a4  lastlog.h 
+  lastlog.h        2 
+81a4  ustat.h 
+81a4  libgen.h 
+  libgen.h        4 
+81a4  utime.h 
+81a4  libintl.h 
+  libintl.h       10 
+81a4  utmp.h 
+  utmp.h        8 
+81a4  libio.h 
+81a4  utmpx.h 
+81a4  limits.h 
+81a4  values.h 
+  values.h        5 
+81a4  link.h 
+81a4  wait.h 
+  wait.h        2 
+81a4  locale.h 
+  locale.h       17 
+81a4  wchar.h 
+  wchar.h       64 
+81a4  malloc.h 
+  malloc.h       14 
+81a4  wctype.h 
+81a4  math.h 
+81a4  wordexp.h 
+  wordexp.h        6 
+81a4  mcheck.h 
+81a4  xlocale.h 
+81a4  memory.h 
+  memory.h        3 
+41ed  python2.7 
+
+---> Processing directory /usr/include/python2.7 
+41ed  . 
+41ed  .. 
+81a4  pyconfig-64.h 
+81a4  mntent.h 
+41ed  c++ 
+81a4  monetary.h 
+41ed  net 
+41ed  netinet 
+41ed  netipx 
+41ed  netiucv 
+41ed  netpacket 
+
+---> Processing directory /usr/include/netpacket 
+41ed  . 
+41ed  .. 
+81a4  packet.h 
+  packet.h        5 
+41ed  netrom 
+41ed  netrose 
+41ed  nfs 
+
+---> Processing directory /usr/include/nfs 
+41ed  . 
+41ed  .. 
+81a4  nfs.h 
+81a4  autosprintf.h 
+81a4  nl_types.h 
+81a4  FlexLexer.h 
+81a4  nss.h 
+81a4  gettext-po.h 
+  gettext-po.h       32 
+81a4  obstack.h 
+  obstack.h       40 
+81a4  pcre.h 
+81a4  paths.h 
+  paths.h        7 
+41ed  misc 
+81a4  poll.h 
+81a4  keyutils.h 
+  keyutils.h       16 
+81a4  printf.h 
+41ed  protocols 
+
+---> Processing directory /usr/include/protocols 
+41ed  . 
+41ed  .. 
+81a4  routed.h 
+81a4  rwhod.h 
+81a4  talkd.h 
+  talkd.h       11 
+81a4  timed.h 
+41ed  et 
+81a4  pthread.h 
+81a4  com_err.h 
+81a4  pty.h 
+  pty.h        5 
+81a4  pcre_scanner.h 
+  pcre_scanner.h       14 
+81a4  pcre_stringpiece.h 
+  pcre_stringpiece.h       14 
+81a4  pcrecpparg.h 
+  pcrecpparg.h       15 
+81a4  pcreposix.h 
+41ed  selinux 
+81a4  verto-module.h 
+  verto-module.h       14 
+81a4  verto.h 
+41ed  gssapi 
+81a4  gssapi.h 
+  gssapi.h        2 
+41ed  gssrpc 
+81a4  krad.h 
+81a4  krb5.h 
+  krb5.h        2 
+81a4  profile.h 
+81a4  zconf.h 
+81a4  zlib.h 
+  zlib.h      171 
+41ed  openssl 
+81a4  curses.h 
+81a4  cursesapp.h 
+81a4  cursesf.h 
+  cursesf.h       56 
+81a4  cursesm.h 
+81a4  cursesp.h 
+81a4  cursesw.h 
+81a4  cursslk.h 
+81a4  etip.h 
+  etip.h       20 
+81a4  form.h 
+81a4  menu.h 
+  menu.h       25 
+81a4  nc_tparm.h 
+41ed  ncurses 
+a1ff  ncurses.h 
+81a4  ncurses_dll.h 
+41ed  ncursesw 
+81a4  panel.h 
+81a4  term.h 
+81a4  term_entry.h 
+81a4  termcap.h 
+81a4  unctrl.h 
+41ed  libexec 
+
+---> Processing directory /usr/libexec 
+41ed  . 
+41ed  .. 
+41ed  getconf 
+41ed  awk 
+
+---> Processing directory /usr/libexec/awk 
+41ed  . 
+41ed  .. 
+81ed  grcat 
+  grcat       15 
+81ed  pwcat 
+41ed  gcc 
+81ed  glib-pacrunner 
+41ed  openldap 
+41ed  coreutils 
+41ed  utempter 
+81ed  virt-what-cpuid-helper 
+  virt-what-cpuid-helper       15 
+81ed  urlgrabber-ext-down 
+41ed  openssh 
+41ed  linux-boot-probes 
+81ed  newns 
+41ed  os-probes 
+41ed  git-core 
+
+---> Processing directory /usr/libexec/git-core 
+41ed  . 
+41ed  .. 
+81ed  git-log 
+  git-log     2960 
+81ed  git-add--interactive 
+81ed  git-push 
+81ed  git-am 
+81ed  git-read-tree 
+81ed  git-bisect 
+81ed  git-ls-files 
+  git-ls-files     2960 
+81ed  git-credential-cache 
+81ed  git-help 
+81ed  git-replace 
+81ed  git-credential-cache--daemon 
+81ed  git-index-pack 
+81ed  git-credential-gnome-keyring 
+81ed  git-ls-remote 
+81ed  git-credential-store 
+  git-credential-store     1437 
+81ed  git-receive-pack 
+  git-receive-pack     2960 
+81ed  git-difftool 
+  git-difftool       28 
+81ed  git-ls-tree 
+  git-ls-tree     2960 
+81ed  git-difftool--helper 
+81ed  git-mailinfo 
+81ed  git-fast-import 
+81ed  git-mailsplit 
+81ed  git-filter-branch 
+81ed  git-merge 
+81ed  git-http-backend 
+81ed  git-merge-base 
+  git-merge-base     2960 
+81ed  git-http-fetch 
+81ed  git-merge-file 
+81ed  git-http-push 
+81ed  git-merge-index 
+81ed  git-imap-send 
+81ed  git-reflog 
+  git-reflog     2960 
+81ed  git-instaweb 
+  git-instaweb       37 
+81ed  git-merge-ours 
+81ed  git-lost-found 
+81ed  git-merge-recursive 
+81ed  git-merge-octopus 
+81ed  git-merge-subtree 
+  git-merge-subtree     2960 
+81ed  git-merge-one-file 
+81ed  git-merge-tree 
+  git-merge-tree     2960 
+81ed  git-merge-resolve 
+81ed  git-mktag 
+  git-mktag     2960 
+81ed  git-mergetool 
+  git-mergetool       18 
+81ed  git-mktree 
+81a4  git-mergetool--lib 
+  git-mergetool--lib       17 
+81ed  git-mv 
+  git-mv     2960 
+81a4  git-parse-remote 
+81ed  git-remote 
+  git-remote     2960 
+81ed  git-pull 
+  git-pull       17 
+81ed  git-name-rev 
+81ed  git-quiltimport 
+81ed  git-remote-ext 
+  git-remote-ext     2960 
+81ed  git-rebase 
+81ed  git-notes 
+81a4  git-rebase--am 
+81ed  git-init 
+  git-init     2960 
+81ed  git-rerere 
+81a4  git-rebase--interactive 
+81ed  git-pack-objects 
+81a4  git-rebase--merge 
+81ed  git-remote-fd 
+81ed  git-relink 
+81ed  git-pack-redundant 
+81ed  git-remote-testpy 
+81ed  git-repo-config 
+81ed  git-repack 
+81ed  git-pack-refs 
+  git-pack-refs     2960 
+81ed  git-request-pull 
+  git-request-pull        9 
+81ed  git-reset 
+81a4  git-sh-i18n 
+  git-sh-i18n        5 
+81ed  git-init-db 
+81ed  git-revert 
+  git-revert     2960 
+81ed  git-sh-i18n--envsubst 
+81ed  git-rev-list 
+81a4  git-sh-setup 
+81ed  git-patch-id 
+81ed  git-show-index 
+81ed  git-rev-parse 
+81ed  git-stash 
+81ed  git-peek-remote 
+81ed  git-submodule 
+81ed  git-rm 
+81ed  git-subtree 
+81ed  git-prune 
+81ed  git-web--browse 
+  git-web--browse       10 
+41ed  mergetools 
+81ed  git-add 
+81ed  git-annotate 
+81ed  git-apply 
+  git-apply     2960 
+81ed  git-archive 
+81ed  git-bisect--helper 
+81ed  git-blame 
+81ed  git-branch 
+  git-branch     2960 
+81ed  git-bundle 
+81ed  git-cat-file 
+  git-cat-file     2960 
+81ed  git-check-attr 
+  git-check-attr     2960 
+81ed  git-check-ignore 
+81ed  git-check-ref-format 
+  git-check-ref-format     2960 
+81ed  git-checkout 
+  git-checkout     2960 
+81ed  git-checkout-index 
+81ed  git-cherry 
+  git-cherry     2960 
+81ed  git-cherry-pick 
+81ed  git-clean 
+81ed  git-clone 
+81ed  git-column 
+  git-column     2960 
+81ed  git-commit 
+81ed  git-commit-tree 
+  git-commit-tree     2960 
+81ed  git-config 
+81ed  git-count-objects 
+81ed  git-credential 
+81ed  git-describe 
+81ed  git-diff 
+  git-diff     2960 
+81ed  git-diff-files 
+81ed  git-diff-index 
+81ed  git-diff-tree 
+  git-diff-tree     2960 
+81ed  git-fast-export 
+81ed  git-fetch 
+81ed  git-fetch-pack 
+81ed  git-fmt-merge-msg 
+81ed  git-for-each-ref 
+81ed  git-format-patch 
+  git-format-patch     2960 
+81ed  git-fsck 
+81ed  git-fsck-objects 
+81ed  git-gc 
+81ed  git-get-tar-commit-id 
+81ed  git-grep 
+81ed  git-hash-object 
+81ed  git-prune-packed 
+81ed  git 
+81ed  git-send-pack 
+81ed  git-shortlog 
+81ed  git-show 
+81ed  git-show-branch 
+81ed  git-show-ref 
+81ed  git-stage 
+  git-stage     2960 
+81ed  git-status 
+81ed  git-stripspace 
+  git-stripspace     2960 
+81ed  git-symbolic-ref 
+81ed  git-tag 
+81ed  git-tar-tree 
+81ed  git-unpack-file 
+  git-unpack-file     2960 
+81ed  git-unpack-objects 
+  git-unpack-objects     2960 
+81ed  git-update-index 
+  git-update-index     2960 
+81ed  git-update-ref 
+81ed  git-update-server-info 
+81ed  git-upload-archive 
+  git-upload-archive     2960 
+81ed  git-var 
+81ed  git-verify-pack 
+  git-verify-pack     2960 
+81ed  git-verify-tag 
+  git-verify-tag     2960 
+81ed  git-whatchanged 
+81ed  git-write-tree 
+81ed  git-shell 
+81ed  git-upload-pack 
+81ed  git-remote-ftp 
+  git-remote-ftp     1634 
+81ed  git-remote-ftps 
+81ed  git-remote-http 
+  git-remote-http     1634 
+81ed  git-remote-https 
+81ed  ebtables 
+41ed  initscripts 
+41ed  plymouth 
+
+---> Processing directory /usr/libexec/plymouth 
+41ed  . 
+41ed  .. 
+81ed  plymouth-generate-initrd 
+81ed  plymouth-populate-initrd 
+81ed  plymouth-update-initrd 
+81ed  gnupg-pcsc-wrapper 
+81ed  gpg-check-pattern 
+  gpg-check-pattern      207 
+81ed  gpg-preset-passphrase 
+  gpg-preset-passphrase      182 
+81ed  gpg-protect-tool 
+81ed  gpg2keys_curl 
+  gpg2keys_curl       91 
+81ed  gpg2keys_finger 
+81ed  gpg2keys_hkp 
+  gpg2keys_hkp      107 
+81ed  gpg2keys_ldap 
+  gpg2keys_ldap      123 
+81ed  nm-avahi-autoipd.action 
+81ed  nm-dhcp-helper 
+  nm-dhcp-helper       24 
+41ed  systemtap 
+
+---> Processing directory /usr/libexec/systemtap 
+41ed  . 
+41ed  .. 
+81ed  stap-authorize-cert 
+81ed  stapio 
+81ed  libHelperSDT_amd64.so 
+  libHelperSDT_amd64.so       35 
+41ed  postfix 
+
+---> Processing directory /usr/libexec/postfix 
+41ed  . 
+41ed  .. 
+81ed  aliasesdb 
+81ed  anvil 
+81ed  bounce 
+  bounce      633 
+81ed  chroot-update 
+81ed  cleanup 
+81ed  discard 
+81ed  dnsblog 
+81ed  error 
+81ed  flush 
+81ed  local 
+81a4  main.cf 
+81ed  master 
+81a4  master.cf 
+81ed  oqmgr 
+81ed  pickup 
+81ed  pipe 
+81ed  post-install 
+81a4  postfix-files 
+  postfix-files       39 
+81ed  postfix-script 
+81ed  postfix-wrapper 
+  postfix-wrapper       14 
+81ed  postmulti-script 
+  postmulti-script       18 
+81ed  postscreen 
+  postscreen      656 
+81ed  proxymap 
+81ed  qmqpd 
+  qmqpd      583 
+81ed  scache 
+81ed  showq 
+81ed  smtpd 
+81ed  spawn 
+81ed  tlsmgr 
+  tlsmgr      575 
+81ed  tlsproxy 
+81ed  trivial-rewrite 
+81ed  verify 
+81ed  virtual 
+  virtual      632 
+81ed  lmtp 
+81ed  smtp 
+  smtp      974 
+81ed  nqmgr 
+81ed  qmgr 
+  qmgr      697 
+81ed  sesh 
+  sesh       65 
+81a4  sudo_noexec.so 
+81a4  sudoers.so 
+41ed  man-db 
+81ed  grepconf.sh 
+  grepconf.sh        2 
+81ed  nm-dispatcher 
+  nm-dispatcher       96 
+81ed  nm-iface-helper 
+41ed  tuned 
+41ed  local 
+
+---> Processing directory /usr/local 
+41ed  . 
+41ed  .. 
+41ed  bin 
+41ed  etc 
+41ed  games 
+41ed  include 
+41ed  lib 
+41ed  lib64 
+41ed  libexec 
+
+---> Processing directory /usr/local/libexec 
+41ed  . 
+41ed  .. 
+41ed  sbin 
+
+---> Processing directory /usr/local/sbin 
+41ed  . 
+41ed  .. 
+41ed  share 
+41ed  src 
+41ed  src 
+a1ff  tmp 
+a1ff  bin 
+a1ff  sbin 
+a1ff  lib 
+a1ff  lib64 
+41ed  home 
+41ed  media 
+
+---> Processing directory /media 
+41ed  . 
+416d  .. 
+41ed  mnt 
+41ed  opt 
+
+---> Processing directory /opt 
+41ed  . 
+416d  .. 
+41ed  srv 
