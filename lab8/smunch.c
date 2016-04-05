@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
     sigset_t sigs;
 	int ret;
 	ret = sigemptyset(&sigs);
-	sigaddset(&sigs, SIGINT);
+	sigaddset(&sigs, SIGKILL);
 	//ret = sigaddset(&sigs, SIGKILL);
 	//sigfillset(&sigs);
 	
@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
 		printf("need pid!\n");
 		return 1;
 	}
-	printf("ret: %d sigs:%x\n", ret ,sigs);
+	//printf("ret: %d sigs:%d\n", ret ,sigs);
 	
 	ret = smunch(atoi(argv[1]), 256);
 	printf("smunch return: %d\n", ret);
