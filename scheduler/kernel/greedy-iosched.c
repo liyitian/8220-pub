@@ -8,11 +8,13 @@
 #include <linux/slab.h>
 #include <linux/init.h>
 
-struct noop_data {
-	struct list_head queue;
+struct greedy_data {
+	struct list_head higher;
+    struct list_head lower;
 };
 
-static void noop_merged_requests(struct request_queue *q, struct request *rq,
+// okay for now
+static void greedy_merged_requests(struct request_queue *q, struct request *rq,
 				 struct request *next)
 {
 	list_del_init(&next->queuelist);
@@ -59,23 +61,25 @@ noop_latter_request(struct request_queue *q, struct request *rq)
 	return list_entry(rq->queuelist.next, struct request, queuelist);
 }
 
-static int noop_init_queue(struct request_queue *q, struct elevator_type *e)
+// I think this is it?
+static int greedy_init_queue(struct request_queue *q, struct elevator_type *e)
 {
-	struct noop_data *nd;
+	struct greedy_data *gd;
 	struct elevator_queue *eq;
 
 	eq = elevator_alloc(q, e);
 	if (!eq)
 		return -ENOMEM;
 
-	nd = kmalloc_node(sizeof(*nd), GFP_KERNEL, q->node);
-	if (!nd) {
+	gd = kmalloc_node(sizeof(*nd), GFP_KERNEL, q->node);
+	if (!gd) {
 		kobject_put(&eq->kobj);
 		return -ENOMEM;
 	}
-	eq->elevator_data = nd;
+	eq->elevator_data = gd;
 
-	INIT_LIST_HEAD(&nd->queue);
+	INIT_LIST_HEAD(&gd->higher);
+	INIT_LIST_HEAD(&gd->lower);
 
 	spin_lock_irq(q->queue_lock);
 	q->elevator = eq;
@@ -83,40 +87,42 @@ static int noop_init_queue(struct request_queue *q, struct elevator_type *e)
 	return 0;
 }
 
-static void noop_exit_queue(struct elevator_queue *e)
+// I think this okay
+static void greedy_exit_queue(struct elevator_queue *e)
 {
-	struct noop_data *nd = e->elevator_data;
+	struct greedy_data *gd = e->elevator_data;
 
-	BUG_ON(!list_empty(&nd->queue));
-	kfree(nd);
+	BUG_ON(!list_empty(&gd->higher));
+	BUG_ON(!list_empty(&gd->lower));
+	kfree(gd);
 }
 
-static struct elevator_type elevator_noop = {
+static struct elevator_type elevator_greedy = {
 	.ops = {
-		.elevator_merge_req_fn		= noop_merged_requests,
-		.elevator_dispatch_fn		= noop_dispatch,
-		.elevator_add_req_fn		= noop_add_request,
-		.elevator_former_req_fn		= noop_former_request,
-		.elevator_latter_req_fn		= noop_latter_request,
-		.elevator_init_fn		= noop_init_queue,
-		.elevator_exit_fn		= noop_exit_queue,
+		//.elevator_merge_req_fn		= greedy_merged_requests,
+		//.elevator_dispatch_fn		= greedy_dispatch,
+		//.elevator_add_req_fn		= greedy_add_request,
+		//.elevator_former_req_fn		= noop_former_request,
+		//.elevator_latter_req_fn		= noop_latter_request,
+		.elevator_init_fn		= greedy_init_queue,
+		.elevator_exit_fn		= greedy_exit_queue,
 	},
 	.elevator_name = "greedy",
 	.elevator_owner = THIS_MODULE,
 };
 
-static int __init noop_init(void)
+static int __init greedy_init(void)
 {
-	return elv_register(&elevator_noop);
+	return elv_register(&elevator_greedy);
 }
 
-static void __exit noop_exit(void)
+static void __exit greedy_exit(void)
 {
-	elv_unregister(&elevator_noop);
+	elv_unregister(&elevator_greedy);
 }
 
-module_init(noop_init);
-module_exit(noop_exit);
+module_init(greedy_init);
+module_exit(greedy_exit);
 
 
 MODULE_AUTHOR("TA");
