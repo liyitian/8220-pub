@@ -26,7 +26,6 @@ static int greedy_dispatch(struct request_queue *q, int force)
 {
     int up_dist;
     int down_dist;
-    struct request* rq;
 	struct greedy_data* gd = q->elevator->elevator_data;    
     // guess upper as target list
     struct request* target;
@@ -72,10 +71,12 @@ static int greedy_dispatch(struct request_queue *q, int force)
 static void add_to_higher(struct request* rq, struct greedy_data* gd)
 {
     struct list_head* pos;
+    struct request* list_rq;
     list_for_each(pos, &gd->higher)
     {
+        list_rq = list_entry(pos, struct request, queuelist);
         // smaller now, so take this guy's spot
-        if (blk_rq_pos(pos) > blk_rq_pos(rq))
+        if (blk_rq_pos(list_rq) > blk_rq_pos(rq))
         {
             break;    
         }
@@ -88,10 +89,12 @@ static void add_to_higher(struct request* rq, struct greedy_data* gd)
 static void add_to_lower(struct request* rq, struct greedy_data* gd)
 {
     struct list_head* pos;
+    struct request* list_rq;
     list_for_each(pos, &gd->lower)
     {
         // we are now bigger than the thing below us, so fit here
-        if (blk_rq_pos(pos) < blk_rq_pos(rq))
+        list_rq = list_entry(pos, struct request, queuelist);
+        if (blk_rq_pos(list_rq) < blk_rq_pos(rq))
         {
             break;    
         }
