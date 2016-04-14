@@ -82,7 +82,7 @@ static void add_to_higher(struct request* rq, struct greedy_data* gd)
         }
     }
     // if list empty, pos == head so same result
-	list_add(&rq->queuelist, &gd->pos);
+	list_add(&rq->queuelist, pos);
 }
 
 // adds to lower list
