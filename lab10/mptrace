@@ -1,0 +1,38 @@
+echo "start"
+date
+(for i in 1 2 3 
+do
+randread /usr  123$i 0.5  0.7  > out.1 ; 
+done
+echo "1 done"
+date ) 
+
+(for i in 1 2 3 
+do
+randread /home 125$i 0.8  0.8  > out.2 
+done
+echo "2 done"
+date ) 
+
+(for i in 1 2 3 
+do
+randread /etc 778$i 0.9  0.8  > out.3 
+done
+echo "3 done"
+date ) 
+
+(for i in 1 2 3 
+do
+randread /bin     523$i 0.3  0.6  > out.4 
+done
+echo "4 done"
+date ) 
+
+(for i in 1 2 3 
+do
+randread /usr 135$i 0.9  0.8  > out.5 
+done
+echo "5 done"
+date ) 
+
+

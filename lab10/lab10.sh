@@ -1,0 +1,3 @@
+./init
+sh ./mptrace
+./test
