@@ -7,14 +7,12 @@
 
 #include<stdio.h>
 #include<sys/syscall.h>
-#define sum_print syscall(328)
+#define sum_init syscall(327)
 
 
 int main(void)
 {
-		//sleep(2);
-	sum_print;
-	
+	sum_init;
 	return 0;
 }
 
