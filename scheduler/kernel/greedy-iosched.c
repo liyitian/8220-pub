@@ -1,5 +1,5 @@
 /*
- * elevator noop
+ * elevator greedy
  */
 #include <linux/blkdev.h>
 #include <linux/elevator.h>
@@ -8,39 +8,117 @@
 #include <linux/slab.h>
 #include <linux/init.h>
 
+// modified from no-op to add additional queue and prev. position
 struct greedy_data {
 	struct list_head higher;
     struct list_head lower;
+    sector_t prev_pos;
 };
 
-// okay for now
+// i think this is okay?
 static void greedy_merged_requests(struct request_queue *q, struct request *rq,
 				 struct request *next)
 {
 	list_del_init(&next->queuelist);
 }
 
-static int noop_dispatch(struct request_queue *q, int force)
+// TODO: this is where we must set prev_pos i think, line below maybe helpful
+static int greedy_dispatch(struct request_queue *q, int force)
 {
-	struct noop_data *nd = q->elevator->elevator_data;
-
-	if (!list_empty(&nd->queue)) {
-		struct request *rq;
-		rq = list_entry(nd->queue.next, struct request, queuelist);
-		list_del_init(&rq->queuelist);
-		elv_dispatch_sort(q, rq);
-		return 1;
-	}
-	return 0;
+    int up_dist;
+    int down_dist;
+    struct request* rq;
+	struct greedy_data *gd = q->elevator->elevator_data;    
+    // guess upper as target list
+    struct list_head target = gd->upper;
+    if (!list_empty(&gd->upper))
+    {
+        // upper exists, does lower?
+        if (!list_empty(&gd->lower))
+        {
+            up_dist = blk_rq_pos(gd->higher) - gd->prev_pos;
+            down_dist = gd->prev_pos - blk_rq_pos(gd->lower);
+            // only if lower is farther away do we change rq
+            if (up_dist > down_dist)
+            {
+                target = gd->lower;
+            }
+        }
+        // in any but innermost case, we are head
+    }
+    // no upper, so if lower exists we choose it
+    else if (!list_empty(&gd->lower))
+    {
+        target = gd->lower;
+    }
+    else
+    {
+        return 0;
+    }
+    struct request* rq = list_first_entry(target, struct request, queuelist);
+    list_del_init(&rq->queuelist);
+    //FIXME: need queue lock: do we already have it?
+    // Add to tail of list, so that we know where we stand
+    elv_dispatch_add_tail(q, rq);
+    gd->prev_pos = blk_rq_pos(rq) + blk_rq_sectors(rq)
+    return 1;
 }
 
-static void noop_add_request(struct request_queue *q, struct request *rq)
-{
-	struct noop_data *nd = q->elevator->elevator_data;
 
-	list_add_tail(&rq->queuelist, &nd->queue);
+static void greedy_add_request(struct request_queue *q, struct request *rq)
+{
+	struct greedy_data *gd = q->elevator->elevator_data;
+    // check if we know prev_position, and if lower. Otherwise default to 
+    // upper list
+    if (gd->prev_pos && gd->prev_pos > blk_rq_pos(rq))
+    {
+        add_to_lower(rq);   
+    }
+    // no prev position, or position is higher
+    else
+    {
+        add_to_higher(rq);
+    }
+
 }
 
+// adds to upper list
+static void add_to_higher(struct request* rq)
+{
+	struct greedy_data *gd = q->elevator->elevator_data;
+    struct list_head* pos;
+    list_for_each(pos, gd->higher)
+    {
+        // smaller now, so take this guy's spot
+        if (blk_rq_pos(pos) > blk_rq_pos(rq))
+        {
+            break;    
+        }
+    }
+    // if list empty, pos == head so same result
+	list_add(&rq->queuelist, &gd->pos);
+}
+
+// adds to lower list
+static void add_to_lower(struct request* rq)
+{
+	struct greedy_data *gd = q->elevator->elevator_data;
+    struct list_head* pos;
+    list_for_each(pos, gd->lower)
+    {
+        // we are now bigger than the thing below us, so fit here
+        if (blk_rq_pos(pos) < blk_rq_pos(rq))
+        {
+            break;    
+        }
+    }
+    // should be list_add to take place of current node
+    // if list empty, pos == head so same result
+	list_add(&rq->queuelist, &gd->pos);
+}
+
+// TODO: idk if we need to implement this or other 'helpful' elv functions
+/*
 static struct request *
 noop_former_request(struct request_queue *q, struct request *rq)
 {
@@ -60,6 +138,7 @@ noop_latter_request(struct request_queue *q, struct request *rq)
 		return NULL;
 	return list_entry(rq->queuelist.next, struct request, queuelist);
 }
+*/
 
 // I think this is it?
 static int greedy_init_queue(struct request_queue *q, struct elevator_type *e)
@@ -71,7 +150,7 @@ static int greedy_init_queue(struct request_queue *q, struct elevator_type *e)
 	if (!eq)
 		return -ENOMEM;
 
-	gd = kmalloc_node(sizeof(*nd), GFP_KERNEL, q->node);
+	gd = kmalloc_node(sizeof(*gd), GFP_KERNEL, q->node);
 	if (!gd) {
 		kobject_put(&eq->kobj);
 		return -ENOMEM;
@@ -80,6 +159,7 @@ static int greedy_init_queue(struct request_queue *q, struct elevator_type *e)
 
 	INIT_LIST_HEAD(&gd->higher);
 	INIT_LIST_HEAD(&gd->lower);
+    gd->prev_pos = 0;
 
 	spin_lock_irq(q->queue_lock);
 	q->elevator = eq;
@@ -99,9 +179,9 @@ static void greedy_exit_queue(struct elevator_queue *e)
 
 static struct elevator_type elevator_greedy = {
 	.ops = {
-		//.elevator_merge_req_fn		= greedy_merged_requests,
-		//.elevator_dispatch_fn		= greedy_dispatch,
-		//.elevator_add_req_fn		= greedy_add_request,
+		.elevator_merge_req_fn		= greedy_merged_requests,
+		.elevator_dispatch_fn		= greedy_dispatch,
+		.elevator_add_req_fn		= greedy_add_request,
 		//.elevator_former_req_fn		= noop_former_request,
 		//.elevator_latter_req_fn		= noop_latter_request,
 		.elevator_init_fn		= greedy_init_queue,
