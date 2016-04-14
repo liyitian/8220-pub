@@ -34,12 +34,12 @@ static int greedy_dispatch(struct request_queue *q, int force)
     if (!list_empty(&gd->higher))
     {
         // guess target as upper to store in case of comparison
-        target = list_first_entry(gd->higher, struct request, 
+        target = list_first_entry(&gd->higher, struct request, 
                                   queuelist);
         // upper exists, does lower?
         if (!list_empty(&gd->lower))
         {
-            lower = list_first_entry(gd->lower, struct request, queuelist);
+            lower = list_first_entry(&gd->lower, struct request, queuelist);
             // guessed upper as target
             up_dist = blk_rq_pos(target) - gd->prev_pos;
             down_dist = gd->prev_pos - blk_rq_pos(lower);
@@ -64,16 +64,15 @@ static int greedy_dispatch(struct request_queue *q, int force)
     //FIXME: need queue lock: do we already have it? we should...
     // Add to tail of list, so that we know where we stand
     elv_dispatch_add_tail(q, target);
-    gd->prev_pos = blk_rq_pos(target) + blk_rq_sectors(target)
+    gd->prev_pos = blk_rq_pos(target) + blk_rq_sectors(target);
     return 1;
 }
 
 // adds to upper list
-static void add_to_higher(struct request* rq)
+static void add_to_higher(struct request* rq, struct greedy_data* gd)
 {
-	struct greedy_data *gd = q->elevator->elevator_data;
     struct list_head* pos;
-    list_for_each(pos, gd->higher)
+    list_for_each(pos, &gd->higher)
     {
         // smaller now, so take this guy's spot
         if (blk_rq_pos(pos) > blk_rq_pos(rq))
@@ -86,11 +85,10 @@ static void add_to_higher(struct request* rq)
 }
 
 // adds to lower list
-static void add_to_lower(struct request* rq)
+static void add_to_lower(struct request* rq, struct greedy_data* gd)
 {
-	struct greedy_data *gd = q->elevator->elevator_data;
     struct list_head* pos;
-    list_for_each(pos, gd->lower)
+    list_for_each(pos, &gd->lower)
     {
         // we are now bigger than the thing below us, so fit here
         if (blk_rq_pos(pos) < blk_rq_pos(rq))
@@ -110,12 +108,12 @@ static void greedy_add_request(struct request_queue *q, struct request *rq)
     // upper list
     if (gd->prev_pos && gd->prev_pos > blk_rq_pos(rq))
     {
-        add_to_lower(rq);   
+        add_to_lower(rq, gd);
     }
     // no prev position, or position is higher
     else
     {
-        add_to_higher(rq);
+        add_to_higher(rq, gd);
     }
 
 }
