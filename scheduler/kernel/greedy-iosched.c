@@ -127,7 +127,7 @@ greedy_former_request(struct request_queue *q, struct request *rq)
 {
 	struct greedy_data* gd = q->elevator->elevator_data;
 
-	if (rq->queuelist.prev == &gd->higher || rq->quelist.prev == &gd->lower)
+	if (rq->queuelist.prev == &gd->higher || rq->queuelist.prev == &gd->lower)
 		return NULL;
 	return list_entry(rq->queuelist.prev, struct request, queuelist);
 }
