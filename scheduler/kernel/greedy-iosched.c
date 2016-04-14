@@ -68,24 +68,6 @@ static int greedy_dispatch(struct request_queue *q, int force)
     return 1;
 }
 
-
-static void greedy_add_request(struct request_queue *q, struct request *rq)
-{
-	struct greedy_data *gd = q->elevator->elevator_data;
-    // check if we know prev_position, and if lower. Otherwise default to 
-    // upper list
-    if (gd->prev_pos && gd->prev_pos > blk_rq_pos(rq))
-    {
-        add_to_lower(rq);   
-    }
-    // no prev position, or position is higher
-    else
-    {
-        add_to_higher(rq);
-    }
-
-}
-
 // adds to upper list
 static void add_to_higher(struct request* rq)
 {
@@ -118,7 +100,24 @@ static void add_to_lower(struct request* rq)
     }
     // should be list_add to take place of current node
     // if list empty, pos == head so same result
-	list_add(&rq->queuelist, &gd->pos);
+	list_add(&rq->queuelist, pos);
+}
+
+static void greedy_add_request(struct request_queue *q, struct request *rq)
+{
+	struct greedy_data *gd = q->elevator->elevator_data;
+    // check if we know prev_position, and if lower. Otherwise default to 
+    // upper list
+    if (gd->prev_pos && gd->prev_pos > blk_rq_pos(rq))
+    {
+        add_to_lower(rq);   
+    }
+    // no prev position, or position is higher
+    else
+    {
+        add_to_higher(rq);
+    }
+
 }
 
 // TODO: idk if we need to implement this or other 'helpful' elv functions
