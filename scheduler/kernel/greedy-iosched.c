@@ -28,20 +28,26 @@ static int greedy_dispatch(struct request_queue *q, int force)
     int up_dist;
     int down_dist;
     struct request* rq;
-	struct greedy_data *gd = q->elevator->elevator_data;    
+	struct greedy_data* gd = q->elevator->elevator_data;    
     // guess upper as target list
-    struct list_head target = gd->upper;
-    if (!list_empty(&gd->upper))
+    struct request* target;
+    struct request* lower;
+    if (!list_empty(&gd->higher))
     {
+        // guess target as upper to store in case of comparison
+        target = list_first_entry(gd->higher, struct request, 
+                                  queuelist);
         // upper exists, does lower?
         if (!list_empty(&gd->lower))
         {
-            up_dist = blk_rq_pos(gd->higher) - gd->prev_pos;
-            down_dist = gd->prev_pos - blk_rq_pos(gd->lower);
+            lower = list_first_entry(gd->lower, struct request, queuelist);
+            // guessed upper as target
+            up_dist = blk_rq_pos(target) - gd->prev_pos;
+            down_dist = gd->prev_pos - blk_rq_pos(lower);
             // only if lower is farther away do we change rq
             if (up_dist > down_dist)
             {
-                target = gd->lower;
+                target = lower;
             }
         }
         // in any but innermost case, we are head
@@ -49,18 +55,17 @@ static int greedy_dispatch(struct request_queue *q, int force)
     // no upper, so if lower exists we choose it
     else if (!list_empty(&gd->lower))
     {
-        target = gd->lower;
+        target = list_first_entry(gd->lower, struct request, queuelist);
     }
     else
     {
         return 0;
     }
-    struct request* rq = list_first_entry(target, struct request, queuelist);
-    list_del_init(&rq->queuelist);
-    //FIXME: need queue lock: do we already have it?
+    list_del_init(&target->queuelist);
+    //FIXME: need queue lock: do we already have it? we should...
     // Add to tail of list, so that we know where we stand
-    elv_dispatch_add_tail(q, rq);
-    gd->prev_pos = blk_rq_pos(rq) + blk_rq_sectors(rq)
+    elv_dispatch_add_tail(q, target);
+    gd->prev_pos = blk_rq_pos(target) + blk_rq_sectors(target)
     return 1;
 }
 
