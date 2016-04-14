@@ -109,7 +109,7 @@ static void greedy_add_request(struct request_queue *q, struct request *rq)
 	struct greedy_data *gd = q->elevator->elevator_data;
     // check if we know prev_position, and if lower. Otherwise default to 
     // upper list
-    if (gd->prev_pos && gd->prev_pos > blk_rq_pos(rq))
+    if (gd->prev_pos > blk_rq_pos(rq))
     {
         add_to_lower(rq, gd);
     }
@@ -121,12 +121,11 @@ static void greedy_add_request(struct request_queue *q, struct request *rq)
 
 }
 
-// TODO: idk if we need to implement this or other 'helpful' elv functions
-/*
+
 static struct request *
-noop_former_request(struct request_queue *q, struct request *rq)
+greedy_former_request(struct request_queue *q, struct request *rq)
 {
-	struct noop_data *nd = q->elevator->elevator_data;
+	struct greedy_data* gd = q->elevator->elevator_data;
 
 	if (rq->queuelist.prev == &nd->queue)
 		return NULL;
@@ -134,15 +133,15 @@ noop_former_request(struct request_queue *q, struct request *rq)
 }
 
 static struct request *
-noop_latter_request(struct request_queue *q, struct request *rq)
+greedy_latter_request(struct request_queue *q, struct request *rq)
 {
-	struct noop_data *nd = q->elevator->elevator_data;
+	struct greedy_data* gd = q->elevator->elevator_data;
 
 	if (rq->queuelist.next == &nd->queue)
 		return NULL;
 	return list_entry(rq->queuelist.next, struct request, queuelist);
 }
-*/
+
 
 // I think this is it?
 static int greedy_init_queue(struct request_queue *q, struct elevator_type *e)
@@ -186,8 +185,8 @@ static struct elevator_type elevator_greedy = {
 		.elevator_merge_req_fn		= greedy_merged_requests,
 		.elevator_dispatch_fn		= greedy_dispatch,
 		.elevator_add_req_fn		= greedy_add_request,
-		//.elevator_former_req_fn		= noop_former_request,
-		//.elevator_latter_req_fn		= noop_latter_request,
+		.elevator_former_req_fn		= greedy_former_request,
+		.elevator_latter_req_fn		= greedy_latter_request,
 		.elevator_init_fn		= greedy_init_queue,
 		.elevator_exit_fn		= greedy_exit_queue,
 	},
