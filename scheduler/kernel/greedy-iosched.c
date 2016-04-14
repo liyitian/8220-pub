@@ -53,7 +53,7 @@ static int greedy_dispatch(struct request_queue *q, int force)
     // no upper, so if lower exists we choose it
     else if (!list_empty(&gd->lower))
     {
-        target = list_first_entry(gd->lower, struct request, queuelist);
+        target = list_first_entry(&gd->lower, struct request, queuelist);
     }
     else
     {
