@@ -127,7 +127,7 @@ greedy_former_request(struct request_queue *q, struct request *rq)
 {
 	struct greedy_data* gd = q->elevator->elevator_data;
 
-	if (rq->queuelist.prev == &nd->queue)
+	if (rq->queuelist.prev == &gd->upper || rq->quelist.prev == &gd->lower)
 		return NULL;
 	return list_entry(rq->queuelist.prev, struct request, queuelist);
 }
@@ -137,7 +137,7 @@ greedy_latter_request(struct request_queue *q, struct request *rq)
 {
 	struct greedy_data* gd = q->elevator->elevator_data;
 
-	if (rq->queuelist.next == &nd->queue)
+	if (rq->queuelist.next == &gd->upper || rq->queuelist.next == &gd->lower)
 		return NULL;
 	return list_entry(rq->queuelist.next, struct request, queuelist);
 }
