@@ -22,7 +22,6 @@ static void greedy_merged_requests(struct request_queue *q, struct request *rq,
 	list_del_init(&next->queuelist);
 }
 
-// TODO: this is where we must set prev_pos i think, line below maybe helpful
 static int greedy_dispatch(struct request_queue *q, int force)
 {
     int up_dist;
