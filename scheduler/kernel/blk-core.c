@@ -2638,7 +2638,7 @@ void blk_finish_request(struct request *req, int error)
 	struct req_stuff req_stuff;
 	getnstimeofday(&current_time);	
 	serv = timespec_sub(current_time, req->start_service);
-	wait = timespec_sub(current_time, req->start_wait);	
+	wait = timespec_sub(req->start_service, req->start_wait);	
 
 	sum_of_services += ((long) serv.tv_sec * MSEC_PER_SEC) + (serv.tv_nsec / 1000000L);
 	sum_of_waits += ((long) wait.tv_sec * MSEC_PER_SEC) + (wait.tv_nsec / 1000000L);
