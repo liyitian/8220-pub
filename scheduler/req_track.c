@@ -21,6 +21,12 @@ SYSCALL_DEFINE0(start_req_track)
     return 0;
 }
 
+SYSCALL_DEFINE1(get_requests_seen, long*, ret)
+{
+    copy_to_user(ret, &requests_seen, sizeof(long));
+    return 0;
+}
+
 SYSCALL_DEFINE1(end_req_track, struct req_stuff*, data)
 {
     serv_recording = 0;
