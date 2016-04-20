@@ -2617,8 +2617,6 @@ void blk_unprep_request(struct request *req)
 EXPORT_SYMBOL_GPL(blk_unprep_request);
 
 // tyler
-
-
 long sum_of_services;
 long sum_of_waits;
 long num_requests_seen;
@@ -2644,7 +2642,8 @@ void blk_finish_request(struct request *req, int error)
 	sum_of_waits += ((long) wait.tv_sec * MSEC_PER_SEC) + (wait.tv_nsec / 1000000L);
 	num_requests_seen++;
 
-	if (serv_recording && requests_seen < REQS_RECORDED)
+	if (serv_recording && requests_seen < REQS_RECORDED && 
+	    rq_end_sector(req) != blk_rq_pos(req))
 	{
 	    req_stuff.pid = task_tgid_vnr(current);
 	    req_stuff.arrival = req->start_wait;
