@@ -63,7 +63,7 @@ static int greedy_dispatch(struct request_queue *q, int force)
     //FIXME: need queue lock: do we already have it? we should...
     // Add to tail of list, so that we know where we stand
     elv_dispatch_add_tail(q, target);
-    gd->prev_pos = blk_rq_pos(target) + blk_rq_sectors(target);
+    gd->prev_pos = rq_end_sector(target);
     return 1;
 }
 
