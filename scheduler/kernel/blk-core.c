@@ -2621,7 +2621,7 @@ long sum_of_services;
 long sum_of_waits;
 long num_requests_seen;
 struct req_stuff stored_reqs[REQS_RECORDED];
-unsigned int requests_seen;
+unsigned int requests_seen = 0;
 bool serv_recording = 0;
 
 /*
@@ -2643,7 +2643,8 @@ void blk_finish_request(struct request *req, int error)
 	num_requests_seen++;
 
 	if (serv_recording && requests_seen < REQS_RECORDED && 
-	    rq_end_sector(req) != blk_rq_pos(req))
+	    req->start_wait.tv_sec && req->start_wait.tv_nsec)// && 
+	    //rq_end_sector(req) != blk_rq_pos(req))
 	{
 	    req_stuff.pid = task_tgid_vnr(current);
 	    req_stuff.arrival = req->start_wait;

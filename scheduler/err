@@ -1,0 +1,24 @@
+tester.c: In function ‘main’:
+tester.c:41:16: error: ‘req_stuff’ undeclared (first use in this function)
+     end_things(req_stuff);
+                ^
+tester.c:21:39: note: in definition of macro ‘end_things’
+ #define end_things(data) syscall(334, data)
+                                       ^
+tester.c:41:16: note: each undeclared identifier is reported only once for each function it appears in
+     end_things(req_stuff);
+                ^
+tester.c:21:39: note: in definition of macro ‘end_things’
+ #define end_things(data) syscall(334, data)
+                                       ^
+tester.c:44:38: error: expected ‘)’ before ‘data’
+         printf("%d, %ld, %ld, %ld\n" data[0].pid, get_ms(data[i].arrival), get_ms(data[i].serv_start), get_ms(data[i].end));
+                                      ^
+tester.c:44:38: warning: format ‘%d’ expects a matching ‘int’ argument [-Wformat=]
+tester.c:44:38: warning: format ‘%ld’ expects a matching ‘long int’ argument [-Wformat=]
+tester.c:44:38: warning: format ‘%ld’ expects a matching ‘long int’ argument [-Wformat=]
+tester.c:44:38: warning: format ‘%ld’ expects a matching ‘long int’ argument [-Wformat=]
+tester.c:34:22: warning: unused variable ‘data’ [-Wunused-variable]
+     struct req_stuff data[REQS_REQUESTED];
+                      ^
+make: *** [all] Error 1

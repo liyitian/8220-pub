@@ -21,9 +21,9 @@ SYSCALL_DEFINE0(start_req_track)
     return 0;
 }
 
-SYSCALL_DEFINE1(get_requests_seen, long*, ret)
+SYSCALL_DEFINE1(get_requests_seen, int*, num_reqs)
 {
-    copy_to_user(ret, &requests_seen, sizeof(long));
+    copy_to_user(num_reqs, &requests_seen, sizeof(int));
     return 0;
 }
 
