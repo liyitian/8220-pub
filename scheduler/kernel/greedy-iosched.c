@@ -1,5 +1,6 @@
 /*
  * elevator greedy
+ * Authors: Tyler Allen, Yaolong Yu, Yitian Li, Wenbo Ding, Chaoran Huang
  */
 #include <linux/blkdev.h>
 #include <linux/elevator.h>
@@ -15,13 +16,13 @@ struct greedy_data {
     sector_t prev_pos;
 };
 
-static void greedy_merged_requests(struct request_queue *q, struct request *rq,
-				 struct request *next)
+static void greedy_merged_requests(struct request_queue* q, struct request* rq,
+				                   struct request* next)
 {
 	list_del_init(&next->queuelist);
 }
 
-static int greedy_dispatch(struct request_queue *q, int force)
+static int greedy_dispatch(struct request_queue* q, int force)
 {
     int up_dist;
     int down_dist;
@@ -119,8 +120,8 @@ static void greedy_add_request(struct request_queue *q, struct request *rq)
 
 }
 
-static struct request *
-greedy_former_request(struct request_queue *q, struct request *rq)
+static struct request*
+greedy_former_request(struct request_queue* q, struct request* rq)
 {
 	struct greedy_data* gd = q->elevator->elevator_data;
 
@@ -129,8 +130,8 @@ greedy_former_request(struct request_queue *q, struct request *rq)
 	return list_entry(rq->queuelist.prev, struct request, queuelist);
 }
 
-static struct request *
-greedy_latter_request(struct request_queue *q, struct request *rq)
+static struct request*
+greedy_latter_request(struct request_queue* q, struct request* rq)
 {
 	struct greedy_data* gd = q->elevator->elevator_data;
 
@@ -139,9 +140,9 @@ greedy_latter_request(struct request_queue *q, struct request *rq)
 	return list_entry(rq->queuelist.next, struct request, queuelist);
 }
 
-static int greedy_init_queue(struct request_queue *q, struct elevator_type *e)
+static int greedy_init_queue(struct request_queue* q, struct elevator_type* e)
 {
-	struct greedy_data *gd;
+	struct greedy_data* gd;
 	struct elevator_queue *eq;
 
 	eq = elevator_alloc(q, e);
@@ -165,9 +166,9 @@ static int greedy_init_queue(struct request_queue *q, struct elevator_type *e)
 	return 0;
 }
 
-static void greedy_exit_queue(struct elevator_queue *e)
+static void greedy_exit_queue(struct elevator_queue* e)
 {
-	struct greedy_data *gd = e->elevator_data;
+	struct greedy_data* gd = e->elevator_data;
 
 	BUG_ON(!list_empty(&gd->higher));
 	BUG_ON(!list_empty(&gd->lower));
