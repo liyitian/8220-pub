@@ -15,7 +15,6 @@ struct greedy_data {
     sector_t prev_pos;
 };
 
-// i think this is okay?
 static void greedy_merged_requests(struct request_queue *q, struct request *rq,
 				 struct request *next)
 {
@@ -48,7 +47,7 @@ static int greedy_dispatch(struct request_queue *q, int force)
                 target = lower;
             }
         }
-        // in any but innermost case, we are head
+        // in any but innermost case, we are upper
     }
     // no upper, so if lower exists we choose it
     else if (!list_empty(&gd->lower))
@@ -60,7 +59,6 @@ static int greedy_dispatch(struct request_queue *q, int force)
         return 0;
     }
     list_del_init(&target->queuelist);
-    //FIXME: need queue lock: do we already have it? we should...
     // Add to tail of list, so that we know where we stand
     elv_dispatch_add_tail(q, target);
     gd->prev_pos = rq_end_sector(target);
@@ -121,7 +119,6 @@ static void greedy_add_request(struct request_queue *q, struct request *rq)
 
 }
 
-
 static struct request *
 greedy_former_request(struct request_queue *q, struct request *rq)
 {
@@ -142,8 +139,6 @@ greedy_latter_request(struct request_queue *q, struct request *rq)
 	return list_entry(rq->queuelist.next, struct request, queuelist);
 }
 
-
-// I think this is it?
 static int greedy_init_queue(struct request_queue *q, struct elevator_type *e)
 {
 	struct greedy_data *gd;
@@ -170,7 +165,6 @@ static int greedy_init_queue(struct request_queue *q, struct elevator_type *e)
 	return 0;
 }
 
-// I think this okay
 static void greedy_exit_queue(struct elevator_queue *e)
 {
 	struct greedy_data *gd = e->elevator_data;
@@ -206,7 +200,6 @@ static void __exit greedy_exit(void)
 
 module_init(greedy_init);
 module_exit(greedy_exit);
-
 
 MODULE_AUTHOR("TA");
 MODULE_LICENSE("GPL");
